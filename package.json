@@ -1,0 +1,11 @@
+{
+  "name": "euroroom",
+  "version": "0.0.0",
+  "description": "euroroom headless cms & front",
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "maciejkaczmarczyk95@gmail.com",
+  "license": "ISC"
+}

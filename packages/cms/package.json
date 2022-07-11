@@ -1,0 +1,30 @@
+{
+  "name": "@euroroom/cms",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/strapi": "4.2.2",
+    "@strapi/plugin-users-permissions": "4.2.2",
+    "@strapi/plugin-i18n": "4.2.2",
+    "better-sqlite3": "7.4.6"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "99eeed9b-0aef-458e-b10a-ab0a11fb812a"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

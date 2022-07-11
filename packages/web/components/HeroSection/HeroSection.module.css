@@ -1,0 +1,18 @@
+.header-wrapper {
+  margin-top: 16px;
+  margin-bottom: 48px;
+}
+
+.description-wrapper {
+  width: 400px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 24px;
+}
+
+.text-wrapper {
+  margin-top: 128px;
+}
