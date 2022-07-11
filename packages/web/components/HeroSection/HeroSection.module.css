@@ -8,11 +8,21 @@
 }
 
 .container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
-  column-gap: 24px;
+  column-gap: 83px;
 }
 
 .text-wrapper {
   margin-top: 128px;
+}
+
+.range-calendar-wrapper {
+  position: absolute;
+  bottom: 140px;
+}
+
+.image {
+  border-bottom-left-radius: 30px;
 }

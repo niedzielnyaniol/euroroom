@@ -2,6 +2,7 @@ import { Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import ImageType from '../../types/ImageType';
 import Container from '../Container';
+import RangeCalendar from '../RangeCalendar';
 import styles from './HeroSection.module.css';
 
 type HeroSectionProps = {
@@ -19,7 +20,7 @@ const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps
           {welcomeMsg}
         </Text>
         <div className={styles['header-wrapper']}>
-          <Heading as="h1" fontSize="6xl">
+          <Heading as="h1" fontSize="6xl" fontWeight={600}>
             {title}
           </Heading>
         </div>
@@ -27,7 +28,10 @@ const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps
           <Text>{description}</Text>
         </div>
       </div>
-      <Image {...image} width={630} height={764} />
+      <Image {...image} width={630} height={764} className={styles.image} />
+      <div className={styles['range-calendar-wrapper']}>
+        <RangeCalendar />
+      </div>
     </div>
   </Container>
 );

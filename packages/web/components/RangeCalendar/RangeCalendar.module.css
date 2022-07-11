@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  border-radius: 0 20px;
+}
+
+.shadowed-container {
+  display: flex;
+  box-shadow: 0 16px 46px rgb(0 0 0 / 6%);
+  border-bottom-left-radius: 20px;
+  padding: 32px 40px;
+  column-gap: 40px;
+  margin-right: 2px;
+}
+
+.input-item {
+  padding: 2px 28px 2px 0;
+}
+
+.with-separator {
+  border-right: 1px solid var(--chakra-colors-gray-400);
+}
