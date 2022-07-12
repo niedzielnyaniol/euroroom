@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-cd packages/web && yarn lingui:extract && npx lint-staged
+cd packages/web && yarn lingui && npx lint-staged

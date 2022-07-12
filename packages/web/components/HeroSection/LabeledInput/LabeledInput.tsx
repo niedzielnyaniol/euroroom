@@ -1,4 +1,5 @@
 import { Input, Select, Text, useTheme } from '@chakra-ui/react';
+import { Plural } from '@lingui/macro';
 import classNames from 'classnames';
 import { ChangeEventHandler } from 'react';
 import { Calendar, TwoUsers } from 'react-iconly';
@@ -53,12 +54,16 @@ const LabeledInput = ({ label, type, value, onChange, maxGuests, className }: La
           value={value}
           onChange={onChange as ChangeEventHandler<HTMLSelectElement>}
         >
-          {[...Array(maxGuests)].map((_, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <option key={index} value={(index + 1).toString()}>
-              {index + 1} Person
-            </option>
-          ))}
+          {[...Array(maxGuests)].map((_, index) => {
+            const idx = index + 1;
+
+            return (
+              // eslint-disable-next-line react/no-array-index-key
+              <option key={index} value={idx.toString()}>
+                <Plural value={idx} one="# Person" other="# Persons" />
+              </option>
+            );
+          })}
         </Select>
       )}
     </div>

@@ -1,4 +1,5 @@
 import { Button } from '@chakra-ui/react';
+import { t } from '@lingui/macro';
 import { Trans } from '@lingui/react';
 import classNames from 'classnames';
 import LabeledInput from '../LabeledInput';
@@ -10,20 +11,20 @@ const RangeCalendar = () => (
       <LabeledInput
         className={classNames(styles['input-item'], styles['with-separator'])}
         type="date"
-        label="Check in"
+        label={t`checkIn`}
         onChange={() => undefined}
       />
       <LabeledInput
         className={classNames(styles['input-item'], styles['with-separator'])}
         type="date"
-        label="Check out"
+        label={t`checkOut`}
         onChange={() => undefined}
       />
       <LabeledInput
         className={styles['input-item']}
         maxGuests={4}
         type="select"
-        label="Guest"
+        label={t`guest`}
         onChange={() => undefined}
       />
     </div>

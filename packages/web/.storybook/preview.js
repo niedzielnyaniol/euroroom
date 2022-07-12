@@ -1,9 +1,9 @@
 import React, { ComponentType } from 'react';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
+import { en, pl } from 'make-plural/plurals';
 import '../styles/globals.css';
 import theme from '../styles/theme';
-import { setLinguiConfig, withLingui } from 'storybook-addon-linguijs';
 import { messages as plMessages } from '../locales/pl/messages';
 import { messages as enMessages } from '../locales/en/messages';
 
@@ -35,15 +35,10 @@ export const parameters = {
   },
 };
 
-setLinguiConfig({
-  locales: ['en', 'pl'],
-  defaultLocale: 'pl',
-  catalogs: {
-    pl: { messages: plMessages },
-    en: { messages: enMessages },
-  },
+i18n.loadLocaleData({
+  en: { plurals: en },
+  pl: { plurals: pl },
 });
-
 i18n.load({
   en: enMessages,
   pl: plMessages,

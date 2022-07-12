@@ -3,10 +3,15 @@ import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
+import { en, pl } from 'make-plural/plurals';
 import theme from '../styles/theme';
 import { messages as plMessages } from '../locales/pl/messages.js';
 import { messages as enMessages } from '../locales/en/messages.js';
 
+i18n.loadLocaleData({
+  en: { plurals: en },
+  pl: { plurals: pl },
+});
 i18n.load({
   en: enMessages,
   pl: plMessages,
