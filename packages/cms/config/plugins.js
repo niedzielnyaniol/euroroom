@@ -1,8 +1,12 @@
 module.exports = {
-  placeholder: {
+  transformer: {
     enabled: true,
     config: {
-      size: 10,
+      prefix: '/api/',
+      responseTransforms: {
+        removeAttributesKey: true,
+        removeDataKey: true,
+      },
     },
   },
 };

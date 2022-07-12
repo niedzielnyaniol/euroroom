@@ -1,24 +1,29 @@
 {
   "collectionName": "components_sections_heroes",
   "info": {
-    "displayName": "Hero",
-    "icon": "circle"
+    "displayName": "hero",
+    "icon": "circle",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "welcomeMsg": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "image.image"
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

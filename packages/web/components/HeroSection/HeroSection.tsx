@@ -5,7 +5,7 @@ import Container from '../Container';
 import RangeCalendar from '../RangeCalendar';
 import styles from './HeroSection.module.css';
 
-type HeroSectionProps = {
+export type HeroSectionProps = {
   title: string;
   description: string;
   welcomeMsg: string;
@@ -28,7 +28,7 @@ const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps
           <Text>{description}</Text>
         </div>
       </div>
-      <Image {...image} width={630} height={764} className={styles.image} />
+      <Image src={image.url} alt={image.alternativeText} width={630} height={764} className={styles.image} />
       <div className={styles['range-calendar-wrapper']}>
         <RangeCalendar />
       </div>

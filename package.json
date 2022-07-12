@@ -9,7 +9,7 @@
     "build:web": "yarn workspace @euroroom/web build",
     "build:cms": "yarn workspace @euroroom/cms build",
     "develop": "concurrently \"yarn:develop:*\"",
-    "develop:web": "yarn workspace @euroroom/web start",
+    "develop:web": "yarn workspace @euroroom/web dev",
     "develop:cms": "yarn workspace @euroroom/cms develop"
   },
   "workspaces": [

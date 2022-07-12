@@ -16,17 +16,27 @@
     }
   },
   "attributes": {
-    "Hero": {
-      "displayName": "Hero",
+    "meta": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.hero",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "pages.meta",
+      "required": true
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.hero",
+      "required": true
     }
   }
 }

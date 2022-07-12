@@ -1,6 +1,7 @@
 type ImageType = {
-  src: string;
-  alt: string;
+  alternativeText: string;
+  caption: string;
+  url: string;
 };
 
 export default ImageType;

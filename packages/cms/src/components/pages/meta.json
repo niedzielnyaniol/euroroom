@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_pages_metas",
+  "info": {
+    "displayName": "meta",
+    "icon": "file-code"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
