@@ -1,7 +1,7 @@
 import Locales from '../types/Locales';
 import Meta from '../types/Meta';
 
-const { API_PATH } = process.env;
+const { NEXT_PUBLIC_SERVER_URL } = process.env;
 
 type Attributes = {
   createdAt: string;
@@ -16,7 +16,7 @@ function getJson<T>(res: Response): Promise<{ data: T & Attributes }> {
 }
 
 export function get<T>(path: string, populate = '*', locale = 'pl') {
-  return fetch(`${API_PATH}/${path}?locale=${locale}&populate=${populate}`, {
+  return fetch(`${NEXT_PUBLIC_SERVER_URL}/api/${path}?locale=${locale}&populate=${populate}`, {
     method: 'GET',
   }).then((data) => getJson<T>(data));
 }
