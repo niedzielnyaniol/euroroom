@@ -7,5 +7,11 @@
     "packages/*"
   ],
   "author": "maciejkaczmarczyk95@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.1"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
 }
