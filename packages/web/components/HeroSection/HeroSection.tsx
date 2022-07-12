@@ -28,7 +28,14 @@ const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps
           <Text>{description}</Text>
         </div>
       </div>
-      <MyImage {...image} width={630} height={764} className={styles.image} />
+      <MyImage
+        objectFit="cover"
+        src={image.url}
+        alt={image.alternativeText}
+        width={630}
+        height={764}
+        className={styles.image}
+      />
       <div className={styles['range-calendar-wrapper']}>
         <RangeCalendar />
       </div>

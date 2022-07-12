@@ -16,14 +16,17 @@ i18n.load({
   en: enMessages,
   pl: plMessages,
 });
-i18n.activate('pl');
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <ChakraProvider theme={theme}>
-    <I18nProvider i18n={i18n}>
-      <Component {...pageProps} />
-    </I18nProvider>
-  </ChakraProvider>
-);
+const MyApp = ({ Component, pageProps, router: { locale } }: AppProps) => {
+  i18n.activate(locale || 'pl');
+
+  return (
+    <ChakraProvider theme={theme}>
+      <I18nProvider i18n={i18n}>
+        <Component {...pageProps} />
+      </I18nProvider>
+    </ChakraProvider>
+  );
+};
 
 export default MyApp;

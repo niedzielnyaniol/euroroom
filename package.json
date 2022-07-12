@@ -11,7 +11,8 @@
     "develop": "concurrently \"yarn:develop:*\"",
     "develop:web": "yarn workspace @euroroom/web dev",
     "develop:cms": "yarn workspace @euroroom/cms develop",
-    "reset": "rimraf ./**/node_modules node_modules ./**/yarn.lock ./yarn.lock && yarn"
+    "reset": "rimraf ./**/node_modules node_modules ./**/yarn.lock ./yarn.lock && yarn",
+    "storybook": "yarn workspace @euroroom/web storybook"
   },
   "workspaces": [
     "packages/*"

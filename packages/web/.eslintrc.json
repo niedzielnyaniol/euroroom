@@ -8,7 +8,6 @@
   ],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
-    "react/destructuring-assignment": "off"
+    "prettier/prettier": "error"
   }
 }

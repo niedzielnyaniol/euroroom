@@ -15,8 +15,8 @@ function getJson<T>(res: Response): Promise<{ data: T & Attributes }> {
   return res.json();
 }
 
-export function get<T>(path: string, populate = '*', locale = 'pl') {
-  return fetch(`${NEXT_PUBLIC_SERVER_URL}/api/${path}?locale=${locale}&populate=${populate}`, {
+export function get<T>(path: string, locale: string | undefined, populate = '*') {
+  return fetch(`${NEXT_PUBLIC_SERVER_URL}/api/${path}?locale=${locale || 'pl'}&populate=${populate}`, {
     method: 'GET',
   }).then((data) => getJson<T>(data));
 }

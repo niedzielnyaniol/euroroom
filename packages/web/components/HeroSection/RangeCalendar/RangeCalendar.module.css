@@ -5,6 +5,7 @@
 
 .shadowed-container {
   display: flex;
+  width: 660px;
   box-shadow: 0 16px 46px rgb(0 0 0 / 6%);
   background-color: var(--chakra-colors-white);
   border-bottom-left-radius: 20px;
@@ -14,6 +15,10 @@
 
 .input-item {
   padding: 2px 28px 2px 0;
+}
+
+.input-item:last-of-type {
+  padding: 2px 0;
 }
 
 .with-separator {
