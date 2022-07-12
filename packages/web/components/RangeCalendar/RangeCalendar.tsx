@@ -1,4 +1,5 @@
 import { Button } from '@chakra-ui/react';
+import { Trans } from '@lingui/react';
 import classNames from 'classnames';
 import LabeledInput from './LabeledInput';
 import styles from './RangeCalendar.module.css';
@@ -37,8 +38,7 @@ const RangeCalendar = () => (
       colorScheme="green"
       fontSize="larger"
     >
-      Check
-      <br /> Availability
+      <Trans id="checkAvailability" />
     </Button>
   </div>
 );

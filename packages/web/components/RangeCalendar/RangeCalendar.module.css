@@ -6,10 +6,10 @@
 .shadowed-container {
   display: flex;
   box-shadow: 0 16px 46px rgb(0 0 0 / 6%);
+  background-color: var(--chakra-colors-white);
   border-bottom-left-radius: 20px;
   padding: 32px 40px;
   column-gap: 40px;
-  margin-right: 2px;
 }
 
 .input-item {

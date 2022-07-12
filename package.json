@@ -10,7 +10,8 @@
     "build:cms": "yarn workspace @euroroom/cms build",
     "develop": "concurrently \"yarn:develop:*\"",
     "develop:web": "yarn workspace @euroroom/web dev",
-    "develop:cms": "yarn workspace @euroroom/cms develop"
+    "develop:cms": "yarn workspace @euroroom/cms develop",
+    "reset": "rimraf ./**/node_modules node_modules ./**/yarn.lock ./yarn.lock && yarn"
   },
   "workspaces": [
     "packages/*"
@@ -19,6 +20,10 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.2.2",
-    "husky": "^8.0.1"
+    "husky": "^8.0.1",
+    "rimraf": "^3.0.2"
+  },
+  "resolutions": {
+    "ts-node": "^10.4.0"
   }
 }

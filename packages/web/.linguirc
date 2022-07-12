@@ -1,0 +1,8 @@
+{
+  "locales": ["pl", "en"],
+  "catalogs": [{
+    "path": "locales/{locale}/messages",
+    "include": ["pages", "components"]
+  }],
+  "format": "minimal"
+}
