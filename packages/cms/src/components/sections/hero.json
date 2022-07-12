@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "circle"
+  },
+  "options": {},
+  "attributes": {
+    "welcomeMsg": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}
