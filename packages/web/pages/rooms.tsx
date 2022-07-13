@@ -20,11 +20,12 @@ type Response = Array<{
 }>;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { data } = await get<Response>(
-    'rooms',
-    context.locale,
-    'populate=roomInfo.bedInfo&populate=meta&populate=roomInfo.mainPhoto&populate=roomInfo.address&populate=roomInfo.bedInfo',
-  );
+  const { data } = await get<Response>('rooms', context.locale, [
+    'meta',
+    'roomInfo.mainPhoto',
+    'roomInfo.address',
+    'roomInfo.bedInfo',
+  ]);
 
   return {
     props: {

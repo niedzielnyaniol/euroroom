@@ -7,7 +7,7 @@ type IndexProps = {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { data } = await get<IndexProps>('index', context.locale, 'hero.image.src');
+  const { data } = await get<IndexProps>('index', context.locale, ['hero.image.src']);
 
   return {
     props: data,
