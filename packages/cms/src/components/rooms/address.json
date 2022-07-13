@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_rooms_addresses",
+  "info": {
+    "displayName": "address",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "street": {
+      "type": "string",
+      "required": true
+    },
+    "postCode": {
+      "type": "string",
+      "required": true
+    },
+    "buildingNumber": {
+      "type": "string",
+      "required": true
+    },
+    "apartmentNumber": {
+      "type": "string",
+      "required": true
+    },
+    "floorLevel": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

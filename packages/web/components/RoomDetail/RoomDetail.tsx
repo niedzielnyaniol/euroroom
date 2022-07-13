@@ -12,19 +12,20 @@ import PersonIcon from '../../assets/icons/person.svg';
 import BedIcon from '../../assets/icons/bed.svg';
 import Address from '../../types/Address';
 import { formatStreet } from '../../utils/address';
+import BedInfo from '../../types/BedInfo';
 
-type RoomDetailProps = {
+export type RoomDetailProps = {
   name: string;
   pricePerNight: number;
   maxGuests: number;
   squareMeters: number;
-  numberOfBeds: number;
+  bedInfo: BedInfo;
   mainPhoto: ImageType;
   address: Address;
 };
 
 const RoomDetail = ({
-  numberOfBeds,
+  bedInfo,
   mainPhoto,
   maxGuests,
   name,
@@ -55,8 +56,8 @@ const RoomDetail = ({
           <LabeledIcon icon={<SqMetersIcon />} title={t`Room area`}>
             {i18n.number(squareMeters)}m²
           </LabeledIcon>
-          <LabeledIcon icon={<BedIcon />} title={t`Beds and sofas`}>
-            <Plural value={numberOfBeds} one="# Bed" other="# Beds" />
+          <LabeledIcon icon={<BedIcon />} title={bedInfo.additionalInfo}>
+            <Plural value={bedInfo.numberOfBeds} one="# Bed" few="# Beds" other="# Beds" />
           </LabeledIcon>
         </div>
       </div>

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-07-13T12:00:15.809Z"
+    "x-generation-date": "2022-07-13T13:29:09.687Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2377,14 +2377,11 @@
               "name": {
                 "type": "string"
               },
-              "pricePerNighth": {
+              "pricePerNight": {
                 "type": "number",
                 "format": "float"
               },
-              "childrens": {
-                "type": "integer"
-              },
-              "adults": {
+              "maxGuests": {
                 "type": "integer"
               },
               "squareMeters": {
@@ -2441,7 +2438,27 @@
                 }
               },
               "address": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  },
+                  "street": {
+                    "type": "string"
+                  },
+                  "postCode": {
+                    "type": "string"
+                  },
+                  "buildingNumber": {
+                    "type": "string"
+                  },
+                  "apartmentNumber": {
+                    "type": "string"
+                  },
+                  "floorLevel": {
+                    "type": "integer"
+                  }
+                }
               }
             }
           },
@@ -2472,14 +2489,11 @@
                   "name": {
                     "type": "string"
                   },
-                  "pricePerNighth": {
+                  "pricePerNight": {
                     "type": "number",
                     "format": "float"
                   },
-                  "childrens": {
-                    "type": "integer"
-                  },
-                  "adults": {
+                  "maxGuests": {
                     "type": "integer"
                   },
                   "squareMeters": {
@@ -2536,7 +2550,27 @@
                     }
                   },
                   "address": {
-                    "type": "string"
+                    "type": "object",
+                    "properties": {
+                      "city": {
+                        "type": "string"
+                      },
+                      "street": {
+                        "type": "string"
+                      },
+                      "postCode": {
+                        "type": "string"
+                      },
+                      "buildingNumber": {
+                        "type": "string"
+                      },
+                      "apartmentNumber": {
+                        "type": "string"
+                      },
+                      "floorLevel": {
+                        "type": "integer"
+                      }
+                    }
                   }
                 }
               },
@@ -2573,14 +2607,11 @@
               "name": {
                 "type": "string"
               },
-              "pricePerNighth": {
+              "pricePerNight": {
                 "type": "number",
                 "format": "float"
               },
-              "childrens": {
-                "type": "integer"
-              },
-              "adults": {
+              "maxGuests": {
                 "type": "integer"
               },
               "squareMeters": {
@@ -3361,7 +3392,30 @@
                 }
               },
               "address": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "string"
+                  },
+                  "street": {
+                    "type": "string"
+                  },
+                  "postCode": {
+                    "type": "string"
+                  },
+                  "buildingNumber": {
+                    "type": "string"
+                  },
+                  "apartmentNumber": {
+                    "type": "string"
+                  },
+                  "floorLevel": {
+                    "type": "integer"
+                  }
+                }
               }
             }
           },
@@ -3708,14 +3762,11 @@
                         "name": {
                           "type": "string"
                         },
-                        "pricePerNighth": {
+                        "pricePerNight": {
                           "type": "number",
                           "format": "float"
                         },
-                        "childrens": {
-                          "type": "integer"
-                        },
-                        "adults": {
+                        "maxGuests": {
                           "type": "integer"
                         },
                         "squareMeters": {
@@ -4496,7 +4547,30 @@
                           }
                         },
                         "address": {
-                          "type": "string"
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "city": {
+                              "type": "string"
+                            },
+                            "street": {
+                              "type": "string"
+                            },
+                            "postCode": {
+                              "type": "string"
+                            },
+                            "buildingNumber": {
+                              "type": "string"
+                            },
+                            "apartmentNumber": {
+                              "type": "string"
+                            },
+                            "floorLevel": {
+                              "type": "integer"
+                            }
+                          }
                         }
                       }
                     },
@@ -4869,14 +4943,11 @@
                       "name": {
                         "type": "string"
                       },
-                      "pricePerNighth": {
+                      "pricePerNight": {
                         "type": "number",
                         "format": "float"
                       },
-                      "childrens": {
-                        "type": "integer"
-                      },
-                      "adults": {
+                      "maxGuests": {
                         "type": "integer"
                       },
                       "squareMeters": {
@@ -5657,7 +5728,30 @@
                         }
                       },
                       "address": {
-                        "type": "string"
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "city": {
+                            "type": "string"
+                          },
+                          "street": {
+                            "type": "string"
+                          },
+                          "postCode": {
+                            "type": "string"
+                          },
+                          "buildingNumber": {
+                            "type": "string"
+                          },
+                          "apartmentNumber": {
+                            "type": "string"
+                          },
+                          "floorLevel": {
+                            "type": "integer"
+                          }
+                        }
                       }
                     }
                   },

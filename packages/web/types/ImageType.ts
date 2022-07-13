@@ -4,4 +4,13 @@ type ImageType = {
   url: string;
 };
 
+export type ImageTypeFromApi = ImageType & {
+  formats: {
+    thumbnail: ImageType;
+    small: ImageType;
+    medium: ImageType;
+    large: ImageType;
+  };
+};
+
 export default ImageType;

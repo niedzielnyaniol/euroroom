@@ -14,7 +14,7 @@ export default {
 
 export const Default = RoomDetail.bind({});
 Default.args = {
-  numberOfBeds: 2,
+  bedInfo: { numberOfBeds: 2, additionalInfo: 'inof' },
   maxGuests: 2,
   name: 'Zielony czerwony',
   squareMeters: 24,
