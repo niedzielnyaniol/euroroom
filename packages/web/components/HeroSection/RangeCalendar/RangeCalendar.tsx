@@ -2,7 +2,7 @@ import { Button } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import { Trans } from '@lingui/react';
 import classNames from 'classnames';
-import LabeledInput from '../LabeledInput';
+import LabeledInput from '../../Container/LabeledInput';
 import styles from './RangeCalendar.module.css';
 
 const RangeCalendar = () => (

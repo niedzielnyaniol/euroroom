@@ -1,8 +1,9 @@
-import { Input, Select, Text, useTheme } from '@chakra-ui/react';
+import { Input, Select, useTheme } from '@chakra-ui/react';
 import { Plural } from '@lingui/macro';
 import classNames from 'classnames';
 import { ChangeEventHandler } from 'react';
 import { Calendar, TwoUsers } from 'react-iconly';
+import LabeledIcon from '../../LabeledIcon';
 import styles from './LabelInput.module.css';
 
 type LabeledInputProps = {
@@ -28,16 +29,18 @@ const LabeledInput = ({ label, type, value, onChange, maxGuests, className }: La
 
   return (
     <div className={classNames(styles.container, className)}>
-      <div className={styles.label}>
-        {isDate ? (
-          <Calendar primaryColor={theme.colors.gray[500]} />
-        ) : (
-          <TwoUsers primaryColor={theme.colors.gray[500]} />
-        )}{' '}
-        <Text fontWeight={500} fontSize="large">
-          {label}
-        </Text>
-      </div>
+      <LabeledIcon
+        fontSize="large"
+        icon={
+          isDate ? (
+            <Calendar primaryColor={theme.colors.gray[500]} />
+          ) : (
+            <TwoUsers primaryColor={theme.colors.gray[500]} />
+          )
+        }
+      >
+        {label}
+      </LabeledIcon>
       {isDate ? (
         <Input
           type="date"

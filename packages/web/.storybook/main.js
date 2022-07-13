@@ -1,3 +1,6 @@
+const path = require('path');
+const pathToInlineSvg = path.resolve(__dirname, '../assets/icons');
+
 module.exports = {
   stories: ['../components/**/*.stories.@(ts|tsx)'],
   addons: [
@@ -23,5 +26,27 @@ module.exports = {
   framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-webpack5',
+  },
+  webpackFinal: async (config) => {
+    const rules = config.module.rules;
+
+    // modify storybook's file-loader rule to avoid conflicts with svgr
+    const fileLoaderRule = rules.find((rule) => rule.test.test('.svg'));
+    fileLoaderRule.exclude = pathToInlineSvg;
+
+    rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgo: true,
+            svgoConfig: { plugins: [{ name: 'preset-default', params: { overrides: { removeViewBox: false } } }] },
+          },
+        },
+      ],
+    });
+
+    return config;
   },
 };
