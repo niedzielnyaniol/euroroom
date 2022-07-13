@@ -6,7 +6,9 @@
     checkIn: 'Zameldowanie',
     checkOut: 'Wymeldowanie',
     guest: 'Liczba gości',
+    index: 'Strona główna',
     night: 'noc',
+    rooms: 'Pokoje',
     st: 'ul.',
     '{0, plural, one {# Bed} few {# Beds} other {# Beds}}': [
       ['0', 'plural', { one: ['#', ' Łóżko'], few: ['#', ' Łóżka'], other: ['#', ' Łóżka'] }],

@@ -1,3 +1,7 @@
+.container {
+  margin-top: 16px;
+}
+
 .rooms-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

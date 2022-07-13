@@ -7,7 +7,7 @@ export type RoomsProps = {
 };
 
 const Rooms = ({ rooms }: RoomsProps) => (
-  <div>
+  <div className={styles.container}>
     <Container>
       <div className={styles['rooms-wrapper']}>
         {rooms.map((room) => (
