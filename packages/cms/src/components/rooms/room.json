@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_rooms_rooms",
+  "info": {
+    "displayName": "room",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "pricePerNighth": {
+      "type": "decimal",
+      "required": true
+    },
+    "childrens": {
+      "type": "integer"
+    },
+    "adults": {
+      "type": "integer",
+      "required": true
+    },
+    "squareMeters": {
+      "type": "integer",
+      "required": true
+    },
+    "bedInfo": {
+      "displayName": "beds",
+      "type": "component",
+      "repeatable": false,
+      "component": "rooms.beds",
+      "required": true
+    },
+    "bathroomInside": {
+      "type": "boolean"
+    },
+    "amenities": {
+      "displayName": "amenities",
+      "type": "component",
+      "repeatable": true,
+      "component": "rooms.amenities"
+    },
+    "mainPhoto": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "photoSlider": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "address": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

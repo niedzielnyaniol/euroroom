@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_rooms_beds",
+  "info": {
+    "displayName": "beds",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "numberOfBeds": {
+      "type": "integer",
+      "required": true
+    },
+    "additionalInfo": {
+      "type": "richtext"
+    }
+  }
+}
