@@ -2,6 +2,7 @@
   messages: {
     'Maximum number of adults': 'Maximum number of adults',
     'Room area': 'Room area',
+    beds: 'Beds',
     checkAvailability: 'Check Availability',
     checkIn: 'Check in',
     checkOut: 'Check out',

@@ -1,0 +1,20 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 233px;
+  background: gray;
+  background-size: 30px 30px;
+  text-decoration-line: underline;
+  text-underline-offset: 16px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--chakra-colors-white);
+}
+
+.big {
+  height: 287px;
+}
+
+.text-big {
+  margin-top: -68px;
+}

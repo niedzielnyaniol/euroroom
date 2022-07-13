@@ -2,6 +2,7 @@
   messages: {
     'Maximum number of adults': 'Maksymalna ilość dorosłych',
     'Room area': 'Powierzchnia pokoju',
+    beds: 'Liczba łóżek',
     checkAvailability: 'Sprawdź dostępność',
     checkIn: 'Zameldowanie',
     checkOut: 'Wymeldowanie',

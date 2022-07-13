@@ -43,8 +43,6 @@ const Home = (props: { rooms: RoomInfo[] } | null) => {
 
   const { rooms } = props;
 
-  console.log(rooms);
-
   return (
     <Rooms rooms={rooms.map((room) => ({ ...room, mainPhoto: (room.mainPhoto as ImageTypeFromApi).formats.medium }))} />
   );

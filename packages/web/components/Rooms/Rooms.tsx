@@ -1,5 +1,9 @@
+import { Heading } from '@chakra-ui/react';
+import { Trans } from '@lingui/react';
+import Banner from '../Banner';
 import Container from '../Container';
 import RoomDetail, { RoomDetailProps } from '../RoomDetail';
+import Filters from './Filters';
 import styles from './Rooms.module.css';
 
 export type RoomsProps = {
@@ -7,8 +11,17 @@ export type RoomsProps = {
 };
 
 const Rooms = ({ rooms }: RoomsProps) => (
-  <div className={styles.container}>
+  <div>
+    <Banner variant="big">
+      <Trans id="rooms" />
+    </Banner>
     <Container>
+      <div className={styles['filters-wrapper']}>
+        <Filters />
+      </div>
+      <Heading size="xl" textTransform="uppercase" className={styles.heading}>
+        <Trans id="Discover our rooms" />
+      </Heading>
       <div className={styles['rooms-wrapper']}>
         {rooms.map((room) => (
           <RoomDetail
