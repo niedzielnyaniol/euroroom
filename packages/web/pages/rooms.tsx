@@ -13,6 +13,7 @@ type RoomInfo = {
   bedInfo: BedInfo;
   mainPhoto: ImageTypeFromApi;
   address: Address;
+  isBathroomInside: boolean;
 };
 
 type Response = Array<{
