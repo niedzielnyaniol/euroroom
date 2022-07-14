@@ -2,7 +2,6 @@ import { Grid, HStack, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { Calling, Home, Message } from 'react-iconly';
 import { Trans } from '@lingui/react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { t } from '@lingui/macro';
 import styles from './Footer.module.css';
 import VcardLine from './VcardLine';
@@ -10,6 +9,7 @@ import GlobeIcon from '../../assets/icons/globe.svg';
 import Container from '../Container';
 import HeaderTitle from './HeaderTitle';
 import ROUTES from '../../config/routes';
+import FooterLink from './FooterLink';
 
 const Footer = () => (
   <div className={styles.container}>
@@ -24,10 +24,9 @@ const Footer = () => (
             <a href="tel:+48123123123">
               <VcardLine icon={<Calling />}>+48 123 123 123</VcardLine>
             </a>
-            <VcardLine icon={<Home />}>ul. Długa 17/6, 31-231 Kraków</VcardLine>
-            <Text textDecor="underline" color="white" className={styles['check-map']}>
-              Check map
-            </Text>
+            <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
+              <VcardLine icon={<Home />}>ul. Długa 17/6, 31-231 Kraków</VcardLine>
+            </a>
           </VStack>
         </VStack>
         <div>
@@ -35,12 +34,12 @@ const Footer = () => (
             <Trans id="Useful links" />
           </HeaderTitle>
           <SimpleGrid columns={2} spacing={8} marginTop="80px">
-            <Link href={ROUTES.aboutUs.route}>{t`About us`}</Link>
-            <Link href={ROUTES.contact.route}>{t`Contact`}</Link>
-            <Link href={ROUTES.rooms.route}>{t`Rooms`}</Link>
-            <Link href={ROUTES.gallery.route}>{t`Gallery`}</Link>
-            <Link href={ROUTES.service.route}>{t`Service`}</Link>
-            <Link href={ROUTES.faq.route}>FAQ</Link>
+            <FooterLink href={ROUTES.aboutUs.route}>{t`About us`}</FooterLink>
+            <FooterLink href={ROUTES.contact.route}>{t`Contact`}</FooterLink>
+            <FooterLink href={ROUTES.rooms.route}>{t`Rooms`}</FooterLink>
+            <FooterLink href={ROUTES.gallery.route}>{t`Gallery`}</FooterLink>
+            <FooterLink href={ROUTES.service.route}>{t`Service`}</FooterLink>
+            <FooterLink href={ROUTES.faq.route}>FAQ</FooterLink>
           </SimpleGrid>
         </div>
         <div>
