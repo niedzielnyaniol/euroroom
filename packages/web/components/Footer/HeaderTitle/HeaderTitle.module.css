@@ -1,0 +1,13 @@
+.heading {
+  position: relative;
+}
+
+.heading::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  width: 60px;
+  height: 4px;
+  background: rgb(255 255 255 / 12%);
+  border-radius: 2px;
+}

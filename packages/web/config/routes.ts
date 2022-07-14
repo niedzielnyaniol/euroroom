@@ -7,6 +7,26 @@ const ROUTES = {
     id: 'rooms',
     route: '/rooms',
   },
+  aboutUs: {
+    id: 'about us',
+    route: '/about-us',
+  },
+  gallery: {
+    id: 'gallery',
+    route: '/gallery',
+  },
+  contact: {
+    id: 'contact',
+    route: '/contact',
+  },
+  faq: {
+    id: 'faq',
+    route: '/faq',
+  },
+  service: {
+    id: 'service',
+    route: '/service',
+  },
 };
 
 export default ROUTES;

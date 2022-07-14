@@ -3,6 +3,7 @@ const pathToInlineSvg = path.resolve(__dirname, '../assets/icons');
 
 module.exports = {
   stories: ['../components/**/*.stories.@(ts|tsx)'],
+  staticDirs: ['../public'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

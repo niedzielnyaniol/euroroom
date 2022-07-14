@@ -3,8 +3,13 @@ import { ReactNode } from 'react';
 
 type ContainerProps = {
   children: ReactNode;
+  className?: string;
 };
 
-const Container = ({ children }: ContainerProps) => <ChContainer maxW={1322}>{children}</ChContainer>;
+const Container = ({ children, className }: ContainerProps) => (
+  <ChContainer className={className} maxW={1322}>
+    {children}
+  </ChContainer>
+);
 
 export default Container;

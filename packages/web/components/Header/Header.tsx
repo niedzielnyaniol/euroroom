@@ -39,13 +39,13 @@ const Header = () => {
               color={ROUTES.index.route === route ? 'black' : 'gray.600'}
               fontWeight={ROUTES.index.route === route ? '900' : undefined}
             >
-              <Link href={ROUTES.index.route}>{t`index`}</Link>
+              <Link href={ROUTES.index.route}>{t`Home`}</Link>
             </Text>
             <Text
               color={ROUTES.rooms.route === route ? 'black' : 'gray.600'}
               fontWeight={ROUTES.rooms.route === route ? '900' : undefined}
             >
-              <Link href={ROUTES.rooms.route}>{t`rooms`}</Link>
+              <Link href={ROUTES.rooms.route}>{t`Rooms`}</Link>
             </Text>
           </div>
         </div>

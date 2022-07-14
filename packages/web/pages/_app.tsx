@@ -8,6 +8,7 @@ import theme from '../styles/theme';
 import { messages as plMessages } from '../locales/pl/messages.js';
 import { messages as enMessages } from '../locales/en/messages.js';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 i18n.loadLocaleData({
   en: { plurals: en },
@@ -26,6 +27,7 @@ const MyApp = ({ Component, pageProps, router: { locale } }: AppProps) => {
       <I18nProvider i18n={i18n}>
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </I18nProvider>
     </ChakraProvider>
   );
