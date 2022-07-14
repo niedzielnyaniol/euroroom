@@ -1,6 +1,5 @@
 import { cloneElement, ReactElement, ReactNode } from 'react';
-import { Text, useTheme } from '@chakra-ui/react';
-import styles from './LabeledIcon.module.css';
+import { HStack, Text, useTheme } from '@chakra-ui/react';
 
 type LabeledIconProps = {
   icon: ReactElement;
@@ -13,12 +12,12 @@ const LabeledIcon = ({ icon, children, fontSize, title }: LabeledIconProps) => {
   const theme = useTheme();
 
   return (
-    <div className={styles.container} title={title}>
+    <HStack gap="4px" title={title}>
       {cloneElement(icon, { primaryColor: theme.colors.gray[500] })}
       <Text color="gray.600" fontWeight={500} fontSize={fontSize}>
         {children}
       </Text>
-    </div>
+    </HStack>
   );
 };
 

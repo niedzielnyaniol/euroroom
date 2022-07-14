@@ -8,11 +8,14 @@ type MyLinkProps = ComponentProps<typeof Link> & {
   color?: string;
 };
 
-const MyLink = ({ underline, color, ...rest }: MyLinkProps) => (
+const MyLink = ({ underline, color, children, ...rest }: MyLinkProps) => (
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   /* @ts-expect-error */
   <span className={classNames({ [styles['underline-hover']]: underline })} style={{ '--text-decoration-color': color }}>
-    <Link {...rest} />
+    <Link {...rest}>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      <a>{children}</a>
+    </Link>
   </span>
 );
 

@@ -1,11 +1,12 @@
 import { GetStaticProps } from 'next';
-import Rooms from '../components/Rooms';
-import Address from '../types/Address';
-import BedInfo from '../types/BedInfo';
-import { ImageTypeFromApi } from '../types/ImageType';
-import { get } from '../utils/api';
+import Rooms from '../../components/Rooms';
+import Address from '../../types/Address';
+import BedInfo from '../../types/BedInfo';
+import { ImageTypeFromApi } from '../../types/ImageType';
+import { get } from '../../utils/api';
 
 type RoomInfo = {
+  id: number;
   name: string;
   pricePerNight: number;
   maxGuests: number;
@@ -17,6 +18,7 @@ type RoomInfo = {
 };
 
 type Response = Array<{
+  id: number;
   roomInfo: RoomInfo;
 }>;
 
@@ -28,25 +30,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
     'roomInfo.bedInfo',
   ]);
 
-  return {
-    props: {
-      rooms: data.map((el) => el.roomInfo),
-    },
-  };
-};
-
-const Home = (props: { rooms: RoomInfo[] } | null) => {
-  if (!props) {
+  if (!data) {
     return {
       notFound: true,
     };
   }
 
-  const { rooms } = props;
-
-  return (
-    <Rooms rooms={rooms.map((room) => ({ ...room, mainPhoto: (room.mainPhoto as ImageTypeFromApi).formats.medium }))} />
-  );
+  return {
+    props: {
+      rooms: data.map((el) => ({ ...el.roomInfo, id: el.id })),
+    },
+  };
 };
+
+const Home = ({ rooms }: { rooms: RoomInfo[] }) => (
+  <Rooms rooms={rooms.map((room) => ({ ...room, mainPhoto: (room.mainPhoto as ImageTypeFromApi).formats.medium }))} />
+);
 
 export default Home;

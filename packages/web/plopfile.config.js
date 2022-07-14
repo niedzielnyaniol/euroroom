@@ -23,11 +23,6 @@ function generateFiles(destination, data) {
       templateFile: path.join(COMPONENT_TEMPLATE_PATH, '/component.hbs'),
       path: path.join(destination, `/{{pascalCase ${ITEM_NAME}}}.tsx`),
     },
-    {
-      type: 'add',
-      templateFile: path.join(COMPONENT_TEMPLATE_PATH, '/styles.hbs'),
-      path: path.join(destination, `/{{pascalCase ${ITEM_NAME}}}.module.css`),
-    },
     data[HAS_STORIES] && {
       type: 'add',
       templateFile: path.join(COMPONENT_TEMPLATE_PATH, '/stories.hbs'),

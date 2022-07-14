@@ -3,10 +3,11 @@ import { Trans } from '@lingui/react';
 import { useState } from 'react';
 import Banner from '../Banner';
 import Container from '../Container';
+import MyLink from '../MyLink';
 import RoomDetail, { RoomDetailProps } from '../RoomDetail';
 import Filters, { FiltersType } from './Filters';
 
-type Room = RoomDetailProps & { isBathroomInside: boolean };
+type Room = RoomDetailProps & { isBathroomInside: boolean; id: number };
 
 export type RoomsProps = {
   rooms: Room[];
@@ -45,16 +46,17 @@ const Rooms = ({ rooms }: RoomsProps) => {
         {filteredRooms.length > 0 ? (
           <SimpleGrid templateColumns="repeat(3, 1fr)" gap="40px 30px">
             {filteredRooms.map((room) => (
-              <RoomDetail
-                key={room.name}
-                address={room.address}
-                mainPhoto={room.mainPhoto}
-                maxGuests={room.maxGuests}
-                name={room.name}
-                bedInfo={room.bedInfo}
-                pricePerNight={room.pricePerNight}
-                squareMeters={room.squareMeters}
-              />
+              <MyLink key={room.id} href={`rooms/${room.id}`}>
+                <RoomDetail
+                  address={room.address}
+                  mainPhoto={room.mainPhoto}
+                  maxGuests={room.maxGuests}
+                  name={room.name}
+                  bedInfo={room.bedInfo}
+                  pricePerNight={room.pricePerNight}
+                  squareMeters={room.squareMeters}
+                />
+              </MyLink>
             ))}
           </SimpleGrid>
         ) : (

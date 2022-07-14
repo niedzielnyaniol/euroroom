@@ -27,6 +27,10 @@ const ROUTES = {
     id: 'service',
     route: '/service',
   },
+  room: {
+    id: 'room',
+    route: '/room',
+  },
 };
 
 export default ROUTES;

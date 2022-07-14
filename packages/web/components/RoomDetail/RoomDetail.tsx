@@ -1,4 +1,4 @@
-import { Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, HStack, SimpleGrid, Spacer, Text } from '@chakra-ui/react';
 import { i18n } from '@lingui/core';
 import { Plural, t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
@@ -6,7 +6,6 @@ import ImageType from '../../types/ImageType';
 import LabeledIcon from '../LabeledIcon';
 import MyImage from '../MyImage/MyImage';
 import Price from './Price';
-import styles from './RoomDetail.module.css';
 import SqMetersIcon from '../../assets/icons/sq-meters.svg';
 import PersonIcon from '../../assets/icons/person.svg';
 import BedIcon from '../../assets/icons/bed.svg';
@@ -36,20 +35,21 @@ const RoomDetail = ({
   const lingui = useLingui();
 
   return (
-    <div>
-      <div className={styles['image-container']}>
+    <Box boxShadow="lg" _hover={{ boxShadow: '2xl' }} transitionDuration="0.3s" borderRadius="lg" overflow="hidden">
+      <Box position="relative" width="100%" height="294px" overflow="hidden">
         <MyImage src={mainPhoto.url} alt={mainPhoto.alternativeText} layout="fill" objectFit="cover" />
-      </div>
-      <div className={styles['info-container']}>
-        <div className={styles['info-container-top']}>
+      </Box>
+      <SimpleGrid templateRows="1fr 1fr" spacing="16px" padding="20px 22px">
+        <HStack>
           <div>
             <Heading fontSize="2xl">{name}</Heading>
             {/* eslint-disable-next-line no-underscore-dangle */}
             <Text color="gray.600">{formatStreet(lingui.i18n._locale, street, t`st`)}</Text>
           </div>
+          <Spacer />
           <Price forWhatLabel={t`night`} price={pricePerNight} />
-        </div>
-        <div className={styles['info-container-bottom']}>
+        </HStack>
+        <Flex columnGap="36px">
           <LabeledIcon icon={<PersonIcon />} title={t`Maximum number of adults`}>
             <Plural value={maxGuests} one="# Person" other="# Persons" />
           </LabeledIcon>
@@ -59,9 +59,9 @@ const RoomDetail = ({
           <LabeledIcon icon={<BedIcon />} title={bedInfo.additionalInfo}>
             <Plural value={bedInfo.numberOfBeds} one="# Bed" few="# Beds" other="# Beds" />
           </LabeledIcon>
-        </div>
-      </div>
-    </div>
+        </Flex>
+      </SimpleGrid>
+    </Box>
   );
 };
 
