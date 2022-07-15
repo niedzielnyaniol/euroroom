@@ -22,6 +22,7 @@ type RoomInfo = {
   address: Address;
   isBathroomInside: boolean;
   photoSLider: ImageTypeFromApi[];
+  description: string;
   amenities: { id: string; name: string };
 };
 
@@ -49,6 +50,32 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     },
   };
 };
-const RoomPage = Room;
+const RoomPage = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  address,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  amenities,
+  bedInfo,
+  description,
+  isBathroomInside,
+  mainPhoto,
+  maxGuests,
+  name,
+  photoSLider,
+  pricePerNight,
+  squareMeters,
+}: RoomInfo) => (
+  <Room
+    bedInfo={bedInfo}
+    isBathroomInside={isBathroomInside}
+    mainPhoto={mainPhoto}
+    maxGuests={maxGuests}
+    name={name}
+    photoSlider={photoSLider}
+    pricePerNight={pricePerNight}
+    squareMeters={squareMeters}
+    description={description}
+  />
+);
 
 export default RoomPage;

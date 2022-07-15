@@ -57,6 +57,9 @@
       "repeatable": false,
       "component": "rooms.address",
       "required": true
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

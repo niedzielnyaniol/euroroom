@@ -51,6 +51,8 @@ Default.args = {
     apartmentNumber: '42',
     floorLevel: 1,
   },
+  description:
+    'Our luxury room offers a stunning view of the white sand beach. This room is designed and decorated with modern style and equipped with the most luxurious facilites. Little luxuries include free Wi-Fi, deluxe bath amenities and a 4K technology flat-screen television with cable channels.\n\nThis is the room having the most amazing view in our hotel. Therefore, i believe that you will love it and have memorable moments when you choose our hotel for you holiday.',
   isBathroomInside: true,
   amenities: ['dw', 'wda', 'dwada', 'dwafge', 'ewadafdaw'],
 };

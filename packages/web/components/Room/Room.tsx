@@ -1,8 +1,9 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Grid } from '@chakra-ui/react';
 import BedInfo from '../../types/BedInfo';
 import ImageType from '../../types/ImageType';
 import Banner from '../Banner';
 import Container from '../Container';
+import Description from './Description';
 import Gallery from './Gallery';
 import MainAmenities from './MainAmenities';
 
@@ -15,6 +16,7 @@ type RoomProps = {
   isBathroomInside: boolean;
   mainPhoto: ImageType;
   photoSlider: ImageType[];
+  description: string;
 };
 
 const Room = ({
@@ -26,8 +28,9 @@ const Room = ({
   pricePerNight,
   squareMeters,
   photoSlider,
+  description,
 }: RoomProps) => {
-  const photos = [mainPhoto, ...photoSlider];
+  const photos = [mainPhoto].concat(photoSlider);
 
   return (
     <Box>
@@ -41,6 +44,9 @@ const Room = ({
           squareMeters={squareMeters}
         />
         {photos && <Gallery photos={photos} />}
+        <Grid marginTop="96px" templateColumns="7fr 5fr" gap="24px">
+          <Description name={name}>{description}</Description>
+        </Grid>
       </Container>
     </Box>
   );
