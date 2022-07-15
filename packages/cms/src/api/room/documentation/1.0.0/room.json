@@ -63,7 +63,9 @@
           }
         }
       },
-      "tags": ["Room"],
+      "tags": [
+        "Room"
+      ],
       "parameters": [
         {
           "name": "sort",
@@ -211,7 +213,9 @@
           }
         }
       },
-      "tags": ["Room"],
+      "tags": [
+        "Room"
+      ],
       "parameters": [],
       "operationId": "post/rooms",
       "requestBody": {
@@ -290,7 +294,9 @@
           }
         }
       },
-      "tags": ["Room"],
+      "tags": [
+        "Room"
+      ],
       "parameters": [
         {
           "name": "id",
@@ -368,7 +374,9 @@
           }
         }
       },
-      "tags": ["Room"],
+      "tags": [
+        "Room"
+      ],
       "parameters": [
         {
           "name": "id",
@@ -457,7 +465,9 @@
           }
         }
       },
-      "tags": ["Room"],
+      "tags": [
+        "Room"
+      ],
       "parameters": [
         {
           "name": "id",
@@ -537,7 +547,9 @@
           }
         }
       },
-      "tags": ["Room"],
+      "tags": [
+        "Room"
+      ],
       "parameters": [
         {
           "name": "id",

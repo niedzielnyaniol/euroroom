@@ -15,7 +15,7 @@ function getJson<T>(res: Response): Promise<{ data: T & Attributes }> {
   return res.json();
 }
 
-export function get<T>(path: string, locale: string | undefined, populate: string[]) {
+export function get<T>(path: string, locale: string | undefined, populate?: string[]) {
   const populateQuery = Array.from(new Set(populate))
     .map((el, index) => `&populate[${index}]=${el}`)
     .join('&');

@@ -1,41 +1,23 @@
 /* eslint-disable react/no-unused-prop-types */
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Room from '../../components/Room';
-import Address from '../../types/Address';
-import BedInfo from '../../types/BedInfo';
-import { ImageTypeFromApi } from '../../types/ImageType';
+import RoomResponse from '../../types/RoomResponse';
 import { get } from '../../utils/api';
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
   paths: [], // indicates that no page needs be created at build time
   fallback: 'blocking', // indicates the type of fallback
 });
-
-type RoomInfo = {
-  id: number;
-  name: string;
-  pricePerNight: number;
-  maxGuests: number;
-  squareMeters: number;
-  bedInfo: BedInfo;
-  mainPhoto: ImageTypeFromApi;
-  address: Address;
-  isBathroomInside: boolean;
-  photoSLider: ImageTypeFromApi[];
-  description: string;
-  amenities: { id: string; name: string };
-};
-
-type Response = { roomInfo: RoomInfo };
+type Response = RoomResponse;
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const { data } = await get<Response>(`rooms/${params?.slug}`, locale, [
     'meta',
-    'roomInfo.mainPhoto',
-    'roomInfo.address',
-    'roomInfo.bedInfo',
-    'roomInfo.amenities',
-    'roomInfo.photoSlider',
+    'mainPhoto',
+    'address',
+    'bedInfo',
+    'amenities',
+    'photoSlider',
   ]);
 
   if (!data) {
@@ -45,11 +27,10 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   }
 
   return {
-    props: {
-      ...data.roomInfo,
-    },
+    props: data,
   };
 };
+
 const RoomPage = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   address,
@@ -61,17 +42,17 @@ const RoomPage = ({
   mainPhoto,
   maxGuests,
   name,
-  photoSLider,
+  photoSlider,
   pricePerNight,
   squareMeters,
-}: RoomInfo) => (
+}: RoomResponse) => (
   <Room
     bedInfo={bedInfo}
     isBathroomInside={isBathroomInside}
     mainPhoto={mainPhoto}
     maxGuests={maxGuests}
     name={name}
-    photoSlider={photoSLider}
+    photoSlider={photoSlider}
     pricePerNight={pricePerNight}
     squareMeters={squareMeters}
     description={description}
