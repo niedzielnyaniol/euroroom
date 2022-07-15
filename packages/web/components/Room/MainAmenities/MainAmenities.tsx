@@ -1,7 +1,7 @@
 import { Center, HStack } from '@chakra-ui/react';
 import { Plural } from '@lingui/macro';
-import { Trans } from '@lingui/react';
 import { i18n } from '@lingui/core';
+import { Trans } from '@lingui/react';
 import IconTile from '../IconTile';
 import PersonIcon from '../../../assets/icons/person.svg';
 import BedIcon from '../../../assets/icons/bed.svg';
@@ -25,7 +25,7 @@ const MainAmenities = ({
   squareMeters,
 }: MainAmenitiesProps) => (
   <Center>
-    <HStack padding={8} gap="16px" borderRadius={12} columnGap="60px">
+    <HStack padding={14} gap="16px" borderRadius={12} columnGap="60px">
       <IconTile icon={<PersonIcon />}>
         <Plural value={maxGuests} one="# Person" other="# Persons" />
       </IconTile>
@@ -40,11 +40,11 @@ const MainAmenities = ({
           // eslint-disable-next-line @typescript-eslint/no-magic-numbers
           maximumFractionDigits: 0,
         })}
+        /<Trans id="night" />
       </IconTile>
       {isBathroomInside && (
         <IconTile icon={<BathroomIcon />}>
           <Trans id="Private bathroom" />
-          {maxGuests}
         </IconTile>
       )}
     </HStack>

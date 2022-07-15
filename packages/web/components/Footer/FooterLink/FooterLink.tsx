@@ -7,7 +7,7 @@ type FooterLinkProps = {
 
 const FooterLink = ({ children, href }: FooterLinkProps) => (
   <div>
-    <MyLink underline color="#fff" href={href}>
+    <MyLink underline href={href}>
       {children}
     </MyLink>
   </div>

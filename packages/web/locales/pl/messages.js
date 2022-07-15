@@ -27,10 +27,10 @@
       ['0', 'plural', { one: ['#', ' łóżko'], few: ['#', ' łóżka'], other: ['#', ' łóżka'] }],
     ],
     '{idx, plural, one {# Person} other {# Persons}}': [
-      ['idx', 'plural', { one: ['#', ' osoba'], other: ['#', ' osoby'] }],
+      ['idx', 'plural', { one: ['#', ' osoba'], other: ['#', ' osób'] }],
     ],
     '{maxGuests, plural, one {# Person} other {# Persons}}': [
-      ['maxGuests', 'plural', { one: ['#', ' osoba'], other: ['#', ' osoby'] }],
+      ['maxGuests', 'plural', { one: ['#', ' osoba'], other: ['#', ' osób'] }],
     ],
     '{numberOfBeds, plural, one {# Bed} few {# Beds} other {# Beds}}': [
       ['numberOfBeds', 'plural', { one: ['#', ' łóżko'], few: ['#', ' łóżka'], other: ['#', ' łóżka'] }],
