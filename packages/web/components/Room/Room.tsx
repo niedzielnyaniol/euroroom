@@ -1,13 +1,18 @@
 import { Box, Grid } from '@chakra-ui/react';
+import AddressType from '../../types/Address';
+import AmenityType from '../../types/Amenity';
 import BedInfo from '../../types/BedInfo';
 import ImageType from '../../types/ImageType';
 import Banner from '../Banner';
 import Container from '../Container';
+import Address from './Address';
+import Amenities from './Amenities';
 import Description from './Description';
 import Gallery from './Gallery';
 import MainAmenities from './MainAmenities';
 
 type RoomProps = {
+  address: AddressType;
   name: string;
   squareMeters: number;
   maxGuests: number;
@@ -17,6 +22,7 @@ type RoomProps = {
   mainPhoto: ImageType;
   photoSlider: ImageType[];
   description: string;
+  amenities: AmenityType[];
 };
 
 const Room = ({
@@ -29,6 +35,8 @@ const Room = ({
   squareMeters,
   photoSlider,
   description,
+  address,
+  amenities,
 }: RoomProps) => {
   const photos = [mainPhoto].concat(photoSlider);
 
@@ -44,9 +52,18 @@ const Room = ({
           squareMeters={squareMeters}
         />
         {photos && <Gallery photos={photos} />}
-        <Grid marginTop="96px" templateColumns="7fr 5fr" gap="24px">
+        <Grid m="96px 0 40px" templateColumns="7fr 5fr" gap="24px">
           <Description name={name}>{description}</Description>
+          <Address
+            apartmentNumber={address.apartmentNumber}
+            buildingNumber={address.buildingNumber}
+            city={address.city}
+            floorLevel={address.floorLevel}
+            postCode={address.postCode}
+            street={address.street}
+          />
         </Grid>
+        {amenities.length > 0 && <Amenities amenities={amenities} />}
       </Container>
     </Box>
   );

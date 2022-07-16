@@ -1,4 +1,5 @@
 import Address from './Address';
+import Amenity from './Amenity';
 import BedInfo from './BedInfo';
 import { ImageTypeFromApi } from './ImageType';
 
@@ -14,7 +15,7 @@ type RoomResponse = {
   isBathroomInside: boolean;
   photoSlider: ImageTypeFromApi[];
   description: string;
-  amenities: { id: string; name: string };
+  amenities: Amenity[];
 };
 
 export default RoomResponse;

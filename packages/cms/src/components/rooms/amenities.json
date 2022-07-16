@@ -2,12 +2,25 @@
   "collectionName": "components_rooms_amenities",
   "info": {
     "displayName": "amenities",
-    "icon": "ad"
+    "icon": "ad",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "name": {
       "type": "string"
+    },
+    "svg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "more": {
+      "displayName": "moreAmenities",
+      "type": "component",
+      "repeatable": true,
+      "component": "rooms.more-amenities"
     }
   }
 }

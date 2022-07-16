@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unused-prop-types */
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Room from '../../components/Room';
 import RoomResponse from '../../types/RoomResponse';
@@ -16,7 +15,8 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     'mainPhoto',
     'address',
     'bedInfo',
-    'amenities',
+    'amenities.more',
+    'amenities.svg',
     'photoSlider',
   ]);
 
@@ -32,9 +32,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 };
 
 const RoomPage = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   address,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   amenities,
   bedInfo,
   description,
@@ -56,6 +54,8 @@ const RoomPage = ({
     pricePerNight={pricePerNight}
     squareMeters={squareMeters}
     description={description}
+    address={address}
+    amenities={amenities}
   />
 );
 

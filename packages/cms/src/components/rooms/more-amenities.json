@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_rooms_more_amenities",
+  "info": {
+    "displayName": "moreAmenities",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

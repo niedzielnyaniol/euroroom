@@ -10,7 +10,7 @@ import SqMetersIcon from '../../assets/icons/sq-meters.svg';
 import PersonIcon from '../../assets/icons/person.svg';
 import BedIcon from '../../assets/icons/bed.svg';
 import Address from '../../types/Address';
-import { formatStreet } from '../../utils/address';
+import { formatAddress } from '../../utils/address';
 import BedInfo from '../../types/BedInfo';
 
 export type RoomDetailProps = {
@@ -43,8 +43,7 @@ const RoomDetail = ({
         <HStack>
           <div>
             <Heading fontSize="2xl">{name}</Heading>
-            {/* eslint-disable-next-line no-underscore-dangle */}
-            <Text color="gray.600">{formatStreet(lingui.i18n._locale, street, t`st`)}</Text>
+            <Text color="gray.600">{formatAddress(lingui.i18n._locale, street, t`st`)}</Text>
           </div>
           <Spacer />
           <Price forWhatLabel={t`night`} price={pricePerNight} />
