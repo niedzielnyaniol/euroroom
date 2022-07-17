@@ -37,6 +37,18 @@
       },
       "component": "sections.hero",
       "required": true
+    },
+    "hotelCard": {
+      "displayName": "hotelCard",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.hotel-card",
+      "required": true
     }
   }
 }

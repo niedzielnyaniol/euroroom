@@ -1,9 +1,8 @@
-import { Grid, HStack, SimpleGrid, Text, VStack } from '@chakra-ui/react';
+import { Box, Divider, Flex, Grid, HStack, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { Calling, Home, Message } from 'react-iconly';
 import { Trans } from '@lingui/react';
 import Image from 'next/image';
 import { t } from '@lingui/macro';
-import styles from './Footer.module.css';
 import VcardLine from './VcardLine';
 import GlobeIcon from '../../assets/icons/globe.svg';
 import Container from '../Container';
@@ -12,9 +11,9 @@ import ROUTES from '../../config/routes';
 import FooterLink from './FooterLink';
 
 const Footer = () => (
-  <div className={styles.container}>
+  <Box pt="77px" backgroundColor="red.900" color="white" fontSize="18px" fontWeight={600}>
     <Container>
-      <Grid templateColumns="1fr 1fr 1fr" columnGap={24} className={styles.content}>
+      <Grid templateColumns="1fr 1fr 1fr" columnGap={24} pb="55px">
         <VStack spacing="68px" align="start" marginTop="-12px">
           <Image src="/er-logo.webp" width={130} height={50} objectFit="contain" />
           <VStack rowGap="13px" align="start">
@@ -52,7 +51,8 @@ const Footer = () => (
           </VStack>
         </div>
       </Grid>
-      <div className={styles['copyrights-section']}>
+      <Divider />
+      <Flex justify="space-between" p="33px 0" fontSize="16px">
         <Text>&copy; {new Date().getFullYear()} Euro-Room Hostel</Text>
         <HStack spacing="8px">
           <GlobeIcon />
@@ -60,9 +60,9 @@ const Footer = () => (
             <Trans id="currentLanguage" />
           </span>
         </HStack>
-      </div>
+      </Flex>
     </Container>
-  </div>
+  </Box>
 );
 
 export default Footer;

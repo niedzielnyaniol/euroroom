@@ -1,7 +1,5 @@
-import { Heading } from '@chakra-ui/react';
-import classNames from 'classnames';
+import { Center, Heading } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import styles from './Banner.module.css';
 
 type BannerProps = {
   children: ReactNode;
@@ -12,16 +10,20 @@ const Banner = ({ children, variant }: BannerProps) => {
   const isBig = variant === 'big';
 
   return (
-    <div className={classNames(styles.banner, { [styles.big]: isBig })}>
+    <Center h={isBig ? '287px' : '233px'} background="gray.600">
       <Heading
         textTransform="uppercase"
         color="white"
         fontWeight={900}
-        className={classNames({ [styles['text-big']]: isBig })}
+        mt={isBig ? '-16px' : undefined}
+        textDecorationLine="underline"
+        textDecorationThickness="1px"
+        textDecorationColor="currentcolor"
+        textUnderlineOffset="16px"
       >
         {children}
       </Heading>
-    </div>
+    </Center>
   );
 };
 
