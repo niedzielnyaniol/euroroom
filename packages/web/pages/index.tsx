@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
-import HeroSection, { HeroSectionProps } from '../components/HeroSection';
+import { HeroSectionProps } from '../components/Home/HeroSection';
+import Home from '../components/Home';
 import { get } from '../utils/api';
 
 type IndexProps = {
@@ -9,22 +10,17 @@ type IndexProps = {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { data } = await get<IndexProps>('index', context.locale, ['hero.image.src']);
 
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: data,
   };
 };
 
-const Home = (props: IndexProps | null) => {
-  if (!props) {
-    return {
-      notFound: true,
-    };
-  }
-  const { hero } = props;
+const Index = ({ hero }: IndexProps) => <Home hero={hero} />;
 
-  return (
-    <HeroSection image={hero.image} description={hero.description} title={hero.title} welcomeMsg={hero.welcomeMsg} />
-  );
-};
-
-export default Home;
+export default Index;

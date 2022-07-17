@@ -1,9 +1,8 @@
-import { Heading, Text } from '@chakra-ui/react';
-import ImageType from '../../types/ImageType';
-import Container from '../Container';
-import MyImage from '../MyImage/MyImage';
-import styles from './HeroSection.module.css';
-import RangeCalendar from './RangeCalendar';
+import { Box, Grid, Heading, Text } from '@chakra-ui/react';
+import ImageType from '../../../types/ImageType';
+import Container from '../../Container';
+import MyImage from '../../MyImage/MyImage';
+import RangeCalendar from '../RangeCalendar';
 
 export type HeroSectionProps = {
   title: string;
@@ -14,32 +13,32 @@ export type HeroSectionProps = {
 
 const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps) => (
   <Container>
-    <div className={styles.container}>
-      <div className={styles['text-wrapper']}>
+    <Grid position="relative" templateColumns="1fr auto" columnGap="83px">
+      <Box mt="128px">
         <Text color="red.600" fontSize="xl" fontWeight={600}>
           {welcomeMsg}
         </Text>
-        <div className={styles['header-wrapper']}>
+        <Box mt="16px" mb="48px">
           <Heading as="h1" fontSize="6xl" fontWeight={600}>
             {title}
           </Heading>
-        </div>
-        <div className={styles['description-wrapper']}>
+        </Box>
+        <Box w="400px">
           <Text>{description}</Text>
-        </div>
-      </div>
+        </Box>
+      </Box>
       <MyImage
         objectFit="cover"
         src={image.url}
         alt={image.alternativeText}
         width={630}
         height={764}
-        className={styles.image}
+        style={{ borderBottomLeftRadius: '30px' }}
       />
-      <div className={styles['range-calendar-wrapper']}>
+      <Box position="absolute" bottom="140px">
         <RangeCalendar />
-      </div>
-    </div>
+      </Box>
+    </Grid>
   </Container>
 );
 
