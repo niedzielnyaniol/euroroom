@@ -7,13 +7,13 @@ const RangeCalendar = () => (
   <Flex>
     <Flex w="660px" boxShadow="md" backgroundColor="white" borderBottomLeftRadius="2xl" p="32px 40px" columnGap="40px">
       <Box p="2px 28px 2px 0" borderRight="1px solid" borderColor="gray.300">
-        <LabeledInput type="date" label={t`checkIn`} onChange={() => undefined} />
+        <LabeledInput type="date" label={t`Check out`} onChange={() => undefined} />
       </Box>
       <Box p="2px 28px 2px 0" borderRight="1px solid" borderColor="gray.300">
-        <LabeledInput type="date" label={t`checkOut`} onChange={() => undefined} />
+        <LabeledInput type="date" label={t`Check in`} onChange={() => undefined} />
       </Box>
       <Box p="2px 0">
-        <LabeledInput maxGuests={4} type="select" label={t`guest`} onChange={() => undefined} />
+        <LabeledInput maxGuests={4} type="select" label={t`Guest`} onChange={() => undefined} />
       </Box>
     </Flex>
     <Button
@@ -27,7 +27,7 @@ const RangeCalendar = () => (
       colorScheme="green"
       fontSize="larger"
     >
-      <Trans id="checkAvailability" />
+      <Trans id="Check availability" />
     </Button>
   </Flex>
 );
