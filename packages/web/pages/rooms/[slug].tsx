@@ -43,9 +43,11 @@ const RoomPage = ({
   name,
   photoSlider,
   pricePerNight,
+  id,
   squareMeters,
 }: RoomResponse) => (
   <Room
+    id={id}
     bedInfo={bedInfo}
     isBathroomInside={isBathroomInside}
     mainPhoto={mainPhoto}

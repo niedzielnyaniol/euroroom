@@ -1,17 +1,23 @@
 import { Box, Divider, Grid } from '@chakra-ui/react';
+import { useLingui } from '@lingui/react';
+import { useEffect, useState } from 'react';
 import AddressType from '../../types/Address';
 import AmenityType from '../../types/Amenity';
 import BedInfo from '../../types/BedInfo';
 import ImageType from '../../types/ImageType';
+import { get } from '../../utils/api';
 import Banner from '../Banner';
 import Container from '../Container';
+import { RoomDetailProps } from '../RoomDetail';
 import Address from './Address';
 import Amenities from './Amenities';
 import Description from './Description';
 import Gallery from './Gallery';
 import MainAmenities from './MainAmenities';
+import RecommendedRooms from './RecommendedRooms';
 
 type RoomProps = {
+  id: number;
   address: AddressType;
   name: string;
   squareMeters: number;
@@ -25,7 +31,10 @@ type RoomProps = {
   amenities: AmenityType[];
 };
 
+type Rooms = Array<RoomDetailProps & { id: number }>;
+
 const Room = ({
+  id,
   name,
   mainPhoto,
   bedInfo,
@@ -39,9 +48,17 @@ const Room = ({
   amenities,
 }: RoomProps) => {
   const photos = [mainPhoto].concat(photoSlider);
+  const [recommendedRooms, setRecommendedRooms] = useState<Rooms>([]);
+  const lingui = useLingui();
+
+  useEffect(() => {
+    get<Rooms>('rooms', lingui.i18n._locale, [], ['[maxGuests][$gte]=25', `[id][$ne]=${id}`]).then(({ data }) => {
+      setRecommendedRooms(data);
+    });
+  }, [lingui.i18n._locale, id]);
 
   return (
-    <Box>
+    <Box mb="50px">
       <Banner>{name}</Banner>
       <Container>
         <MainAmenities
@@ -66,6 +83,7 @@ const Room = ({
         </Grid>
         <Divider />
         <Box mt="40px">{amenities.length > 0 && <Amenities amenities={amenities} />}</Box>
+        {recommendedRooms.length > 0 && <RecommendedRooms rooms={recommendedRooms} />}
       </Container>
     </Box>
   );
