@@ -24,11 +24,9 @@ export function get<T>(path: string, locale: string | undefined, populate?: stri
     .map((el) => `&filters${el}`)
     .join('&');
 
-  console.log(filterQuery);
-
   return fetch(
     `${NEXT_PUBLIC_SERVER_URL}/api/${path}?locale=${locale || 'pl'}&populate=*${populateQuery}${
-      filters ? `&${filterQuery}` : undefined
+      filters ? filterQuery : ''
     }`,
     {
       method: 'GET',

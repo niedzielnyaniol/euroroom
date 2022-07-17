@@ -1,6 +1,7 @@
 import { Box, Center, Heading, SimpleGrid } from '@chakra-ui/react';
 import { Trans } from '@lingui/react';
 import { useState } from 'react';
+import ROUTES from '../../config/routes';
 import Banner from '../Banner';
 import Container from '../Container';
 import MyLink from '../MyLink';
@@ -46,7 +47,7 @@ const Rooms = ({ rooms }: RoomsProps) => {
         {filteredRooms.length > 0 ? (
           <SimpleGrid templateColumns="repeat(3, 1fr)" gap="40px 30px">
             {filteredRooms.map((room) => (
-              <MyLink key={room.id} href={`rooms/${room.id}`}>
+              <MyLink key={room.id} href={`${ROUTES.rooms.route}/${room.id}`}>
                 <RoomDetail
                   address={room.address}
                   mainPhoto={room.mainPhoto}

@@ -83,7 +83,11 @@ const Room = ({
         </Grid>
         <Divider />
         <Box mt="40px">{amenities.length > 0 && <Amenities amenities={amenities} />}</Box>
-        {recommendedRooms.length > 0 && <RecommendedRooms rooms={recommendedRooms} />}
+        {recommendedRooms.length > 0 && (
+          <Box mt="40px" mb="80px">
+            <RecommendedRooms rooms={recommendedRooms} />
+          </Box>
+        )}
       </Container>
     </Box>
   );
