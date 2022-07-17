@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-07-16T20:59:20.078Z"
+    "x-generation-date": "2022-07-17T10:02:12.967Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2422,6 +2422,19 @@
               },
               "floorLevel": {
                 "type": "integer"
+              },
+              "markerPosition": {
+                "type": "object",
+                "properties": {
+                  "lat": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "lng": {
+                    "type": "number",
+                    "format": "float"
+                  }
+                }
               }
             }
           },
@@ -2566,6 +2579,19 @@
                   },
                   "floorLevel": {
                     "type": "integer"
+                  },
+                  "markerPosition": {
+                    "type": "object",
+                    "properties": {
+                      "lat": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "lng": {
+                        "type": "number",
+                        "format": "float"
+                      }
+                    }
                   }
                 }
               },
@@ -3062,6 +3088,22 @@
               },
               "floorLevel": {
                 "type": "integer"
+              },
+              "markerPosition": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "lat": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "lng": {
+                    "type": "number",
+                    "format": "float"
+                  }
+                }
               }
             }
           },
@@ -4595,6 +4637,22 @@
                         },
                         "floorLevel": {
                           "type": "integer"
+                        },
+                        "markerPosition": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "lat": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "lng": {
+                              "type": "number",
+                              "format": "float"
+                            }
+                          }
                         }
                       }
                     },
@@ -6154,6 +6212,22 @@
                       },
                       "floorLevel": {
                         "type": "integer"
+                      },
+                      "markerPosition": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "lat": {
+                            "type": "number",
+                            "format": "float"
+                          },
+                          "lng": {
+                            "type": "number",
+                            "format": "float"
+                          }
+                        }
                       }
                     }
                   },

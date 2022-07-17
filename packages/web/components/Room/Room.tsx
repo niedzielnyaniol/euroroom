@@ -1,4 +1,4 @@
-import { Box, Grid } from '@chakra-ui/react';
+import { Box, Divider, Grid } from '@chakra-ui/react';
 import AddressType from '../../types/Address';
 import AmenityType from '../../types/Amenity';
 import BedInfo from '../../types/BedInfo';
@@ -52,7 +52,7 @@ const Room = ({
           squareMeters={squareMeters}
         />
         {photos && <Gallery photos={photos} />}
-        <Grid m="96px 0 40px" templateColumns="7fr 5fr" gap="24px">
+        <Grid m="96px 0 40px" templateColumns="7fr 5fr" gap="36px">
           <Description name={name}>{description}</Description>
           <Address
             apartmentNumber={address.apartmentNumber}
@@ -61,9 +61,11 @@ const Room = ({
             floorLevel={address.floorLevel}
             postCode={address.postCode}
             street={address.street}
+            markerPosition={address.markerPosition}
           />
         </Grid>
-        {amenities.length > 0 && <Amenities amenities={amenities} />}
+        <Divider />
+        <Box mt="40px">{amenities.length > 0 && <Amenities amenities={amenities} />}</Box>
       </Container>
     </Box>
   );

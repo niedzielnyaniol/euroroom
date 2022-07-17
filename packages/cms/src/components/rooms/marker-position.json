@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_rooms_marker_positions",
+  "info": {
+    "displayName": "markerPosition",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "lat": {
+      "type": "float",
+      "required": true
+    },
+    "lng": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

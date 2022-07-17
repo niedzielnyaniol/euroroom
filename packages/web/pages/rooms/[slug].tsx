@@ -14,6 +14,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     'meta',
     'mainPhoto',
     'address',
+    'address.markerPosition',
     'bedInfo',
     'amenities.more',
     'amenities.svg',

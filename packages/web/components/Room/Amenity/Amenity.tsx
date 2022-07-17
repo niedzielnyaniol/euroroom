@@ -15,7 +15,9 @@ const Amenity = ({ more, name, svg }: AmenityProps) => {
         icon={<MyImage src={svg.url} alt={svg.alternativeText} width="36px" height="36px" />}
         fontColor={theme.colors.black}
       >
-        <Text fontWeight={600}>{name}</Text>
+        <Text as="span" fontWeight={600}>
+          {name}
+        </Text>
       </LabeledIcon>
       {more.length > 0 && (
         <VStack mt={2} align="start">
