@@ -49,6 +49,11 @@
       },
       "component": "sections.hotel-card",
       "required": true
+    },
+    "favourite_rooms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::room.room"
     }
   }
 }

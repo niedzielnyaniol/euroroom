@@ -23,8 +23,5 @@
     "concurrently": "^7.2.2",
     "husky": "^8.0.1",
     "rimraf": "^3.0.2"
-  },
-  "resolutions": {
-    "ts-node": "^10.4.0"
   }
 }
