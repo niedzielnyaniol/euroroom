@@ -25,13 +25,21 @@ const Address = ({
   return (
     <Box>
       <DynamicMap position={[lat, lng]} />
-      <Box>{formatAddress(lingui.i18n._locale, street, t`st`, apartmentNumber, buildingNumber)},</Box>
+      <Box>
+        {formatAddress({
+          locale: lingui.i18n._locale,
+          street,
+          streetTranslation: t`st`,
+          apartmentNumber,
+          buildingNumber,
+        })}
+        ,
+      </Box>
       <Box>
         {postCode} {city}
       </Box>
-      <Box>
-        <Trans id="Floor level:" />
-        {floorLevel}
+      <Box textTransform="capitalize">
+        <Trans id="floor level" />: {floorLevel}
       </Box>
     </Box>
   );

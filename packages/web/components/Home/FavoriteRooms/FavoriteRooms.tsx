@@ -10,7 +10,7 @@ type FavoriteRoomsProps = { rooms: Array<RoomDetailProps & { id: number }> };
 const NUMBER_OF_SMALL_TILES = 4;
 
 const FavoriteRooms = ({ rooms }: FavoriteRoomsProps) => (
-  <Section title={t`Out favourite rooms`} href={ROUTES.rooms.route} hrefTitle={t`See more`}>
+  <Section title={t`Our favorite rooms`} href={ROUTES.rooms.route} hrefTitle={t`See more`}>
     <Grid gap="30px" h="630px" templateColumns="repeat(4, 1fr)" templateRows="repeat(2, 1fr)">
       <>
         <GridItem rowSpan={2} colSpan={2}>

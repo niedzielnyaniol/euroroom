@@ -72,6 +72,7 @@ const Room = ({
         <Grid m="96px 0 40px" templateColumns="7fr 5fr" gap="36px">
           <Description name={name}>{description}</Description>
           <Address
+            id={address.id}
             apartmentNumber={address.apartmentNumber}
             buildingNumber={address.buildingNumber}
             city={address.city}

@@ -1,9 +1,10 @@
-import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import Leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/images/marker-shadow.png';
 import { useEffect, useState } from 'react';
 import { Box } from '@chakra-ui/react';
+import { Trans } from '@lingui/react';
 
 type MapProps = { position: [number, number]; height?: string | number; h?: string | number };
 
@@ -20,7 +21,17 @@ const Map = ({ position, height = '300px', h = height }: MapProps) => {
           url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
         />
         {/* eslint-disable-next-line @typescript-eslint/no-magic-numbers */}
-        <Marker position={position} icon={new Leaflet.Icon({ iconUrl: '/marker-icon-2x.png', iconSize: [25, 41] })} />
+        <Marker position={position} icon={new Leaflet.Icon({ iconUrl: '/marker.svg', iconSize: [40, 51] })}>
+          <Popup>
+            <a
+              href={`http://maps.google.com/maps?z=16&t=m&q=loc:${position[0]}+${position[1]}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Trans id="Check in Google Maps" />
+            </a>
+          </Popup>
+        </Marker>
       </MapContainer>
     </Box>
   ) : (

@@ -54,6 +54,17 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::room.room"
+    },
+    "locations": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "rooms.address",
+      "required": true
     }
   }
 }

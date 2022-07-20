@@ -32,7 +32,7 @@ const RoomDetail = ({
   pricePerNight,
   squareMeters,
   variant,
-  address: { street },
+  address: { street, buildingNumber },
 }: RoomDetailProps) => {
   const lingui = useLingui();
   const isTransparent = variant === 'transparent';
@@ -90,7 +90,7 @@ const RoomDetail = ({
               {name}
             </Heading>
             <Text color={isTransparent ? 'white' : 'gray.600'}>
-              {formatAddress(lingui.i18n._locale, street, t`st`)}
+              {formatAddress({ locale: lingui.i18n._locale, street, streetTranslation: t`st`, buildingNumber })}
             </Text>
           </Box>
           <Spacer />

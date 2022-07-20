@@ -1,19 +1,22 @@
 import Address from '../types/Address';
 
-const formatBuildingInfo = (buildingNumber: Address['buildingNumber'], apartmentNumber: Address['apartmentNumber']) =>
-  `${buildingNumber}/${apartmentNumber}`;
+// eslint-disable-next-line no-confusing-arrow
+const formatBuildingInfo = (buildingNumber: Address['buildingNumber'], apartmentNumber?: Address['apartmentNumber']) =>
+  apartmentNumber ? `${buildingNumber}/${apartmentNumber}` : buildingNumber;
 
-export const formatAddress = (
-  locale: string,
-  street: string,
-  streetTranslation: string,
-  apartmentNumber?: string,
-  buildingNumber?: string,
-) => {
+type Format = {
+  locale: string;
+  street: string;
+  streetTranslation: string;
+  apartmentNumber?: string;
+  buildingNumber?: string;
+};
+
+export const formatAddress = ({ locale, street, streetTranslation, apartmentNumber, buildingNumber }: Format) => {
   if (locale === 'pl') {
     let address = `${streetTranslation} ${street}`;
 
-    if (apartmentNumber && buildingNumber) {
+    if (buildingNumber) {
       address += ` ${formatBuildingInfo(buildingNumber, apartmentNumber)}`;
     }
 
@@ -22,7 +25,7 @@ export const formatAddress = (
 
   let address = `${street} ${streetTranslation}`;
 
-  if (apartmentNumber && buildingNumber) {
+  if (buildingNumber) {
     address = `${formatBuildingInfo(buildingNumber, apartmentNumber)} ${address}`;
   }
 

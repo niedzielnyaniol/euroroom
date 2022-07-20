@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-07-20T14:54:03.542Z"
+    "x-generation-date": "2022-07-20T16:17:59.788Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -82,7 +82,7 @@
         }
       },
       "IndexLocalizationRequest": {
-        "required": ["meta", "hero", "hotelCard", "locale"],
+        "required": ["meta", "hero", "hotelCard", "locations", "locale"],
         "type": "object",
         "properties": {
           "meta": {
@@ -168,6 +168,45 @@
               "example": "string or id"
             }
           },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                },
+                "street": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "buildingNumber": {
+                  "type": "string"
+                },
+                "apartmentNumber": {
+                  "type": "string"
+                },
+                "floorLevel": {
+                  "type": "integer"
+                },
+                "markerPosition": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "lng": {
+                      "type": "number",
+                      "format": "float"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "locale": {
             "type": "string"
           }
@@ -178,7 +217,7 @@
         "required": ["data"],
         "properties": {
           "data": {
-            "required": ["meta", "hero", "hotelCard"],
+            "required": ["meta", "hero", "hotelCard", "locations"],
             "type": "object",
             "properties": {
               "meta": {
@@ -262,6 +301,45 @@
                     }
                   ],
                   "example": "string or id"
+                }
+              },
+              "locations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "city": {
+                      "type": "string"
+                    },
+                    "street": {
+                      "type": "string"
+                    },
+                    "postCode": {
+                      "type": "string"
+                    },
+                    "buildingNumber": {
+                      "type": "string"
+                    },
+                    "apartmentNumber": {
+                      "type": "string"
+                    },
+                    "floorLevel": {
+                      "type": "integer"
+                    },
+                    "markerPosition": {
+                      "type": "object",
+                      "properties": {
+                        "lat": {
+                          "type": "number",
+                          "format": "float"
+                        },
+                        "lng": {
+                          "type": "number",
+                          "format": "float"
+                        }
+                      }
+                    }
+                  }
                 }
               },
               "locale": {
@@ -2624,6 +2702,51 @@
                           "type": "string"
                         }
                       }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "street": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "buildingNumber": {
+                  "type": "string"
+                },
+                "apartmentNumber": {
+                  "type": "string"
+                },
+                "floorLevel": {
+                  "type": "integer"
+                },
+                "markerPosition": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "lat": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "lng": {
+                      "type": "number",
+                      "format": "float"
                     }
                   }
                 }
@@ -5049,6 +5172,51 @@
                                     "type": "string"
                                   }
                                 }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "locations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "city": {
+                            "type": "string"
+                          },
+                          "street": {
+                            "type": "string"
+                          },
+                          "postCode": {
+                            "type": "string"
+                          },
+                          "buildingNumber": {
+                            "type": "string"
+                          },
+                          "apartmentNumber": {
+                            "type": "string"
+                          },
+                          "floorLevel": {
+                            "type": "integer"
+                          },
+                          "markerPosition": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "lat": {
+                                "type": "number",
+                                "format": "float"
+                              },
+                              "lng": {
+                                "type": "number",
+                                "format": "float"
                               }
                             }
                           }
@@ -7500,6 +7668,51 @@
                                   "type": "string"
                                 }
                               }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "locations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "city": {
+                          "type": "string"
+                        },
+                        "street": {
+                          "type": "string"
+                        },
+                        "postCode": {
+                          "type": "string"
+                        },
+                        "buildingNumber": {
+                          "type": "string"
+                        },
+                        "apartmentNumber": {
+                          "type": "string"
+                        },
+                        "floorLevel": {
+                          "type": "integer"
+                        },
+                        "markerPosition": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "lat": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "lng": {
+                              "type": "number",
+                              "format": "float"
                             }
                           }
                         }
