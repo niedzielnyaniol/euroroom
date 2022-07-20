@@ -52,7 +52,7 @@ const RoomDetail = ({
   return (
     <Box
       boxShadow="lg"
-      _hover={{ boxShadow: '2xl' }}
+      _hover={{ boxShadow: isTransparent ? 'dark-lg' : '2xl' }}
       transitionDuration="0.3s"
       borderRadius="lg"
       overflow="hidden"
@@ -97,8 +97,8 @@ const RoomDetail = ({
           {isTransparent || <Price forWhatLabel={t`night`} price={pricePerNight} />}
         </HStack>
         <Flex
-          columnGap="36px"
-          bg={isTransparent ? 'blackAlpha.300' : undefined}
+          columnGap={isTransparent ? '12px' : '36px'}
+          bg={isTransparent ? 'blackAlpha.500' : undefined}
           p={isTransparent ? '10px 12px' : undefined}
           borderRadius={isTransparent ? 'md' : undefined}
           color={isTransparent ? 'white' : undefined}

@@ -22,9 +22,9 @@ const RangeCalendar = () => (
       width="270px"
       borderRadius={0}
       borderTopRightRadius={20}
-      backgroundColor="#063C43"
-      color="#fff"
-      colorScheme="green"
+      bgColor="red.700"
+      color="white"
+      colorScheme="red"
       fontSize="larger"
     >
       <Trans id="Check availability" />
