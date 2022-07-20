@@ -1,23 +1,44 @@
 import Address from '../types/Address';
 
-// eslint-disable-next-line no-confusing-arrow
-const formatBuildingInfo = (buildingNumber: Address['buildingNumber'], apartmentNumber?: Address['apartmentNumber']) =>
-  apartmentNumber ? `${buildingNumber}/${apartmentNumber}` : buildingNumber;
-
 type Format = {
   locale: string;
-  street: string;
   streetTranslation: string;
-  apartmentNumber?: string;
-  buildingNumber?: string;
+  street: Address['street'];
+} & Partial<Pick<Address, 'city' | 'postCode' | 'buildingNumber' | 'apartmentNumber'>>;
+
+const formatAddressRest = ({
+  buildingNumber,
+  apartmentNumber,
+  city,
+  postCode,
+}: Pick<Format, 'buildingNumber' | 'apartmentNumber' | 'postCode' | 'city'>) => {
+  let rest = buildingNumber;
+
+  if (apartmentNumber) {
+    rest += `/${buildingNumber}`;
+  }
+
+  if (postCode && city) {
+    rest += `, ${postCode} ${city}`;
+  }
+
+  return rest;
 };
 
-export const formatAddress = ({ locale, street, streetTranslation, apartmentNumber, buildingNumber }: Format) => {
+export const formatAddress = ({
+  locale,
+  street,
+  streetTranslation,
+  apartmentNumber,
+  buildingNumber,
+  city,
+  postCode,
+}: Format) => {
   if (locale === 'pl') {
     let address = `${streetTranslation} ${street}`;
 
     if (buildingNumber) {
-      address += ` ${formatBuildingInfo(buildingNumber, apartmentNumber)}`;
+      address += ` ${formatAddressRest({ buildingNumber, apartmentNumber, city, postCode })}`;
     }
 
     return address;
@@ -26,7 +47,7 @@ export const formatAddress = ({ locale, street, streetTranslation, apartmentNumb
   let address = `${street} ${streetTranslation}`;
 
   if (buildingNumber) {
-    address = `${formatBuildingInfo(buildingNumber, apartmentNumber)} ${address}`;
+    address = `${formatAddressRest({ buildingNumber, apartmentNumber, city, postCode })} ${address}`;
   }
 
   return address;

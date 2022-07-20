@@ -18,13 +18,13 @@ const Address = ({
   floorLevel,
   postCode,
   street,
-  markerPosition: { lat, lng },
+  markerPosition,
 }: AddressProps) => {
   const lingui = useLingui();
 
   return (
     <Box>
-      <DynamicMap position={[lat, lng]} />
+      <DynamicMap position={markerPosition} />
       <Box>
         {formatAddress({
           locale: lingui.i18n._locale,

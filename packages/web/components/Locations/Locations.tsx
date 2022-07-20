@@ -69,11 +69,7 @@ const Locations = ({ locations }: LocationsProps) => {
           })}
         </VStack>
         {selectedLocation?.markerPosition && (
-          <DynamicMap
-            height="560px"
-            key={selectedLocationId}
-            position={[selectedLocation.markerPosition.lat, selectedLocation.markerPosition.lng]}
-          />
+          <DynamicMap height="560px" key={selectedLocationId} position={selectedLocation.markerPosition} />
         )}
       </Grid>
     </Section>

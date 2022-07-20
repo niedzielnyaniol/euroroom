@@ -4,10 +4,10 @@ type Address = {
   street: string;
   postCode: string;
   buildingNumber: string;
-  apartmentNumber: string;
+  apartmentNumber?: string;
   floorLevel: string;
   markerPosition: {
-    id: number;
+    id?: number;
     lat: number;
     lng: number;
   };
