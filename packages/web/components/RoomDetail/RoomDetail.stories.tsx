@@ -27,3 +27,16 @@ Default.args = {
     alternativeText: 'test',
   },
 };
+
+export const Transparent = Default.bind({});
+Transparent.args = {
+  ...Default.args,
+  variant: 'transparent',
+};
+Transparent.decorators = [
+  (Story: ComponentType) => (
+    <div style={{ height: '300px' }}>
+      <Story />
+    </div>
+  ),
+];

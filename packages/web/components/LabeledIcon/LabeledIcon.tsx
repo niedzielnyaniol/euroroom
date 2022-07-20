@@ -4,7 +4,7 @@ import { HStack, Text } from '@chakra-ui/react';
 type LabeledIconProps = {
   icon: ReactElement;
   children: ReactNode;
-  fontSize?: 'large';
+  fontSize?: string;
   title?: string;
   fontColor?: string;
 };

@@ -18,13 +18,11 @@ const Gallery = ({ photos }: GalleryProps) => (
         <MyImage layout="fill" src={photos[1].url} alt={photos[1].alternativeText} objectFit="cover" />
       </GridItem>
     )}
-
     {photos[2] && (
       <GridItem position="relative" colSpan={1} borderRadius="xl" overflow="hidden">
         <MyImage layout="fill" src={photos[2].url} alt={photos[2].alternativeText} objectFit="cover" />
       </GridItem>
     )}
-
     {photos[3] && (
       <GridItem position="relative" colSpan={1} borderRadius="xl" overflow="hidden">
         <MyImage layout="fill" src={photos[3].url} alt={photos[3].alternativeText} objectFit="cover" />

@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, HStack, SimpleGrid, Spacer, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, HStack, Spacer, Text, VStack } from '@chakra-ui/react';
 import { i18n } from '@lingui/core';
 import { Plural, t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
@@ -21,6 +21,7 @@ export type RoomDetailProps = {
   bedInfo: BedInfo;
   mainPhoto: ImageType;
   address: Address;
+  variant?: 'transparent';
 };
 
 const RoomDetail = ({
@@ -30,36 +31,89 @@ const RoomDetail = ({
   name,
   pricePerNight,
   squareMeters,
+  variant,
   address: { street },
 }: RoomDetailProps) => {
   const lingui = useLingui();
+  const isTransparent = variant === 'transparent';
+  const labeledStyles = isTransparent
+    ? {
+        fontColor: 'white',
+        fontSize: '12px',
+      }
+    : undefined;
+  const iconStyles = isTransparent
+    ? {
+        width: 20,
+        height: 20,
+      }
+    : undefined;
 
   return (
-    <Box boxShadow="lg" _hover={{ boxShadow: '2xl' }} transitionDuration="0.3s" borderRadius="lg" overflow="hidden">
-      <Box position="relative" width="100%" height="294px" overflow="hidden">
+    <Box
+      boxShadow="lg"
+      _hover={{ boxShadow: '2xl' }}
+      transitionDuration="0.3s"
+      borderRadius="lg"
+      overflow="hidden"
+      h="100%"
+      position="relative"
+    >
+      <Box position="relative" w="100%" h={isTransparent ? '100%' : '294px'} overflow="hidden">
         <MyImage src={mainPhoto.url} alt={mainPhoto.alternativeText} layout="fill" objectFit="cover" />
+        {isTransparent && (
+          <Box
+            bgGradient="linear(to-b, blackAlpha.50, blackAlpha.400, blackAlpha.600)"
+            position="absolute"
+            top={0}
+            left={0}
+            w="100%"
+            h="100%"
+          >
+            <Box p="10px 12px">
+              <Price forWhatLabel={t`night`} price={pricePerNight} variant="white" />
+            </Box>
+          </Box>
+        )}
       </Box>
-      <SimpleGrid templateRows="1fr 1fr" spacing="16px" padding="20px 22px">
-        <HStack>
-          <div>
-            <Heading fontSize="2xl">{name}</Heading>
-            <Text color="gray.600">{formatAddress(lingui.i18n._locale, street, t`st`)}</Text>
-          </div>
+      <VStack
+        position={isTransparent ? 'absolute' : undefined}
+        bottom="0"
+        spacing="16px"
+        p={isTransparent ? '10px 20px' : '20px 22px'}
+        bg={isTransparent ? 'transparent' : 'white'}
+        align="start"
+      >
+        <HStack w="100%">
+          <Box>
+            <Heading color={isTransparent ? 'white' : undefined} fontSize="2xl">
+              {name}
+            </Heading>
+            <Text color={isTransparent ? 'white' : 'gray.600'}>
+              {formatAddress(lingui.i18n._locale, street, t`st`)}
+            </Text>
+          </Box>
           <Spacer />
-          <Price forWhatLabel={t`night`} price={pricePerNight} />
+          {isTransparent || <Price forWhatLabel={t`night`} price={pricePerNight} />}
         </HStack>
-        <Flex columnGap="36px">
-          <LabeledIcon icon={<PersonIcon />} title={t`Maximum number of adults`}>
+        <Flex
+          columnGap="36px"
+          bg={isTransparent ? 'blackAlpha.300' : undefined}
+          p={isTransparent ? '10px 12px' : undefined}
+          borderRadius={isTransparent ? 'md' : undefined}
+          color={isTransparent ? 'white' : undefined}
+        >
+          <LabeledIcon {...labeledStyles} icon={<PersonIcon {...iconStyles} />} title={t`Maximum number of adults`}>
             <Plural value={maxGuests} one="# Person" other="# Persons" />
           </LabeledIcon>
-          <LabeledIcon icon={<SqMetersIcon />} title={t`Room area`}>
+          <LabeledIcon {...labeledStyles} icon={<SqMetersIcon {...iconStyles} />} title={t`Room area`}>
             {i18n.number(squareMeters)}m²
           </LabeledIcon>
-          <LabeledIcon icon={<BedIcon />} title={bedInfo.additionalInfo}>
+          <LabeledIcon {...labeledStyles} icon={<BedIcon {...iconStyles} />} title={bedInfo.additionalInfo}>
             <Plural value={bedInfo.numberOfBeds} one="# Bed" few="# Beds" other="# Beds" />
           </LabeledIcon>
         </Flex>
-      </SimpleGrid>
+      </VStack>
     </Box>
   );
 };
