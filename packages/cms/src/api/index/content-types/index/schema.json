@@ -65,6 +65,17 @@
       },
       "component": "rooms.address",
       "required": true
+    },
+    "placesNearby": {
+      "displayName": "placesNearby",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.places-nearby"
     }
   }
 }

@@ -51,8 +51,8 @@ const RoomDetail = ({
 
   return (
     <Box
-      boxShadow="lg"
-      _hover={{ boxShadow: isTransparent ? 'dark-lg' : '2xl' }}
+      boxShadow={isTransparent ? 'lg' : 'base'}
+      _hover={{ boxShadow: isTransparent ? 'dark-lg' : 'md' }}
       transitionDuration="0.3s"
       borderRadius="lg"
       overflow="hidden"

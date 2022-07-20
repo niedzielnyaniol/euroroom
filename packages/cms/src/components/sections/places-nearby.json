@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_places_nearbies",
+  "info": {
+    "displayName": "placesNearby",
+    "icon": "ad",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    },
+    "distance": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

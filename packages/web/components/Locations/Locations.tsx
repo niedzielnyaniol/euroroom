@@ -34,8 +34,13 @@ const Locations = ({ locations }: LocationsProps) => {
                 onClick={() => setSelectedLocationId(id)}
                 w="100%"
                 bg="white"
-                boxShadow={isSelected ? 'md' : 'initial'}
-                _hover={{ boxShadow: 'md', borderLeft: '8px solid', borderColor: 'red.600', bg: 'white' }}
+                boxShadow={isSelected ? 'base' : 'initial'}
+                _hover={{
+                  boxShadow: isSelected ? 'base' : 'md',
+                  borderLeft: '8px solid',
+                  borderColor: 'red.600',
+                  bg: 'white',
+                }}
                 p="20px 30px"
                 height="auto"
                 display="block"

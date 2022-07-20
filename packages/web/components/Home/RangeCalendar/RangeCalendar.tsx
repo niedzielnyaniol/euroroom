@@ -5,7 +5,14 @@ import LabeledInput from '../../Container/LabeledInput';
 
 const RangeCalendar = () => (
   <Flex>
-    <Flex w="660px" boxShadow="md" backgroundColor="white" borderBottomLeftRadius="2xl" p="32px 40px" columnGap="40px">
+    <Flex
+      w="660px"
+      boxShadow="base"
+      backgroundColor="white"
+      borderBottomLeftRadius="2xl"
+      p="32px 40px"
+      columnGap="40px"
+    >
       <Box p="2px 28px 2px 0" borderRight="1px solid" borderColor="gray.300">
         <LabeledInput type="date" label={t`Check out`} onChange={() => undefined} />
       </Box>

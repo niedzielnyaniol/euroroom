@@ -5,12 +5,14 @@ import { get } from '../utils/api';
 import { HotelCardProps } from '../components/Home/HotelCard';
 import { RoomDetailProps } from '../components/RoomDetail/RoomDetail';
 import Address from '../types/Address';
+import PlaceNearby from '../types/PlaceNearby';
 
 type RequestProps = {
   hero: HeroSectionProps;
   hotelCard: HotelCardProps;
   favorite_rooms: Array<RoomDetailProps & { id: number }>;
   locations: Address[];
+  placesNearby: PlaceNearby[];
 };
 
 type IndexProps = Omit<RequestProps, 'favorite_rooms'> & { favoriteRooms: RequestProps['favorite_rooms'] };
@@ -24,6 +26,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     'favorite_rooms.address',
     'favorite_rooms.bedInfo',
     'locations.markerPosition',
+    'placesNearby.image',
   ]);
 
   if (!data) {
@@ -37,8 +40,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-const Index = ({ hero, hotelCard, favoriteRooms, locations }: IndexProps) => (
-  <Home hero={hero} hotelCard={hotelCard} favoriteRooms={favoriteRooms} locations={locations} />
+const Index = ({ hero, hotelCard, favoriteRooms, locations, placesNearby }: IndexProps) => (
+  <Home
+    hero={hero}
+    hotelCard={hotelCard}
+    favoriteRooms={favoriteRooms}
+    locations={locations}
+    placesNearby={placesNearby}
+  />
 );
 
 export default Index;
