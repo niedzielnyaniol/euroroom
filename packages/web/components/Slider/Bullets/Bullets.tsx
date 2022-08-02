@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import { SliderProps } from '..';
-import './Bullets.css';
 
 type BulletsProps = { bulletVariant: SliderProps['bulletVariant'] };
 

@@ -22,7 +22,7 @@ export const Default = Slider.bind({});
 Default.args = {
   arrowVariant: 'huge',
   bulletVariant: 'dots',
-  sliders: [
+  children: [
     <Center key={1} bg="green">
       11
     </Center>,

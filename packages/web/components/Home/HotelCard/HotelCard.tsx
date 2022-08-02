@@ -9,7 +9,7 @@ export type HotelCardProps = {
 };
 
 const HotelCard = ({ description, title, benefits }: HotelCardProps) => (
-  <Box background="gray.200" w="100%" padding="100px 0">
+  <Box background="gray.200" w="100%" padding="100px 0 160px">
     <Center>
       <Box w="990px" mt="40px" mb="100px">
         <Benefits benefits={benefits} />
