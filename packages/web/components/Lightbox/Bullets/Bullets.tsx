@@ -1,6 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react';
-import classNames from 'classnames';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSwiper } from 'swiper/react';
 import ImageType from '../../../types/ImageType';
 import MyImage from '../../MyImage/MyImage';
@@ -12,24 +11,16 @@ type BulletsProps = {
 
 const Bullets = ({ photos }: BulletsProps) => {
   const swiper = useSwiper();
-  const [activeSlide, setActiveSlide] = useState(swiper.activeIndex);
-
-  useEffect(() => {
-    swiper.on('slideChange', ({ activeIndex }) => {
-      setActiveSlide(activeIndex);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [swiper]);
 
   useEffect(() => {
     const keyDownHandler = (event: KeyboardEvent) => {
       if (event.key === 'ArrowLeft') {
         event.preventDefault();
-        swiper.slideTo((activeSlide + photos.length - 1) % photos.length);
+        swiper.slidePrev();
       }
       if (event.key === 'ArrowRight') {
         event.preventDefault();
-        swiper.slideTo(((activeSlide + 1) % photos.length) + 1);
+        swiper.slideNext();
       }
     };
 
@@ -40,10 +31,6 @@ const Bullets = ({ photos }: BulletsProps) => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [swiper]);
-
-  useEffect(() => {
-    setActiveSlide(swiper.activeIndex);
-  }, [swiper.activeIndex]);
 
   return (
     <Flex pos="relative" zIndex={2} gap="32px">
@@ -59,7 +46,7 @@ const Bullets = ({ photos }: BulletsProps) => {
             key={index}
             onClick={() => swiper.slideTo(currentIndex)}
             cursor="pointer"
-            className={classNames({ [styles.inactive]: activeSlide !== currentIndex })}
+            className={styles.inactive}
           >
             <MyImage layout="fill" objectFit="contain" src={photo.url} alt={photo.alternativeText} />
           </Box>
