@@ -1,0 +1,3 @@
+.inactive img {
+  filter: brightness(0.4);
+}
