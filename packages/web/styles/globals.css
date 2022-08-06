@@ -50,14 +50,3 @@ a {
 .swiper-pagination-white > .swiper-pagination-bullet::after {
   background-color: var(--chakra-colors-white);
 }
-
-/* stylelint-disable-next-line selector-class-pattern */
-.ReactModal__Overlay {
-  z-index: 99999 !important;
-}
-
-/* stylelint-disable-next-line selector-class-pattern */
-.ril__caption,
-.ril__toolbar {
-  height: 88px !important;
-}

@@ -26,7 +26,6 @@ const Footer = () => {
       setContactInfo(data);
     });
   }, [locale]);
-  console.log(contactInfo?.links);
 
   return (
     <Box pt="77px" backgroundColor="red.900" color="white" fontSize="18px" fontWeight={600}>
