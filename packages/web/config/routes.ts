@@ -11,10 +11,6 @@ const ROUTES = {
     id: 'about us',
     route: '/about-us',
   },
-  gallery: {
-    id: 'gallery',
-    route: '/gallery',
-  },
   contact: {
     id: 'contact',
     route: '/contact',

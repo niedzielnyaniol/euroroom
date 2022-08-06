@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-08-06T10:07:14.858Z"
+    "x-generation-date": "2022-08-06T11:25:36.146Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -177,6 +177,15 @@
               },
               "booking": {
                 "type": "string"
+              },
+              "bookingReviews": {
+                "type": "string"
+              },
+              "hostelWorldReviews": {
+                "type": "string"
+              },
+              "hostelsClubReviews": {
+                "type": "string"
               }
             }
           },
@@ -284,6 +293,15 @@
                     "type": "string"
                   },
                   "booking": {
+                    "type": "string"
+                  },
+                  "bookingReviews": {
+                    "type": "string"
+                  },
+                  "hostelWorldReviews": {
+                    "type": "string"
+                  },
+                  "hostelsClubReviews": {
                     "type": "string"
                   }
                 }
@@ -407,6 +425,15 @@
                 "type": "string"
               },
               "booking": {
+                "type": "string"
+              },
+              "bookingReviews": {
+                "type": "string"
+              },
+              "hostelWorldReviews": {
+                "type": "string"
+              },
+              "hostelsClubReviews": {
                 "type": "string"
               }
             }
@@ -840,6 +867,15 @@
                           "type": "string"
                         },
                         "booking": {
+                          "type": "string"
+                        },
+                        "bookingReviews": {
+                          "type": "string"
+                        },
+                        "hostelWorldReviews": {
+                          "type": "string"
+                        },
+                        "hostelsClubReviews": {
                           "type": "string"
                         }
                       }
@@ -1299,6 +1335,15 @@
                         "type": "string"
                       },
                       "booking": {
+                        "type": "string"
+                      },
+                      "bookingReviews": {
+                        "type": "string"
+                      },
+                      "hostelWorldReviews": {
+                        "type": "string"
+                      },
+                      "hostelsClubReviews": {
                         "type": "string"
                       }
                     }

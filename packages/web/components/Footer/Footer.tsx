@@ -11,6 +11,8 @@ import FooterLink from './FooterLink';
 import Contact from '../../types/Contact';
 import { get } from '../../utils/api';
 import VCard from '../VCard';
+import HostelWorldLogo from '../../assets/logos/hostel-world.svg';
+import BookingComLogo from '../../assets/logos/booking-com.svg';
 
 type ContactInfo = Omit<Contact, 'locations'>;
 
@@ -20,10 +22,11 @@ const Footer = () => {
   const locale = lingui.i18n._locale;
 
   useEffect(() => {
-    get<ContactInfo>('contact', locale, ['mainAddress.markerPosition']).then(({ data }) => {
+    get<ContactInfo>('contact', locale, ['mainAddress.markerPosition', 'links']).then(({ data }) => {
       setContactInfo(data);
     });
   }, [locale]);
+  console.log(contactInfo?.links);
 
   return (
     <Box pt="77px" backgroundColor="red.900" color="white" fontSize="18px" fontWeight={600}>
@@ -47,19 +50,46 @@ const Footer = () => {
               <FooterLink href={ROUTES.aboutUs.route}>{t`About us`}</FooterLink>
               <FooterLink href={ROUTES.contact.route}>{t`Contact`}</FooterLink>
               <FooterLink href={ROUTES.rooms.route}>{t`Rooms`}</FooterLink>
-              <FooterLink href={ROUTES.gallery.route}>{t`Gallery`}</FooterLink>
               <FooterLink href={ROUTES.service.route}>{t`Service`}</FooterLink>
               <FooterLink href={ROUTES.faq.route}>FAQ</FooterLink>
             </SimpleGrid>
           </div>
           <div>
-            <HeaderTitle>
-              <Trans id="Find us at" />
-            </HeaderTitle>
-            <VStack align="start" spacing={8} marginTop="80px">
-              <span>booking</span>
-              <span>Hostel world</span>
-            </VStack>
+            {contactInfo?.links?.bookingReviews &&
+              contactInfo?.links?.hostelsClubReviews &&
+              contactInfo?.links?.hostelsClubReviews && (
+                <>
+                  <HeaderTitle>
+                    <Trans id="Check reviews at" />
+                  </HeaderTitle>
+                  <VStack align="start" spacing={8} marginTop="80px">
+                    <a
+                      href={contactInfo.links.bookingReviews}
+                      style={{ cursor: 'pointer' }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <BookingComLogo />
+                    </a>
+                    <a
+                      href={contactInfo.links.hostelWorldReviews}
+                      style={{ cursor: 'pointer' }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <HostelWorldLogo height={47} width={212} />
+                    </a>
+                    <a
+                      href={contactInfo.links.hostelsClubReviews}
+                      style={{ cursor: 'pointer' }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image src="/hostels-club.png" width={236} height={45} />
+                    </a>
+                  </VStack>
+                </>
+              )}
           </div>
         </Grid>
         <Divider />

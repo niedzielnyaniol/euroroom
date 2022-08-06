@@ -1,5 +1,5 @@
 const path = require('path');
-const pathToInlineSvg = path.resolve(__dirname, '../assets/icons');
+const pathToInlineSvg = path.resolve(__dirname, '../assets');
 
 module.exports = {
   stories: ['../components/**/*.stories.@(ts|tsx)'],

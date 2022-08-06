@@ -2,7 +2,8 @@
   "collectionName": "components_sections_links",
   "info": {
     "displayName": "links",
-    "icon": "ad"
+    "icon": "ad",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,6 +18,15 @@
     "booking": {
       "type": "string",
       "required": true
+    },
+    "bookingReviews": {
+      "type": "string"
+    },
+    "hostelWorldReviews": {
+      "type": "string"
+    },
+    "hostelsClubReviews": {
+      "type": "string"
     }
   }
 }

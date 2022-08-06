@@ -4,6 +4,9 @@ type Links = {
   yt: string;
   fb: string;
   booking: string;
+  bookingReviews?: string;
+  hostelWorldReviews?: string;
+  hostelsClubReviews?: string;
 };
 
 type Contact = {

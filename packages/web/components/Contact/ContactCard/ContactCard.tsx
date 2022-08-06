@@ -1,5 +1,5 @@
 import { Box, Heading, HStack, Text } from '@chakra-ui/react';
-import Bubbles from '../../../assets/icons/bubbles.svg';
+import Bubbles from '../../../assets/backgrounds/bubbles.svg';
 import YoutubeIcon from '../../../assets/icons/youtube.svg';
 import BookingIcon from '../../../assets/icons/booking.svg';
 import FacebookIcon from '../../../assets/icons/facebook.svg';
