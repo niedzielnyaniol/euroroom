@@ -57,6 +57,12 @@ const Header = () => {
             >
               <MyLink href={ROUTES.rooms.route}>{t`Rooms`}</MyLink>
             </Text>
+            <Text
+              color={ROUTES.contact.route === route ? 'black' : 'gray.600'}
+              fontWeight={ROUTES.contact.route === route ? '900' : undefined}
+            >
+              <MyLink href={ROUTES.contact.route}>{t`Contact`}</MyLink>
+            </Text>
           </Flex>
         </Grid>
       </Container>

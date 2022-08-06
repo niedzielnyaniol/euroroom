@@ -54,6 +54,18 @@
       },
       "type": "string",
       "required": true
+    },
+    "links": {
+      "displayName": "links",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "sections.links",
+      "required": true
     }
   }
 }

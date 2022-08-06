@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "payment_infos",
+  "info": {
+    "singularName": "payment-info",
+    "pluralName": "payment-infos",
+    "displayName": "PaymentInfo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "accNumber": {
+      "type": "string",
+      "required": true
+    },
+    "accNumberEuro": {
+      "type": "string"
+    },
+    "iban": {
+      "type": "string"
+    },
+    "swift": {
+      "type": "string",
+      "required": true
+    },
+    "bankInfo": {
+      "type": "string"
+    }
+  }
+}

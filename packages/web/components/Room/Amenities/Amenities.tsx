@@ -8,7 +8,7 @@ type AmenitiesProps = { amenities: AmenityType[] };
 const Amenities = ({ amenities }: AmenitiesProps) => (
   <Box>
     <Heading>
-      <Trans id="Amenities:" />
+      <Trans id="Amenities" />:
     </Heading>
     <Box style={{ columnCount: 3 }} mt="36px">
       {amenities.map(({ id, more, name: amenityName, svg }) => (

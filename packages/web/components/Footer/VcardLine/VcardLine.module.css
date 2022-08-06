@@ -1,6 +1,0 @@
-.vcard-line {
-  display: inline-flex;
-  color: var(--chakra-colors-white);
-  align-items: center;
-  column-gap: 20px;
-}

@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
 import { en, pl } from 'make-plural/plurals';
@@ -26,7 +26,9 @@ const MyApp = ({ Component, pageProps, router: { locale } }: AppProps) => {
     <ChakraProvider theme={theme}>
       <I18nProvider i18n={i18n}>
         <Header />
-        <Component {...pageProps} />
+        <Box minH="calc(100vh - 574.5px)">
+          <Component {...pageProps} />
+        </Box>
         <Footer />
       </I18nProvider>
     </ChakraProvider>

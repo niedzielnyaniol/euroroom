@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_links",
+  "info": {
+    "displayName": "links",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "yt": {
+      "type": "string",
+      "required": true
+    },
+    "fb": {
+      "type": "string",
+      "required": true
+    },
+    "booking": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

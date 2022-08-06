@@ -1,10 +1,8 @@
 import { Box, Divider, Flex, Grid, HStack, SimpleGrid, Text, VStack } from '@chakra-ui/react';
-import { Calling, Home, Message } from 'react-iconly';
 import { Trans, useLingui } from '@lingui/react';
 import Image from 'next/image';
 import { t } from '@lingui/macro';
 import { useEffect, useState } from 'react';
-import VcardLine from './VcardLine';
 import GlobeIcon from '../../assets/icons/globe.svg';
 import Container from '../Container';
 import HeaderTitle from './HeaderTitle';
@@ -12,7 +10,7 @@ import ROUTES from '../../config/routes';
 import FooterLink from './FooterLink';
 import Contact from '../../types/Contact';
 import { get } from '../../utils/api';
-import { formatAddress } from '../../utils/address';
+import VCard from '../VCard';
 
 type ContactInfo = Omit<Contact, 'locations'>;
 
@@ -34,26 +32,11 @@ const Footer = () => {
           <VStack spacing="68px" align="start" marginTop="-12px">
             <Image src="/er-logo.webp" width={130} height={50} objectFit="contain" />
             {contactInfo && (
-              <VStack rowGap="13px" align="start">
-                <a href={`mailto:${contactInfo.email}`}>
-                  <VcardLine icon={<Message />}>{contactInfo.email}</VcardLine>
-                </a>
-                <a href={`tel:${contactInfo.phoneNumber}`}>
-                  <VcardLine icon={<Calling />}>{contactInfo.phoneNumber}</VcardLine>
-                </a>
-                <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
-                  <VcardLine icon={<Home />}>
-                    {formatAddress({
-                      locale,
-                      street: contactInfo.mainAddress.street,
-                      buildingNumber: contactInfo.mainAddress.buildingNumber,
-                      streetTranslation: t`st`,
-                      city: contactInfo.mainAddress.city,
-                      postCode: contactInfo.mainAddress.postCode,
-                    })}
-                  </VcardLine>
-                </a>
-              </VStack>
+              <VCard
+                email={contactInfo.email}
+                mainAddress={contactInfo.mainAddress}
+                phoneNumber={contactInfo.phoneNumber}
+              />
             )}
           </VStack>
           <div>
