@@ -41,7 +41,7 @@ const OurServices = ({ services }: OurServicesProps) => {
             >
               {activeService && activeService.images.length > 0 && (
                 <Box mt="-30px">
-                  <Slider arrowVariant="huge" bulletVariant="color" w={844}>
+                  <Slider arrowVariant="huge" bulletsVariant="color" w={844}>
                     {activeService?.images.map(({ url, alternativeText }) => (
                       <Box h={520} key={url}>
                         <MyImage src={url} alt={alternativeText} layout="fill" objectFit="cover" />

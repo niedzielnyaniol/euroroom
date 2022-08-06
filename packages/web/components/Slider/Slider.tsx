@@ -12,16 +12,17 @@ SwiperCore.use([Navigation, Pagination]);
 
 export type SliderProps = {
   children: ReactNode[];
-  arrowVariant?: 'huge';
-  bulletVariant?: 'color' | 'white';
+  arrowVariant?: 'huge' | 'inside';
+  bulletsVariant?: 'color' | 'white';
+  bulletsInside?: boolean;
   w?: number;
 };
-const Slider = ({ children, arrowVariant, bulletVariant, w }: SliderProps) => {
+const Slider = ({ children, arrowVariant, bulletsVariant, w, bulletsInside }: SliderProps) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
 
   return (
-    <Box>
+    <Box pos="relative">
       <Flex>
         {arrowVariant && <ArrowLeft variant={arrowVariant} ref={navigationPrevRef} />}
         <Box borderRadius="lg" overflow="hidden" w={w}>
@@ -52,7 +53,15 @@ const Slider = ({ children, arrowVariant, bulletVariant, w }: SliderProps) => {
         </Box>
         {arrowVariant && <ArrowRight variant={arrowVariant} ref={navigationNextRef} />}
       </Flex>
-      <Center>{bulletVariant && <Bullets bulletVariant={bulletVariant} />}</Center>
+      {bulletsVariant && (
+        <Center
+          {...(bulletsInside
+            ? { position: 'absolute', zIndex: 1, left: '50%', pb: '24px', transform: 'translate(-50%, -100%)' }
+            : undefined)}
+        >
+          <Bullets bulletVariant={bulletsVariant} />
+        </Center>
+      )}
     </Box>
   );
 };

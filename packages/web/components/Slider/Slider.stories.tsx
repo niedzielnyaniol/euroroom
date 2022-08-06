@@ -21,7 +21,7 @@ const Center = ({ children, bg }: any) => (
 export const Default = Slider.bind({});
 Default.args = {
   arrowVariant: 'huge',
-  bulletVariant: 'dots',
+  bulletsVariant: 'color',
   children: [
     <Center key={1} bg="green">
       11
@@ -36,4 +36,12 @@ Default.args = {
       14
     </Center>,
   ],
+};
+
+export const ArrowsInside = Slider.bind({});
+ArrowsInside.args = {
+  ...Default.args,
+  arrowVariant: 'inside',
+  bulletsVariant: 'white',
+  bulletsInside: true,
 };
