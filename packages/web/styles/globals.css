@@ -43,10 +43,18 @@ a {
   width: 31px;
 }
 
-.swiper-pagination-white > .swiper-pagination-bullet-active::after {
+.swiper-pagination-white .swiper-pagination-bullet-active::after {
   background-color: var(--chakra-colors-white);
 }
 
-.swiper-pagination-white > .swiper-pagination-bullet::after {
+.swiper-pagination-white .swiper-pagination-bullet::after {
   background-color: var(--chakra-colors-white);
+}
+
+.swiper-pagination-inside .swiper-pagination {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }

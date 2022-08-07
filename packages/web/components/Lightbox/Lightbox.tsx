@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import SwiperCore, { Navigation } from 'swiper';
+import SwiperCore, { Keyboard, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
@@ -76,7 +76,10 @@ const Lightbox = ({ photos, initialPhoto, onClose }: LightboxProps) => {
         draggable
         initialSlide={initialPhoto}
         loop
-        modules={[Navigation]}
+        modules={[Navigation, Keyboard]}
+        keyboard={{
+          enabled: true,
+        }}
         grabCursor
         navigation={{
           prevEl: navigationPrevRef.current,

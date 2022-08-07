@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
+import classNames from 'classnames';
 import ArrowLeft from './ArrowLeft';
 import ArrowRight from './ArrowRight';
 import Bullets from './Bullets';
@@ -31,12 +32,21 @@ const Slider = ({
   const navigationNextRef = useRef(null);
 
   return (
-    <Box w="fit-content" pos="relative">
+    <Box pos="relative">
       <Flex>
         {arrowVariant && <ArrowLeft variant={arrowVariant} ref={navigationPrevRef} />}
         <Box borderRadius={borderRadius} overflow="hidden" w={w}>
           <Swiper
-            pagination={{ enabled: true, clickable: true, el: '.swiper-pagination', type: 'bullets' }}
+            className={classNames({
+              'swiper-pagination-inside': bulletsInside,
+              'swiper-pagination-white': bulletsVariant === 'white',
+            })}
+            pagination={{
+              enabled: true,
+              clickable: true,
+              el: bulletsInside ? undefined : '.swiper-pagination',
+              type: 'bullets',
+            }}
             draggable
             loop
             modules={[Pagination, Navigation]}
