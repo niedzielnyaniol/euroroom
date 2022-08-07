@@ -12,6 +12,7 @@ import BedIcon from '../../assets/icons/bed.svg';
 import Address from '../../types/Address';
 import { formatAddress } from '../../utils/address';
 import BedInfo from '../../types/BedInfo';
+import theme from '../../config/theme';
 
 export type RoomDetailProps = {
   name: string;
@@ -89,7 +90,7 @@ const RoomDetail = ({
             <Heading color={isTransparent ? 'white' : undefined} fontSize="2xl">
               {name}
             </Heading>
-            <Text color={isTransparent ? 'white' : 'gray.600'}>
+            <Text color={isTransparent ? 'white' : theme.primary.colors.lightFont}>
               {formatAddress({ locale: lingui.i18n._locale, street, streetTranslation: t`st`, buildingNumber })}
             </Text>
           </Box>

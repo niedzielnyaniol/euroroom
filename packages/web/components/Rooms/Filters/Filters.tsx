@@ -2,6 +2,7 @@ import { Box, Checkbox, Flex } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import { Trans } from '@lingui/react';
 import { ChangeEvent } from 'react';
+import theme from '../../../config/theme';
 import NumberedInput from '../../NumberedInput';
 
 export type FiltersType = {
@@ -19,8 +20,8 @@ type FiltersProps = {
 
 const Filters = ({ maxGuests, maxBeds, onChange, filters }: FiltersProps) => (
   <Flex padding={8} gap="16px" backgroundColor="white" borderRadius={12} boxShadow="md">
-    <Flex border="1px solid" borderColor="gray.300" borderRadius="lg">
-      <Box padding="15px 20px" borderRight="1px solid" borderColor="gray.300">
+    <Flex border="1px solid" borderColor={theme.primary.colors.defaultBorder} borderRadius="lg">
+      <Box padding="15px 20px" borderRight="1px solid" borderColor={theme.primary.colors.defaultBorder}>
         <NumberedInput
           label={t`Guest`}
           onChange={(_, guestNumber) => onChange({ ...filters, minGuests: guestNumber })}
@@ -37,7 +38,7 @@ const Filters = ({ maxGuests, maxBeds, onChange, filters }: FiltersProps) => (
         />
       </Box>
     </Flex>
-    <Flex padding="15px 20px" border="1px solid" borderColor="gray.300" borderRadius="lg">
+    <Flex padding="15px 20px" border="1px solid" borderColor={theme.primary.colors.defaultBorder} borderRadius="lg">
       <Checkbox
         colorScheme="red"
         onChange={(e: ChangeEvent<HTMLInputElement>) => onChange({ ...filters, privateBathroom: e.target.checked })}

@@ -1,5 +1,6 @@
 import { cloneElement, ReactElement, ReactNode } from 'react';
 import { HStack, Text } from '@chakra-ui/react';
+import theme from '../../config/theme';
 
 type LabeledIconProps = {
   icon: ReactElement;
@@ -12,7 +13,7 @@ type LabeledIconProps = {
 const LabeledIcon = ({ icon, children, fontSize, title, fontColor }: LabeledIconProps) => (
   <HStack gap="4px" title={title}>
     {cloneElement(icon)}
-    <Text color={fontColor || 'gray.600'} fontWeight={500} fontSize={fontSize}>
+    <Text color={fontColor || theme.primary.colors.lightFont} fontWeight={500} fontSize={fontSize}>
       {children}
     </Text>
   </HStack>

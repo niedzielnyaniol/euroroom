@@ -1,6 +1,7 @@
 import { Box, Button, Flex } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import { Trans } from '@lingui/react';
+import theme from '../../../config/theme';
 import LabeledInput from '../../Container/LabeledInput';
 
 const RangeCalendar = () => (
@@ -13,10 +14,10 @@ const RangeCalendar = () => (
       p="32px 40px"
       columnGap="40px"
     >
-      <Box p="2px 28px 2px 0" borderRight="1px solid" borderColor="gray.300">
+      <Box p="2px 28px 2px 0" borderRight="1px solid" borderColor={theme.primary.colors.defaultBorder}>
         <LabeledInput type="date" label={t`Check out`} onChange={() => undefined} />
       </Box>
-      <Box p="2px 28px 2px 0" borderRight="1px solid" borderColor="gray.300">
+      <Box p="2px 28px 2px 0" borderRight="1px solid" borderColor={theme.primary.colors.defaultBorder}>
         <LabeledInput type="date" label={t`Check in`} onChange={() => undefined} />
       </Box>
       <Box p="2px 0">

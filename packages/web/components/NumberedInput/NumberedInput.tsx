@@ -1,4 +1,5 @@
 import { Button, HStack, Input, Text, useNumberInput } from '@chakra-ui/react';
+import theme from '../../config/theme';
 import styles from './NumberedInput.module.css';
 
 type NumberedInputProps = {
@@ -26,7 +27,7 @@ const NumberedInput = ({ onChange, value, max, min = 1, label }: NumberedInputPr
   return (
     <div className={styles.container}>
       {label && (
-        <Text size="larger" color="gray.600">
+        <Text size="larger" color={theme.primary.colors.lightFont}>
           {label}
         </Text>
       )}

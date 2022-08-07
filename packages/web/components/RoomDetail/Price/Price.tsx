@@ -1,5 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import { i18n } from '@lingui/core';
+import theme from '../../../config/theme';
 
 type PriceProps = {
   price: number;
@@ -21,8 +22,8 @@ const Price = ({ price, forWhatLabel, withFractionalDigits = false, variant }: P
       borderRadius="md"
       border="2px solid"
       bg="white"
-      borderColor={isWhite ? 'transparent' : 'red.600'}
-      color={isWhite ? undefined : 'red.600'}
+      borderColor={isWhite ? 'transparent' : theme.primary.colors.primary}
+      color={isWhite ? undefined : theme.primary.colors.primary}
     >
       <Text fontWeight={900} fontSize="sm">
         {i18n.number(price, {

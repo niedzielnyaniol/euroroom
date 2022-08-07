@@ -1,4 +1,5 @@
 import { Box, Center } from '@chakra-ui/react';
+import theme from '../../../config/theme';
 import Description from '../../Description';
 import Benefits, { Benefit } from '../Benefits';
 
@@ -9,7 +10,7 @@ export type HotelCardProps = {
 };
 
 const HotelCard = ({ description, title, benefits }: HotelCardProps) => (
-  <Box background="gray.200" w="100%" padding="100px 0 160px">
+  <Box background={theme.primary.colors.defaultSection} w="100%" padding="100px 0 160px">
     <Center>
       <Box w="990px" mt="40px" mb="100px">
         <Benefits benefits={benefits} />

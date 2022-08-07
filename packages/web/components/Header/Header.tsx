@@ -6,6 +6,7 @@ import { ChangeEvent } from 'react';
 import ROUTES from '../../config/routes';
 import Container from '../Container';
 import MyLink from '../MyLink';
+import themeConfig from '../../config/theme';
 
 const Header = () => {
   const router = useRouter();
@@ -46,19 +47,25 @@ const Header = () => {
           </Flex>
           <Flex align="center" columnGap="52px">
             <Text
-              color={ROUTES.index.route === route ? 'black' : 'gray.600'}
+              color={ROUTES.index.route === route ? 'black' : themeConfig.primary.colors.lightFont}
               fontWeight={ROUTES.index.route === route ? '900' : undefined}
             >
               <MyLink href={ROUTES.index.route}>{t`Home`}</MyLink>
             </Text>
             <Text
-              color={ROUTES.rooms.route === route ? 'black' : 'gray.600'}
+              color={ROUTES.rooms.route === route ? 'black' : themeConfig.primary.colors.lightFont}
               fontWeight={ROUTES.rooms.route === route ? '900' : undefined}
             >
               <MyLink href={ROUTES.rooms.route}>{t`Rooms`}</MyLink>
             </Text>
             <Text
-              color={ROUTES.contact.route === route ? 'black' : 'gray.600'}
+              color={ROUTES.services.route === route ? 'black' : themeConfig.primary.colors.lightFont}
+              fontWeight={ROUTES.services.route === route ? '900' : undefined}
+            >
+              <MyLink href={ROUTES.services.route}>{t`Services`}</MyLink>
+            </Text>
+            <Text
+              color={ROUTES.contact.route === route ? 'black' : themeConfig.primary.colors.lightFont}
               fontWeight={ROUTES.contact.route === route ? '900' : undefined}
             >
               <MyLink href={ROUTES.contact.route}>{t`Contact`}</MyLink>

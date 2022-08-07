@@ -1,8 +1,8 @@
 import { Box, Grid, Heading, Text } from '@chakra-ui/react';
+import theme from '../../../config/theme';
 import ImageType from '../../../types/ImageType';
 import Container from '../../Container';
 import MyImage from '../../MyImage/MyImage';
-import RangeCalendar from '../RangeCalendar';
 
 export type HeroSectionProps = {
   title: string;
@@ -15,7 +15,7 @@ const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps
   <Container>
     <Grid position="relative" templateColumns="1fr auto" columnGap="83px">
       <Box mt="128px">
-        <Text color="red.600" fontSize="xl" fontWeight={600}>
+        <Text color={theme.primary.colors.primary} fontSize="xl" fontWeight={600}>
           {welcomeMsg}
         </Text>
         <Box mt="16px" mb="48px">
@@ -35,9 +35,10 @@ const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps
         height={764}
         style={{ borderBottomLeftRadius: '30px' }}
       />
+      {/* Disabled in alpha version
       <Box position="absolute" bottom="140px">
         <RangeCalendar />
-      </Box>
+      </Box> */}
     </Grid>
   </Container>
 );

@@ -13,6 +13,7 @@ import { get } from '../../utils/api';
 import VCard from '../VCard';
 import HostelWorldLogo from '../../assets/logos/hostel-world.svg';
 import BookingComLogo from '../../assets/logos/booking-com.svg';
+import theme from '../../config/theme';
 
 type ContactInfo = Omit<Contact, 'locations'>;
 
@@ -28,7 +29,7 @@ const Footer = () => {
   }, [locale]);
 
   return (
-    <Box pt="77px" backgroundColor="red.900" color="white" fontSize="18px" fontWeight={600}>
+    <Box pt="77px" backgroundColor={theme.primary.colors.primaryDark} color="white" fontSize="18px" fontWeight={600}>
       <Container>
         <Grid templateColumns="1fr 1fr 1fr" columnGap={24} pb="55px">
           <VStack spacing="68px" align="start" marginTop="-12px">
@@ -49,7 +50,7 @@ const Footer = () => {
               <FooterLink href={ROUTES.aboutUs.route}>{t`About us`}</FooterLink>
               <FooterLink href={ROUTES.contact.route}>{t`Contact`}</FooterLink>
               <FooterLink href={ROUTES.rooms.route}>{t`Rooms`}</FooterLink>
-              <FooterLink href={ROUTES.service.route}>{t`Service`}</FooterLink>
+              <FooterLink href={ROUTES.services.route}>{t`Service`}</FooterLink>
               <FooterLink href={ROUTES.faq.route}>FAQ</FooterLink>
             </SimpleGrid>
           </div>

@@ -8,6 +8,7 @@ import Section from '../../Section';
 import Tabs from '../../Tabs';
 import Service from '../../../types/Service';
 import Container from '../../Container';
+import theme from '../../../config/theme';
 
 const Slider = dynamic(() => import('../../Slider'));
 
@@ -20,7 +21,7 @@ const OurServices = ({ services }: OurServicesProps) => {
   const activeService = services.find((service) => service.id === activeTab);
 
   return (
-    <Box bg="gray.200" p="100px 0">
+    <Box bg={theme.primary.colors.defaultSection} p="100px 0">
       <Container>
         <Section title={t`Services`}>
           <Box mt="110px">

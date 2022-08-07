@@ -19,9 +19,9 @@ const ROUTES = {
     id: 'faq',
     route: '/faq',
   },
-  service: {
-    id: 'service',
-    route: '/service',
+  services: {
+    id: 'services',
+    route: '/services',
   },
 };
 

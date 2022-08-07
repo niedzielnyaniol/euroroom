@@ -8,6 +8,7 @@ import { formatAddress } from '../../utils/address';
 import MarkerIcon from '../../assets/icons/marker.svg';
 import Section from '../Section';
 import Tabs from '../Tabs';
+import theme from '../../config/theme';
 
 const DynamicMap = dynamic(() => import('../Map'), {
   ssr: false,
@@ -40,7 +41,7 @@ const Locations = ({ locations }: LocationsProps) => {
                 })}
               </Text>
               <Flex as="span" mt="10px">
-                <Box mr="8px" color="red.600">
+                <Box mr="8px" color={theme.primary.colors.primary}>
                   <MarkerIcon />
                 </Box>
                 {postCode} {city}, <Trans id="floor level" /> {floorLevel}

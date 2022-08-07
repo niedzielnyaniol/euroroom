@@ -1,4 +1,5 @@
 import { Box, Center, Divider, Flex, Text } from '@chakra-ui/react';
+import theme from '../../config/theme';
 import PlaceNearby from '../../types/PlaceNearby';
 import MyImage from '../MyImage/MyImage';
 
@@ -14,9 +15,9 @@ const Place = ({ distance, image, name }: PlaceProps) => (
         {name}
       </Text>
       <Center h="36px" m="0 20px -2px">
-        <Divider h="25px" orientation="vertical" borderColor="gray.300" />
+        <Divider h="25px" orientation="vertical" borderColor={theme.primary.colors.defaultBorder} />
       </Center>
-      <Text fontSize="larger" fontWeight={600} color="red.600">
+      <Text fontSize="larger" fontWeight={600} color={theme.primary.colors.primary}>
         {distance}
       </Text>
     </Flex>

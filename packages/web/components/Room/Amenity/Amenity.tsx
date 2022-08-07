@@ -3,6 +3,7 @@ import AmenityType from '../../../types/Amenity';
 import LabeledIcon from '../../LabeledIcon';
 import MarkIcon from '../../../assets/icons/mark.svg';
 import MyImage from '../../MyImage/MyImage';
+import themeConfig from '../../../config/theme';
 
 type AmenityProps = Omit<AmenityType, 'id'>;
 
@@ -26,7 +27,7 @@ const Amenity = ({ more, name, svg }: AmenityProps) => {
               key={id}
               icon={
                 // eslint-disable-next-line react/jsx-wrap-multilines
-                <Box color="red.600">
+                <Box color={themeConfig.primary.colors.primaryDark}>
                   <MarkIcon />
                 </Box>
               }

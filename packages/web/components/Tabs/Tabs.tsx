@@ -1,5 +1,6 @@
 import { Box, Button, Grid, VStack } from '@chakra-ui/react';
 import { ReactNode } from 'react';
+import theme from '../../config/theme';
 
 type Id = number;
 
@@ -30,7 +31,7 @@ const Tabs = ({ tabs, children, onTabChange, activeTab }: TabsProps) => (
             _hover={{
               boxShadow: isSelected ? 'base' : 'md',
               borderLeft: '8px solid',
-              borderColor: 'red.600',
+              borderColor: theme.primary.colors.primary,
               bg: 'white',
             }}
             bg={isSelected ? 'white' : 'transparent'}
@@ -40,7 +41,7 @@ const Tabs = ({ tabs, children, onTabChange, activeTab }: TabsProps) => (
             textAlign="left"
             borderRadius="lg"
             borderLeft="8px solid"
-            borderColor={isSelected ? 'red.600' : 'transparent'}
+            borderColor={isSelected ? theme.primary.colors.primary : 'transparent'}
             transition="0.3s"
           >
             {tab}
