@@ -1,3 +1,3 @@
 export { default } from './Services';
 
-export type { Amenity } from './Services';
+export type { ServicesProps } from './Services';

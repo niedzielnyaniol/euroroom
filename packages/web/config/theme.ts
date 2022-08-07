@@ -7,7 +7,7 @@ const primary = {
     lightFont: 'gray.600',
   },
   radius: {
-    default: 'xl',
+    default: 'xl' as const,
   },
 };
 

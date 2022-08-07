@@ -10,7 +10,7 @@
     "name": {
       "type": "string"
     },
-    "svg": {
+    "image": {
       "type": "media",
       "multiple": false,
       "required": true,

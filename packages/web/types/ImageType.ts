@@ -1,4 +1,5 @@
 type ImageType = {
+  id: number;
   alternativeText: string;
   caption: string;
   url: string;

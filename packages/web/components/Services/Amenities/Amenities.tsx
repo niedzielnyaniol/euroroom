@@ -1,14 +1,8 @@
 import { Box, Grid, Text, VStack } from '@chakra-ui/react';
 import theme from '../../../config/theme';
-import ImageType from '../../../types/ImageType';
+import Amenity from '../../../types/Amenity';
 import Container from '../../Container';
 import MyImage from '../../MyImage/MyImage';
-
-export type Amenity = {
-  id: number;
-  name: string;
-  image: ImageType;
-};
 
 type AmenitiesProps = {
   amenities: Amenity[];

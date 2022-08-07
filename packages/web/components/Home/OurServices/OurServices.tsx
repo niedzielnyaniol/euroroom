@@ -9,11 +9,12 @@ import Tabs from '../../Tabs';
 import Service from '../../../types/Service';
 import Container from '../../Container';
 import theme from '../../../config/theme';
+import ROUTES from '../../../config/routes';
 
 const Slider = dynamic(() => import('../../Slider'));
 
 type OurServicesProps = {
-  services: Service[];
+  services: Omit<Service, 'description'>[];
 };
 
 const OurServices = ({ services }: OurServicesProps) => {
@@ -23,7 +24,7 @@ const OurServices = ({ services }: OurServicesProps) => {
   return (
     <Box bg={theme.primary.colors.defaultSection} p="100px 0">
       <Container>
-        <Section title={t`Services`}>
+        <Section title={t`Services`} href={ROUTES.services.route} hrefTitle={t`See more`}>
           <Box mt="110px">
             <Tabs
               tabs={services.map(({ icon, id, name }) => ({

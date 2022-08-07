@@ -5,6 +5,7 @@ type Service = {
   name: string;
   icon: ImageType;
   images: ImageType[];
+  description: string;
 };
 
 export default Service;

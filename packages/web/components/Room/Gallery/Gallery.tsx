@@ -4,6 +4,7 @@ import { Center, Grid, GridItem, Text } from '@chakra-ui/react';
 import ImageType from '../../../types/ImageType';
 import MyImage from '../../MyImage/MyImage';
 import Lightbox from '../../Lightbox';
+import theme from '../../../config/theme';
 
 type GalleryProps = {
   photos: ImageType[];
@@ -26,7 +27,7 @@ const Gallery = ({ photos }: GalleryProps) => {
           position="relative"
           rowSpan={2}
           colSpan={2}
-          borderRadius="xl"
+          borderRadius={theme.primary.radius.default}
           overflow="hidden"
         >
           <MyImage layout="fill" src={photos[0].url} alt={photos[0].alternativeText} objectFit="cover" />
@@ -37,7 +38,7 @@ const Gallery = ({ photos }: GalleryProps) => {
             position="relative"
             cursor="pointer"
             colSpan={2}
-            borderRadius="xl"
+            borderRadius={theme.primary.radius.default}
             overflow="hidden"
           >
             <MyImage layout="fill" src={photos[1].url} alt={photos[1].alternativeText} objectFit="cover" />
@@ -49,7 +50,7 @@ const Gallery = ({ photos }: GalleryProps) => {
             position="relative"
             cursor="pointer"
             colSpan={1}
-            borderRadius="xl"
+            borderRadius={theme.primary.radius.default}
             overflow="hidden"
           >
             <MyImage layout="fill" src={photos[2].url} alt={photos[2].alternativeText} objectFit="cover" />
@@ -61,7 +62,7 @@ const Gallery = ({ photos }: GalleryProps) => {
             cursor="pointer"
             position="relative"
             colSpan={1}
-            borderRadius="xl"
+            borderRadius={theme.primary.radius.default}
             overflow="hidden"
           >
             <MyImage layout="fill" src={photos[3].url} alt={photos[3].alternativeText} objectFit="cover" />

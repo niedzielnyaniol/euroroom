@@ -1,5 +1,5 @@
 {
-  "/contact": {
+  "/service-page": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactListResponse"
+                "$ref": "#/components/schemas/ServicePageListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Contact"
+        "Service-page"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/contact"
+      "operationId": "get/service-page"
     },
     "put": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactResponse"
+                "$ref": "#/components/schemas/ServicePageResponse"
               }
             }
           }
@@ -214,16 +214,16 @@
         }
       },
       "tags": [
-        "Contact"
+        "Service-page"
       ],
       "parameters": [],
-      "operationId": "put/contact",
+      "operationId": "put/service-page",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ContactRequest"
+              "$ref": "#/components/schemas/ServicePageRequest"
             }
           }
         }
@@ -294,13 +294,13 @@
         }
       },
       "tags": [
-        "Contact"
+        "Service-page"
       ],
       "parameters": [],
-      "operationId": "delete/contact"
+      "operationId": "delete/service-page"
     }
   },
-  "/contact/localizations": {
+  "/service-page/localizations": {
     "post": {
       "responses": {
         "200": {
@@ -308,7 +308,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactLocalizationResponse"
+                "$ref": "#/components/schemas/ServicePageLocalizationResponse"
               }
             }
           }
@@ -365,16 +365,16 @@
         }
       },
       "tags": [
-        "Contact"
+        "Service-page"
       ],
       "parameters": [],
-      "operationId": "post/contact/localizations",
+      "operationId": "post/service-page/localizations",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ContactLocalizationRequest"
+              "$ref": "#/components/schemas/ServicePageLocalizationRequest"
             }
           }
         }

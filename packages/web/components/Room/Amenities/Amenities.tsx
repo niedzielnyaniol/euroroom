@@ -11,9 +11,9 @@ const Amenities = ({ amenities }: AmenitiesProps) => (
       <Trans id="Amenities" />:
     </Heading>
     <Box style={{ columnCount: 3 }} mt="36px">
-      {amenities.map(({ id, more, name: amenityName, svg }) => (
+      {amenities.map(({ id, more, name: amenityName, image }) => (
         <Box mb="16px" key={id} display="inline-block" w="100%">
-          <Amenity more={more} name={amenityName} svg={svg} />
+          <Amenity more={more} name={amenityName} image={image} />
         </Box>
       ))}
     </Box>

@@ -31,7 +31,7 @@ const getStyles = (variant: Variant) => {
       height: '40px',
       top: '50%',
       transform: 'translateY(-50%)',
-      bg: 'blackAlpha.500',
+      bg: 'blackAlpha.400',
     };
   }
 

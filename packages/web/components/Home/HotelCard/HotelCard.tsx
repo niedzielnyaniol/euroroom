@@ -17,7 +17,7 @@ const HotelCard = ({ description, title, benefits }: HotelCardProps) => (
       </Box>
     </Center>
     <Center>
-      <Box background="white" w="1070px" p="0 40px 40px" borderRadius="xl">
+      <Box background="white" w="1070px" p="0 40px 40px" borderRadius={theme.primary.radius.default}>
         <Center p="40px">
           <Box w="560px">
             <Description name={title} align="center">
@@ -26,7 +26,7 @@ const HotelCard = ({ description, title, benefits }: HotelCardProps) => (
           </Box>
         </Center>
         <Center mt="20px">
-          <Box borderRadius="xl" overflow="hidden" w="960px" position="relative" mb="-100px">
+          <Box borderRadius={theme.primary.radius.default} overflow="hidden" w="960px" position="relative" mb="-100px">
             <iframe
               width="960"
               height="540"

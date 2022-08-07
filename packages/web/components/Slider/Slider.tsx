@@ -7,6 +7,7 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 import ArrowLeft from './ArrowLeft';
 import ArrowRight from './ArrowRight';
 import Bullets from './Bullets';
+import theme from '../../config/theme';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -15,17 +16,25 @@ export type SliderProps = {
   arrowVariant?: 'huge' | 'inside';
   bulletsVariant?: 'color' | 'white';
   bulletsInside?: boolean;
+  borderRadius?: 'none' | typeof theme.primary.radius.default;
   w?: number;
 };
-const Slider = ({ children, arrowVariant, bulletsVariant, w, bulletsInside }: SliderProps) => {
+const Slider = ({
+  children,
+  arrowVariant,
+  bulletsVariant,
+  w,
+  bulletsInside,
+  borderRadius = theme.primary.radius.default,
+}: SliderProps) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
 
   return (
-    <Box pos="relative">
+    <Box w="fit-content" pos="relative">
       <Flex>
         {arrowVariant && <ArrowLeft variant={arrowVariant} ref={navigationPrevRef} />}
-        <Box borderRadius="lg" overflow="hidden" w={w}>
+        <Box borderRadius={borderRadius} overflow="hidden" w={w}>
           <Swiper
             pagination={{ enabled: true, clickable: true, el: '.swiper-pagination', type: 'bullets' }}
             draggable
