@@ -1,15 +1,16 @@
 import { createPortal } from 'react-dom';
-import SwiperCore, { Keyboard, FreeMode, Navigation, Thumbs } from 'swiper';
+import SwiperCore, { FreeMode, Navigation, Thumbs } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 /* eslint-disable import/no-unresolved */
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 /* eslint-enable import/no-unresolved */
-import { Box } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { Box, Button } from '@chakra-ui/react';
+import { useEffect, useRef, useState } from 'react';
 import MyImage from '../MyImage/MyImage';
+import ArrowRightIcon from '../../assets/icons/arrow-right.svg';
+import ArrowLeftIcon from '../../assets/icons/arrow-left.svg';
 import ImageType from '../../types/ImageType';
 
 type LightboxProps = {
@@ -22,6 +23,8 @@ SwiperCore.use([Navigation]);
 
 const Lightbox = ({ photos, initialPhoto, onClose }: LightboxProps) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
 
   useEffect(() => {
     const keyDownHandler = (event: KeyboardEvent) => {
@@ -73,18 +76,24 @@ const Lightbox = ({ photos, initialPhoto, onClose }: LightboxProps) => {
         onClick={onClose}
       />
       <Swiper
-        style={
-          {
-            '--swiper-navigation-color': '#fff',
-            '--swiper-pagination-color': '#fff',
-          } as React.CSSProperties
-        }
-        loop
         spaceBetween={10}
-        navigation
+        navigation={{
+          prevEl: navigationPrevRef.current,
+          nextEl: navigationNextRef.current,
+          enabled: true,
+        }}
+        loop
+        onBeforeInit={(swiper) => {
+          /* eslint-disable no-param-reassign, @typescript-eslint/ban-ts-comment */
+          // @ts-expect-error
+          swiper.params.navigation.prevEl = navigationPrevRef.current;
+          // @ts-expect-error
+          swiper.params.navigation.nextEl = navigationNextRef.current;
+          /* eslint-enable no-param-reassign, @typescript-eslint/ban-ts-comment */
+        }}
         initialSlide={initialPhoto}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs, Keyboard]}
+        modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
         {photos.map((photo, index) => (
@@ -95,6 +104,40 @@ const Lightbox = ({ photos, initialPhoto, onClose }: LightboxProps) => {
             </Box>
           </SwiperSlide>
         ))}
+        <Button
+          pos="fixed"
+          right={0}
+          zIndex={1}
+          h="100vh"
+          w="150px"
+          top="50%"
+          transform="translateY(-50%)"
+          variant="unstyled"
+          className="swiper-button-next"
+          color="white"
+          pr="16px"
+          ref={navigationNextRef}
+          display="flex"
+          justifyContent="end"
+        >
+          <ArrowRightIcon height={30} width={30} />
+        </Button>
+        <Button
+          pos="fixed"
+          left={0}
+          zIndex={1}
+          h="100vh"
+          w="150px"
+          top="50%"
+          transform="translateY(-50%)"
+          variant="unstyled"
+          className="swiper-button-prev"
+          ref={navigationPrevRef}
+          color="white"
+          pl="16px"
+        >
+          <ArrowLeftIcon height={30} width={30} />
+        </Button>
       </Swiper>
       <Swiper
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -103,6 +146,7 @@ const Lightbox = ({ photos, initialPhoto, onClose }: LightboxProps) => {
         touchRatio={0.2}
         slidesPerView={10}
         watchSlidesProgress
+        centerInsufficientSlides
         freeMode
         modules={[FreeMode, Navigation, Thumbs]}
         className="thumbs-slider"
@@ -110,7 +154,7 @@ const Lightbox = ({ photos, initialPhoto, onClose }: LightboxProps) => {
         {photos.map((photo, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <SwiperSlide key={index}>
-            <MyImage src={photo.url} width="150px" height="100px" alt={photo.alternativeText} objectFit="contain" />
+            <MyImage src={photo.url} width="150px" height="100px" alt={photo.alternativeText} objectFit="cover" />
           </SwiperSlide>
         ))}
       </Swiper>

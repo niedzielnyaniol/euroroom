@@ -14,7 +14,7 @@ const getStyles = (variant: Variant) => {
       boxShadow: 'md',
       h: '460px',
       minWidth: '60px',
-      borderRightRadius: 'none',
+      borderLeftRadius: 'none',
       mt: '30px',
       _hover: { boxShadow: 'xl', bg: 'white' },
     };

@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from 'react';
+import { ReactNode, useState } from 'react';
 import { Box, Center, Flex } from '@chakra-ui/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // eslint-disable-next-line import/no-unresolved
@@ -28,13 +28,13 @@ const Slider = ({
   bulletsInside,
   borderRadius = theme.primary.radius.default,
 }: SliderProps) => {
-  const navigationPrevRef = useRef(null);
-  const navigationNextRef = useRef(null);
+  const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
+  const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
 
   return (
     <Box pos="relative">
       <Flex>
-        {arrowVariant && <ArrowLeft variant={arrowVariant} ref={navigationPrevRef} />}
+        {arrowVariant && <ArrowLeft variant={arrowVariant} ref={(node) => setPrevEl(node)} />}
         <Box borderRadius={borderRadius} overflow="hidden" w={w}>
           <Swiper
             className={classNames({
@@ -51,16 +51,16 @@ const Slider = ({
             loop
             modules={[Pagination, Navigation]}
             navigation={{
-              prevEl: navigationPrevRef.current,
-              nextEl: navigationNextRef.current,
+              prevEl,
+              nextEl,
               enabled: true,
             }}
-            onBeforeInit={(swiper) => {
+            onInit={(swiper) => {
               /* eslint-disable no-param-reassign, @typescript-eslint/ban-ts-comment */
               // @ts-expect-error
-              swiper.params.navigation.prevEl = navigationPrevRef.current;
+              swiper.params.navigation.prevEl = prevEl?.current;
               // @ts-expect-error
-              swiper.params.navigation.nextEl = navigationNextRef.current;
+              swiper.params.navigation.nextEl = nextEl?.current;
               /* eslint-enable no-param-reassign, @typescript-eslint/ban-ts-comment */
             }}
           >
@@ -70,7 +70,7 @@ const Slider = ({
             ))}
           </Swiper>
         </Box>
-        {arrowVariant && <ArrowRight variant={arrowVariant} ref={navigationNextRef} />}
+        {arrowVariant && <ArrowRight variant={arrowVariant} ref={(node) => setNextEl(node)} />}
       </Flex>
       {bulletsVariant && (
         <Center
