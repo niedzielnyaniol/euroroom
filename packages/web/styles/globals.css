@@ -58,3 +58,19 @@ a {
   transform: translateX(-50%);
   z-index: 1;
 }
+
+.thumbs-slider {
+  margin-top: 25px;
+}
+
+.thumbs-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+  filter: brightness(0.5);
+  cursor: pointer;
+}
+
+.thumbs-slider .swiper-slide-thumb-active {
+  cursor: auto;
+  filter: none;
+}
