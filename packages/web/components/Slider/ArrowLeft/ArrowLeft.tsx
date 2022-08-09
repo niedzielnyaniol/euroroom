@@ -32,6 +32,8 @@ const getStyles = (variant: Variant) => {
       top: '50%',
       transform: 'translateY(-50%)',
       bg: 'blackAlpha.400',
+      color: 'white',
+      _hover: { bg: 'blackAlpha.700' },
     };
   }
 
