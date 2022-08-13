@@ -33,6 +33,7 @@ const Services = ({ amenities, services }: ServicesProps) => (
 
           return (
             <Service
+              id={id}
               order={order}
               variant={isOdd ? 'reverse' : undefined}
               key={id}

@@ -1,4 +1,5 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
+import { Trans } from '@lingui/react';
 import Bubbles from '../../../assets/backgrounds/bubbles.svg';
 import Contact from '../../../types/Contact';
 import SocialMedia from '../../SocialMedia';
@@ -11,7 +12,7 @@ const ContactCard = ({ email, mainAddress, phoneNumber, links }: ContactCardProp
     <Box pos="absolute" color="white" p="28px 36px">
       <Heading>Euro-Room Hostel</Heading>
       <Text fontWeight={600} m="8px 0 36px">
-        Contact information
+        <Trans id="Contact information" />
       </Text>
       <VCard variant="small" email={email} mainAddress={mainAddress} phoneNumber={phoneNumber} />
     </Box>

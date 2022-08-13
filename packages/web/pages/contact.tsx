@@ -4,9 +4,11 @@ import ContactType from '../types/Contact';
 import Payment from '../types/Payment';
 import { get } from '../utils/api';
 
-export const getStaticProps: GetStaticProps = async (context) => {
+type ContactPageProps = ContactType & { paymentInfo: Payment };
+
+export const getStaticProps: GetStaticProps<ContactPageProps> = async (context) => {
   const { data } = await get<ContactType>('contact', context.locale, ['mainAddress.markerPosition', 'links']);
-  const { data: paymentInfo } = await get<ContactType>('payment-info', context.locale);
+  const { data: paymentInfo } = await get<Payment>('payment-info', context.locale);
 
   if (!data) {
     return {
@@ -18,9 +20,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: { ...data, paymentInfo },
   };
 };
-
-type ContactPageProps = ContactType & { paymentInfo: Payment };
-
 const ContactPage = ({ email, mainAddress, phoneNumber, links, paymentInfo }: ContactPageProps) => (
   <Contact paymentInfo={paymentInfo} email={email} mainAddress={mainAddress} phoneNumber={phoneNumber} links={links} />
 );

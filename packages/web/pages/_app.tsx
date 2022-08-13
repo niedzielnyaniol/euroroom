@@ -4,6 +4,7 @@ import { Box, ChakraProvider } from '@chakra-ui/react';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
 import { en, pl } from 'make-plural/plurals';
+import { useRef } from 'react';
 import theme from '../styles/theme';
 import { messages as plMessages } from '../locales/pl/messages.js';
 import { messages as enMessages } from '../locales/en/messages.js';
@@ -20,7 +21,12 @@ i18n.load({
 });
 
 const MyApp = ({ Component, pageProps, router: { locale } }: AppProps) => {
-  i18n.activate(locale || 'pl');
+  const firstRender = useRef(true);
+
+  if (firstRender.current || i18n.locale !== locale) {
+    i18n.activate(locale || 'pl');
+    firstRender.current = false;
+  }
 
   return (
     <ChakraProvider theme={theme}>

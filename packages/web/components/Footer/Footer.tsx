@@ -55,7 +55,7 @@ const Footer = () => {
               <Trans id="Useful links" />
             </HeaderTitle>
             <SimpleGrid columns={2} spacing={8} mt="80px">
-              <FooterLink href={ROUTES.aboutUs.route}>{t`About us`}</FooterLink>
+              <FooterLink href={ROUTES.index.route}>{t`Home`}</FooterLink>
               <FooterLink href={ROUTES.contact.route}>{t`Contact`}</FooterLink>
               <FooterLink href={ROUTES.rooms.route}>{t`Rooms`}</FooterLink>
               <FooterLink href={ROUTES.services.route}>{t`Service`}</FooterLink>

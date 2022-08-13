@@ -55,6 +55,14 @@
       },
       "type": "richtext",
       "required": true
+    },
+    "richDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
     }
   }
 }

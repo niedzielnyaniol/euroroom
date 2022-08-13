@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
-import Services, { ServicesProps } from '../components/Services';
-import { get } from '../utils/api';
+import Services, { ServicesProps } from '../../components/Services';
+import { get } from '../../utils/api';
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps<ServicesProps> = async (context) => {
   const { data } = await get<ServicesProps>('service-page', context.locale, [
     'services.images',
     'services.icon',

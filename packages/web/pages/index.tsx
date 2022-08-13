@@ -19,7 +19,7 @@ type RequestProps = {
 
 type IndexProps = Omit<RequestProps, 'favorite_rooms'> & { favoriteRooms: RequestProps['favorite_rooms'] };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps<IndexProps> = async (context) => {
   const { data } = await get<RequestProps>('index', context.locale, [
     'hero.image',
     'hotelCard.image',

@@ -7,10 +7,6 @@ const ROUTES = {
     id: 'rooms',
     route: '/rooms',
   },
-  aboutUs: {
-    id: 'about us',
-    route: '/about-us',
-  },
   contact: {
     id: 'contact',
     route: '/contact',

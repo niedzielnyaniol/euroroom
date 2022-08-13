@@ -1,17 +1,21 @@
 import dynamic from 'next/dynamic';
-import { Box, Center, Divider, Flex, HStack, Text } from '@chakra-ui/react';
+import { Box, Button, Center, Divider, Flex, HStack, Text } from '@chakra-ui/react';
+import { Trans } from '@lingui/react';
 import ServiceType from '../../../types/Service';
 import MyImage from '../../MyImage/MyImage';
 import theme from '../../../config/theme';
+import ArrowIcon from '../../../assets/icons/arrow.svg';
+import MyLink from '../../MyLink';
+import ROUTES from '../../../config/routes';
 
 const Slider = dynamic(() => import('../../Slider'));
 
-type ServiceProps = Omit<ServiceType, 'id'> & {
+type ServiceProps = Omit<ServiceType, 'richDescription'> & {
   order?: 'first' | 'last';
   variant?: 'reverse';
 };
 
-const Service = ({ images, name, icon, description, variant, order }: ServiceProps) => {
+const Service = ({ images, name, icon, description, variant, order, id }: ServiceProps) => {
   const isReversed = variant === 'reverse';
   const isFirst = order === 'first';
   const isLast = order === 'last';
@@ -29,8 +33,8 @@ const Service = ({ images, name, icon, description, variant, order }: ServicePro
         overflow="hidden"
       >
         <Slider borderRadius="none" arrowVariant="inside" bulletsInside bulletsVariant="white" w={645}>
-          {images.map(({ id, alternativeText, url }) => (
-            <Box h="442px" key={id} pos="relative">
+          {images.map(({ id: imageId, alternativeText, url }) => (
+            <Box h="442px" key={imageId} pos="relative">
               <Box
                 bgGradient="linear(to-b, blackAlpha.50, blackAlpha.400, blackAlpha.600)"
                 pos="absolute"
@@ -46,18 +50,40 @@ const Service = ({ images, name, icon, description, variant, order }: ServicePro
         </Slider>
       </Box>
       <Center flex="1">
-        <Box w="410px">
-          <HStack gap="16px" mb="24px">
+        <Flex flexDir="column" w="410px">
+          <HStack flexDir={isReversed ? 'row-reverse' : undefined} gap="16px" mb="24px">
             <MyImage width="44px" height="44px" src={icon.url} alt={icon.alternativeText} />
             <Text fontSize="3xl" fontWeight={600} textTransform="uppercase">
               {name}
             </Text>
           </HStack>
           <Divider />
-          <Text mt="30px" color={theme.primary.colors.lightFont}>
+          <Text align={isReversed ? 'right' : undefined} mt="30px" color={theme.primary.colors.lightFont}>
             {description}
           </Text>
-        </Box>
+          <Button
+            as="span"
+            cursor="pointer"
+            mt="54px"
+            textTransform="uppercase"
+            colorScheme="white"
+            color={theme.primary.colors.primary}
+            p="23px 33px"
+            borderRadius={theme.primary.radius.default}
+            border="1px solid"
+            borderColor={theme.primary.colors.primary}
+            fontSize="larger"
+            ml={isReversed ? 'auto' : undefined}
+            mr={isReversed ? undefined : 'auto'}
+          >
+            <MyLink href={`${ROUTES.services.route}/${id}`}>
+              <HStack as="span" gap="12px">
+                <Trans id="View details" />
+                <ArrowIcon width="33px" />
+              </HStack>
+            </MyLink>
+          </Button>
+        </Flex>
       </Center>
     </Flex>
   );
