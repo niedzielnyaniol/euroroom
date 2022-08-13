@@ -10,7 +10,7 @@ type DescriptionProps = {
 const Description = ({ children, name, align }: DescriptionProps) => (
   <Box>
     <Heading textAlign={align}>{name}</Heading>
-    <Text textAlign={align} marginTop="36px">
+    <Text textAlign={align} mt="36px">
       <Marked>{children}</Marked>
     </Text>
   </Box>

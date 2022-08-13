@@ -58,14 +58,14 @@ const RoomDetail = ({
       borderRadius="lg"
       overflow="hidden"
       h="100%"
-      position="relative"
+      pos="relative"
     >
-      <Box position="relative" w="100%" h={isTransparent ? '100%' : '294px'} overflow="hidden">
+      <Box pos="relative" w="100%" h={isTransparent ? '100%' : '294px'} overflow="hidden">
         <MyImage src={mainPhoto.url} alt={mainPhoto.alternativeText} layout="fill" objectFit="cover" />
         {isTransparent && (
           <Box
             bgGradient="linear(to-b, blackAlpha.50, blackAlpha.400, blackAlpha.600)"
-            position="absolute"
+            pos="absolute"
             top={0}
             left={0}
             w="100%"

@@ -14,6 +14,7 @@ import VCard from '../VCard';
 import HostelWorldLogo from '../../assets/logos/hostel-world.svg';
 import BookingComLogo from '../../assets/logos/booking-com.svg';
 import theme from '../../config/theme';
+import SocialMedia from '../SocialMedia';
 
 type ContactInfo = Omit<Contact, 'locations'>;
 
@@ -32,21 +33,28 @@ const Footer = () => {
     <Box pt="77px" backgroundColor={theme.primary.colors.primaryDark} color="white" fontSize="18px" fontWeight={600}>
       <Container>
         <Grid templateColumns="1fr 1fr 1fr" columnGap={24} pb="55px">
-          <VStack spacing="68px" align="start" marginTop="-12px">
-            <Image src="/er-logo.webp" width={130} height={50} objectFit="contain" />
+          <Box>
+            <VStack spacing="68px" align="start" mt="-12px">
+              <Image src="/er-logo.webp" width={130} height={50} objectFit="contain" />
+              {contactInfo && (
+                <VCard
+                  email={contactInfo.email}
+                  mainAddress={contactInfo.mainAddress}
+                  phoneNumber={contactInfo.phoneNumber}
+                />
+              )}
+            </VStack>
             {contactInfo && (
-              <VCard
-                email={contactInfo.email}
-                mainAddress={contactInfo.mainAddress}
-                phoneNumber={contactInfo.phoneNumber}
-              />
+              <Box mt="30px">
+                <SocialMedia links={contactInfo.links} />
+              </Box>
             )}
-          </VStack>
+          </Box>
           <div>
             <HeaderTitle>
               <Trans id="Useful links" />
             </HeaderTitle>
-            <SimpleGrid columns={2} spacing={8} marginTop="80px">
+            <SimpleGrid columns={2} spacing={8} mt="80px">
               <FooterLink href={ROUTES.aboutUs.route}>{t`About us`}</FooterLink>
               <FooterLink href={ROUTES.contact.route}>{t`Contact`}</FooterLink>
               <FooterLink href={ROUTES.rooms.route}>{t`Rooms`}</FooterLink>
@@ -62,14 +70,14 @@ const Footer = () => {
                   <HeaderTitle>
                     <Trans id="Check reviews at" />
                   </HeaderTitle>
-                  <VStack align="start" spacing={8} marginTop="80px">
+                  <VStack align="start" spacing={8} mt="80px">
                     <a
                       href={contactInfo.links.bookingReviews}
                       style={{ cursor: 'pointer' }}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <BookingComLogo />
+                      <BookingComLogo height={47} />
                     </a>
                     <a
                       href={contactInfo.links.hostelWorldReviews}

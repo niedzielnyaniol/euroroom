@@ -33,7 +33,7 @@ const Service = ({ images, name, icon, description, variant, order }: ServicePro
             <Box h="442px" key={id} pos="relative">
               <Box
                 bgGradient="linear(to-b, blackAlpha.50, blackAlpha.400, blackAlpha.600)"
-                position="absolute"
+                pos="absolute"
                 top={0}
                 left={0}
                 w="100%"

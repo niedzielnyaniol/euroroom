@@ -19,9 +19,9 @@ type FiltersProps = {
 };
 
 const Filters = ({ maxGuests, maxBeds, onChange, filters }: FiltersProps) => (
-  <Flex padding={8} gap="16px" backgroundColor="white" borderRadius={12} boxShadow="md">
+  <Flex p={8} gap="16px" backgroundColor="white" borderRadius={12} boxShadow="md">
     <Flex border="1px solid" borderColor={theme.primary.colors.defaultBorder} borderRadius="lg">
-      <Box padding="15px 20px" borderRight="1px solid" borderColor={theme.primary.colors.defaultBorder}>
+      <Box p="15px 20px" borderRight="1px solid" borderColor={theme.primary.colors.defaultBorder}>
         <NumberedInput
           label={t`Guest`}
           onChange={(_, guestNumber) => onChange({ ...filters, minGuests: guestNumber })}
@@ -29,7 +29,7 @@ const Filters = ({ maxGuests, maxBeds, onChange, filters }: FiltersProps) => (
           value={filters.minGuests}
         />
       </Box>
-      <Box padding="15px 20px">
+      <Box p="15px 20px">
         <NumberedInput
           label={t`Beds`}
           onChange={(_, bedsNumber) => onChange({ ...filters, minBeds: bedsNumber })}
@@ -38,7 +38,7 @@ const Filters = ({ maxGuests, maxBeds, onChange, filters }: FiltersProps) => (
         />
       </Box>
     </Flex>
-    <Flex padding="15px 20px" border="1px solid" borderColor={theme.primary.colors.defaultBorder} borderRadius="lg">
+    <Flex p="15px 20px" border="1px solid" borderColor={theme.primary.colors.defaultBorder} borderRadius="lg">
       <Checkbox
         colorScheme="red"
         onChange={(e: ChangeEvent<HTMLInputElement>) => onChange({ ...filters, privateBathroom: e.target.checked })}

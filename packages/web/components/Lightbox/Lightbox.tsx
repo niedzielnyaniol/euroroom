@@ -43,7 +43,7 @@ const Lightbox = ({ photos, initialPhoto, onClose }: LightboxProps) => {
   }, []);
 
   return createPortal(
-    <Box position="fixed" top="0" left="0" w="100%" h="100%" zIndex={99999} bg="blackAlpha.800">
+    <Box pos="fixed" top="0" left="0" w="100%" h="100%" zIndex={99999} bg="blackAlpha.800">
       <Box
         _before={{
           position: 'absolute',

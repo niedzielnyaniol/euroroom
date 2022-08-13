@@ -22,13 +22,13 @@ const Header = () => {
   return (
     <Box
       as="header"
-      position="sticky"
+      pos="sticky"
       top="0"
       h="88px"
       borderBottom="1px solid"
       borderColor={borderColor}
       zIndex={10000}
-      background="white"
+      bg="white"
     >
       <Container>
         <Grid templateColumns="1fr auto 1fr" p="19px 0">

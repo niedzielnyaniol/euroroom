@@ -26,8 +26,8 @@ const RangeCalendar = () => (
     </Flex>
     <Button
       size="md"
-      height="auto"
-      width="270px"
+      h="auto"
+      w="270px"
       borderRadius={0}
       borderTopRightRadius={20}
       bgColor="red.700"

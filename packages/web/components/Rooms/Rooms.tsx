@@ -28,12 +28,12 @@ const Rooms = ({ rooms }: RoomsProps) => {
   const filteredRooms = rooms.filter(filterRooms);
 
   return (
-    <Box marginBottom="120px">
-      <Banner variant="big">
+    <Box mb="120px">
+      <Banner>
         <Trans id="rooms" />
       </Banner>
       <Container>
-        <Box marginTop="-16px" marginBottom="80px">
+        <Box mt="-16px" mb="80px">
           <Filters
             filters={filters}
             onChange={setFilter}
@@ -41,7 +41,7 @@ const Rooms = ({ rooms }: RoomsProps) => {
             maxBeds={Math.max(...rooms.map((el) => el.bedInfo.numberOfBeds))}
           />
         </Box>
-        <Heading size="xl" textTransform="uppercase" marginBottom="78px">
+        <Heading size="xl" textTransform="uppercase" mb="78px">
           <Trans id="Discover our rooms" />
         </Heading>
         {filteredRooms.length > 0 ? (

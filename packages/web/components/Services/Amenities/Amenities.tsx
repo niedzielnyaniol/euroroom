@@ -11,7 +11,7 @@ type AmenitiesProps = {
 const Amenities = ({ amenities }: AmenitiesProps) => (
   <Box p="90px 0" bg={theme.primary.colors.defaultSection}>
     <Container>
-      <Grid templateColumns="repeat(4, 1fr)" gap="54px 100px" width="fit-content" m="0 auto">
+      <Grid templateColumns="repeat(4, 1fr)" gap="54px 100px" w="fit-content" m="0 auto">
         {amenities.map(({ id, name, image }) => (
           <VStack key={id}>
             <MyImage width={48} height={48} objectFit="contain" src={image.url} alt={image.alternativeText} />

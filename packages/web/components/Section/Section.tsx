@@ -14,7 +14,7 @@ type SectionProps = {
 
 const Section = ({ children, title, href, as = 'section', hrefTitle }: SectionProps) => (
   <Box as={as}>
-    <HStack width="100%" justify="space-between">
+    <HStack w="100%" justify="space-between">
       <Heading textTransform="uppercase">{title}</Heading>
       {href && hrefTitle && (
         <MyLink href={href}>

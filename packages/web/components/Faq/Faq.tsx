@@ -21,7 +21,7 @@ const Faq = ({ questions, paymentInfo }: FaqProps) => (
     <Banner>
       <Trans id="Faq" />
     </Banner>
-    <Box p="60px 0 120px">
+    <Box p="60px 0 120px" minH="700px">
       <Container>
         <Accordion>
           <AccordionItem>

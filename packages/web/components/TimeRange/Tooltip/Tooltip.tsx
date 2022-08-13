@@ -18,14 +18,14 @@ const Tooltip = ({ children }: TooltipProps) => (
       borderColor: 'var(--chakra-colors-blackAlpha-800) transparent transparent transparent',
       bottom: '-10px',
       content: '""',
-      marginLeft: '-0.5em',
+      ml: '-0.5em',
       transition: 'all .65s cubic-bezier(.84,-0.18,.31,1.26), opacity .65s .5s',
     }}
     borderRadius="md"
     bg="blackAlpha.800"
     color="white"
     fontSize="sm"
-    padding="10px 20px"
+    p="10px 20px"
     display="inline-block"
   >
     {children}

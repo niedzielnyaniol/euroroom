@@ -14,7 +14,7 @@ export type HeroSectionProps = {
 
 const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps) => (
   <Container>
-    <Grid position="relative" templateColumns="1fr auto" columnGap="83px">
+    <Grid pos="relative" templateColumns="1fr auto" columnGap="83px">
       <Box mt="128px">
         <Text color={theme.primary.colors.primary} fontSize="xl" fontWeight={600}>
           {welcomeMsg}
@@ -36,7 +36,7 @@ const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps
         height={764}
         style={{ borderBottomLeftRadius: '30px' }}
       />
-      <Box position="absolute" bottom="140px">
+      <Box pos="absolute" bottom="140px">
         <RangeCalendar />
       </Box>
     </Grid>

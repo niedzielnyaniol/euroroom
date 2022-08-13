@@ -25,7 +25,7 @@ const MainAmenities = ({
   squareMeters,
 }: MainAmenitiesProps) => (
   <Center>
-    <HStack padding={14} gap="16px" borderRadius={12} columnGap="60px">
+    <HStack p={14} gap="16px" borderRadius={12} columnGap="60px">
       <IconTile icon={<PersonIcon />}>
         <Plural value={maxGuests} one="# Person" other="# Persons" />
       </IconTile>

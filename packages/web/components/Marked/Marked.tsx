@@ -12,7 +12,7 @@ const Marked = ({ children }: MarkedProps) => {
   useEffect(() => setDescription(marked(children.replaceAll(/\n/g, '\n<br>'))), [children]);
 
   /* eslint-disable-next-line react/no-danger */
-  return <Text dangerouslySetInnerHTML={{ __html: description }} />;
+  return <Text as="span" dangerouslySetInnerHTML={{ __html: description }} />;
 };
 
 export default Marked;

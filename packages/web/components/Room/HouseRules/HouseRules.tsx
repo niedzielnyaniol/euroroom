@@ -45,7 +45,9 @@ const HouseRules = ({ checkInOut, rules }: HouseRulesProps) => (
                 fontSize="large"
                 icon={<MyImage width="48px" height="48px" src={icon.url} alt={icon.alternativeText} />}
               >
-                <Text fontWeight={600}>{name}</Text>
+                <Text as="span" fontWeight={600}>
+                  {name}
+                </Text>
               </LabeledIcon>
               <Marked>{description}</Marked>
             </Box>

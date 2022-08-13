@@ -24,7 +24,7 @@ const Gallery = ({ photos }: GalleryProps) => {
         <GridItem
           onClick={() => setCurrentImage(0)}
           cursor="pointer"
-          position="relative"
+          pos="relative"
           rowSpan={2}
           colSpan={2}
           borderRadius={theme.primary.radius.default}
@@ -35,7 +35,7 @@ const Gallery = ({ photos }: GalleryProps) => {
         {photos[1] && (
           <GridItem
             onClick={() => setCurrentImage(1)}
-            position="relative"
+            pos="relative"
             cursor="pointer"
             colSpan={2}
             borderRadius={theme.primary.radius.default}
@@ -47,7 +47,7 @@ const Gallery = ({ photos }: GalleryProps) => {
         {photos[2] && (
           <GridItem
             onClick={() => setCurrentImage(2)}
-            position="relative"
+            pos="relative"
             cursor="pointer"
             colSpan={1}
             borderRadius={theme.primary.radius.default}
@@ -60,14 +60,14 @@ const Gallery = ({ photos }: GalleryProps) => {
           <GridItem
             onClick={() => setCurrentImage(3)}
             cursor="pointer"
-            position="relative"
+            pos="relative"
             colSpan={1}
             borderRadius={theme.primary.radius.default}
             overflow="hidden"
           >
             <MyImage layout="fill" src={photos[3].url} alt={photos[3].alternativeText} objectFit="cover" />
             {photos.length > NUMBER_OF_PHOTOS && (
-              <Center position="absolute" width="100%" height="100%" background="blackAlpha.600">
+              <Center pos="absolute" w="100%" h="100%" bg="blackAlpha.600">
                 <Text color="white" fontSize="larger">
                   +{photos.length - NUMBER_OF_PHOTOS}
                 </Text>

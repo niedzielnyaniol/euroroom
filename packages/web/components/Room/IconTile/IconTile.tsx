@@ -10,7 +10,7 @@ const IconTile = ({ children, icon }: IconTileProps) => {
   const theme = useTheme();
 
   return (
-    <Center boxShadow="base" borderRadius="md" display="inline-flex" width="121px" height="121px">
+    <Center boxShadow="base" borderRadius="md" display="inline-flex" w="121px" h="121px">
       <VStack spacing={2}>
         {cloneElement(icon, { width: 48, height: 48, color: theme.colors.red[600] })}
         <Text textAlign="center" fontSize="larger" fontWeight={900}>

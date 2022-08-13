@@ -7,7 +7,7 @@ type PlaceProps = Omit<PlaceNearby, 'id' | 'link'>;
 
 const Place = ({ distance, image, name }: PlaceProps) => (
   <Box bg="white" h="100%" borderRadius="lg" boxShadow="base" transition="0.3s" _hover={{ boxShadow: 'md' }}>
-    <Box position="relative" overflow="hidden" borderTopRadius="lg" h="calc(100% - 74px)">
+    <Box pos="relative" overflow="hidden" borderTopRadius="lg" h="calc(100% - 74px)">
       <MyImage src={image.url} alt={image.alternativeText} layout="fill" objectFit="cover" />
     </Box>
     <Flex align="end" p="20px 25px" bg="white" borderBottomRadius="lg">

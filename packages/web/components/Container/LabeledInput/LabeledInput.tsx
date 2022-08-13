@@ -1,10 +1,8 @@
-import { Input, Select, useTheme } from '@chakra-ui/react';
+import { Box, Input, Select, useTheme } from '@chakra-ui/react';
 import { Plural } from '@lingui/macro';
-import classNames from 'classnames';
 import { ChangeEventHandler } from 'react';
 import { Calendar, TwoUsers } from 'react-iconly';
 import LabeledIcon from '../../LabeledIcon';
-import styles from './LabelInput.module.css';
 
 type LabeledInputProps = {
   label: string;
@@ -28,7 +26,7 @@ const LabeledInput = ({ label, type, value, onChange, maxGuests, className }: La
   const theme = useTheme();
 
   return (
-    <div className={classNames(styles.container, className)}>
+    <Box display="flex" flexDir="column" rowGap="8px" className={className}>
       <LabeledIcon
         fontSize="large"
         icon={
@@ -46,7 +44,6 @@ const LabeledInput = ({ label, type, value, onChange, maxGuests, className }: La
           type="date"
           fontSize="larger"
           variant="unstyled"
-          className={styles.select}
           value={value}
           onChange={onChange as ChangeEventHandler<HTMLInputElement>}
         />
@@ -69,7 +66,7 @@ const LabeledInput = ({ label, type, value, onChange, maxGuests, className }: La
           })}
         </Select>
       )}
-    </div>
+    </Box>
   );
 };
 

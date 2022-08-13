@@ -10,14 +10,14 @@ export type HotelCardProps = {
 };
 
 const HotelCard = ({ description, title, benefits }: HotelCardProps) => (
-  <Box background={theme.primary.colors.defaultSection} w="100%" padding="100px 0 160px">
+  <Box bg={theme.primary.colors.defaultSection} w="100%" p="100px 0 160px">
     <Center>
       <Box w="990px" mt="40px" mb="100px">
         <Benefits benefits={benefits} />
       </Box>
     </Center>
     <Center>
-      <Box background="white" w="1070px" p="0 40px 40px" borderRadius={theme.primary.radius.default}>
+      <Box bg="white" w="1070px" p="0 40px 40px" borderRadius={theme.primary.radius.default}>
         <Center p="40px">
           <Box w="560px">
             <Description name={title} align="center">
@@ -26,7 +26,7 @@ const HotelCard = ({ description, title, benefits }: HotelCardProps) => (
           </Box>
         </Center>
         <Center mt="20px">
-          <Box borderRadius={theme.primary.radius.default} overflow="hidden" w="960px" position="relative" mb="-100px">
+          <Box borderRadius={theme.primary.radius.default} overflow="hidden" w="960px" pos="relative" mb="-100px">
             <iframe
               width="960"
               height="540"
