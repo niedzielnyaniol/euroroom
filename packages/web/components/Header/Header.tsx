@@ -65,6 +65,12 @@ const Header = () => {
               <MyLink href={ROUTES.services.route}>{t`Services`}</MyLink>
             </Text>
             <Text
+              color={ROUTES.faq.route === route ? 'black' : themeConfig.primary.colors.lightFont}
+              fontWeight={ROUTES.faq.route === route ? '900' : undefined}
+            >
+              <MyLink href={ROUTES.faq.route}>{t`FAQ`}</MyLink>
+            </Text>
+            <Text
               color={ROUTES.contact.route === route ? 'black' : themeConfig.primary.colors.lightFont}
               fontWeight={ROUTES.contact.route === route ? '900' : undefined}
             >

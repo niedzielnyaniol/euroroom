@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Heading } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import { Trans, useLingui } from '@lingui/react';
 import dynamic from 'next/dynamic';
@@ -25,6 +25,9 @@ const Address = ({
   return (
     <Box>
       <DynamicMap position={markerPosition} />
+      <Heading fontSize="md" mt="8px">
+        <Trans id="Address" />:
+      </Heading>
       <Box>
         {formatAddress({
           locale: lingui.i18n._locale,

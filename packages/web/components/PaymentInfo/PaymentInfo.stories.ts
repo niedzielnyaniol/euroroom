@@ -17,10 +17,5 @@ Default.args = {
     postCode: '98823',
     buildingNumber: '497',
     floorLevel: 3,
-    markerPosition: {
-      id: 1,
-      lat: 50,
-      lng: 25,
-    },
   },
 };

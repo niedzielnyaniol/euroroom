@@ -3,6 +3,7 @@ import theme from '../../../config/theme';
 import ImageType from '../../../types/ImageType';
 import Container from '../../Container';
 import MyImage from '../../MyImage/MyImage';
+import RangeCalendar from '../RangeCalendar';
 
 export type HeroSectionProps = {
   title: string;
@@ -35,10 +36,9 @@ const HeroSection = ({ title, description, welcomeMsg, image }: HeroSectionProps
         height={764}
         style={{ borderBottomLeftRadius: '30px' }}
       />
-      {/* Disabled in alpha version
       <Box position="absolute" bottom="140px">
         <RangeCalendar />
-      </Box> */}
+      </Box>
     </Grid>
   </Container>
 );

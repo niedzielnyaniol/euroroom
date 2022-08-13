@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Room from '../../components/Room';
 import CheckInOut from '../../types/CheckInOut';
 import RoomResponse from '../../types/RoomResponse';
-import Rule from '../../types/Rule';
+import Information from '../../types/Information';
 import { get } from '../../utils/api';
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
@@ -11,7 +11,7 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
 });
 type Response = RoomResponse & {
   houseRules: {
-    rules: Rule[];
+    rules: Information[];
     checkInOut: CheckInOut;
   };
 };

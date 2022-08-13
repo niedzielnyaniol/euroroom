@@ -2,7 +2,7 @@ import { Box, Text, VStack } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import theme from '../../../config/theme';
 import CheckInOut from '../../../types/CheckInOut';
-import Rule from '../../../types/Rule';
+import Information from '../../../types/Information';
 import TimeRange from '../../TimeRange';
 import timeToLocale from '../../../utils/timeToLocale';
 import Container from '../../Container';
@@ -12,7 +12,7 @@ import MyImage from '../../MyImage/MyImage';
 import Marked from '../../Marked';
 
 type HouseRulesProps = {
-  rules: Rule[];
+  rules: Information[];
   checkInOut: CheckInOut;
 };
 

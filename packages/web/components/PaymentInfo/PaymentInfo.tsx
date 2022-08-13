@@ -14,9 +14,6 @@ const PaymentInfo = ({ accNumber, accNumberEuro, bankInfo, iban, name, swift, ad
 
   return (
     <Box>
-      <Heading fontSize="2xl">
-        <Trans id="Bank transfer details" />:
-      </Heading>
       <VStack align="start" gap="8px" mt="16px">
         <Box>
           <PaymentLabel label={t`Recipient`}>

@@ -6,7 +6,7 @@ import AmenityType from '../../types/Amenity';
 import BedInfo from '../../types/BedInfo';
 import CheckInOut from '../../types/CheckInOut';
 import ImageType from '../../types/ImageType';
-import Rule from '../../types/Rule';
+import Information from '../../types/Information';
 import { get } from '../../utils/api';
 import Banner from '../Banner';
 import Container from '../Container';
@@ -33,7 +33,7 @@ type RoomProps = {
   description: string;
   amenities: AmenityType[];
   houseRules: {
-    rules: Rule[];
+    rules: Information[];
     checkInOut: CheckInOut;
   };
 };

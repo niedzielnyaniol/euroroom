@@ -4,7 +4,7 @@
   "info": {
     "singularName": "house-rule",
     "pluralName": "house-rules",
-    "displayName": "HouseRule",
+    "displayName": "HouseRules",
     "description": ""
   },
   "options": {
@@ -36,7 +36,7 @@
           "localized": true
         }
       },
-      "component": "house-rules.rule",
+      "component": "info.rule",
       "required": true
     }
   }

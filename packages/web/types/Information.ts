@@ -1,10 +1,10 @@
 import ImageType from './ImageType';
 
-type Rule = {
+type Information = {
   id: number;
   icon: ImageType;
   name: string;
   description: string;
 };
 
-export default Rule;
+export default Information;
