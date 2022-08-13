@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "house_rules",
+  "info": {
+    "singularName": "house-rule",
+    "pluralName": "house-rules",
+    "displayName": "HouseRule",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "checkInOut": {
+      "displayName": "Hours",
+      "type": "component",
+      "repeatable": false,
+      "component": "house-rules.hours",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "rules": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "house-rules.rule",
+      "required": true
+    }
+  }
+}

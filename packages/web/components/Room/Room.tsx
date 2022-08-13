@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react';
 import AddressType from '../../types/Address';
 import AmenityType from '../../types/Amenity';
 import BedInfo from '../../types/BedInfo';
+import CheckInOut from '../../types/CheckInOut';
 import ImageType from '../../types/ImageType';
+import Rule from '../../types/Rule';
 import { get } from '../../utils/api';
 import Banner from '../Banner';
 import Container from '../Container';
@@ -13,6 +15,7 @@ import { RoomDetailProps } from '../RoomDetail';
 import Address from './Address';
 import Amenities from './Amenities';
 import Gallery from './Gallery';
+import HouseRules from './HouseRules';
 import MainAmenities from './MainAmenities';
 import RecommendedRooms from './RecommendedRooms';
 
@@ -29,6 +32,10 @@ type RoomProps = {
   photoSlider: ImageType[];
   description: string;
   amenities: AmenityType[];
+  houseRules: {
+    rules: Rule[];
+    checkInOut: CheckInOut;
+  };
 };
 
 type Rooms = Array<RoomDetailProps & { id: number }>;
@@ -46,6 +53,7 @@ const Room = ({
   description,
   address,
   amenities,
+  houseRules,
 }: RoomProps) => {
   const photos = [mainPhoto].concat(photoSlider);
   const [recommendedRooms, setRecommendedRooms] = useState<Rooms>([]);
@@ -83,7 +91,10 @@ const Room = ({
           />
         </Grid>
         <Divider />
-        <Box mt="40px">{amenities.length > 0 && <Amenities amenities={amenities} />}</Box>
+        <Box m="40px 0">{amenities.length > 0 && <Amenities amenities={amenities} />}</Box>
+      </Container>
+      <HouseRules checkInOut={houseRules.checkInOut} rules={houseRules.rules} />
+      <Container>
         {recommendedRooms.length > 0 && (
           <Box mt="40px" mb="80px">
             <RecommendedRooms rooms={recommendedRooms} />

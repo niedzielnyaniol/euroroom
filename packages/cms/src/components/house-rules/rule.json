@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_house_rules_rules",
+  "info": {
+    "displayName": "rule",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

@@ -1,13 +1,20 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Room from '../../components/Room';
+import CheckInOut from '../../types/CheckInOut';
 import RoomResponse from '../../types/RoomResponse';
+import Rule from '../../types/Rule';
 import { get } from '../../utils/api';
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
   paths: [], // indicates that no page needs be created at build time
   fallback: 'blocking', // indicates the type of fallback
 });
-type Response = RoomResponse;
+type Response = RoomResponse & {
+  houseRules: {
+    rules: Rule[];
+    checkInOut: CheckInOut;
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const { data } = await get<Response>(`rooms/${params?.slug}`, locale, [
@@ -20,6 +27,11 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     'amenities.image',
     'photoSlider',
   ]);
+  const { data: houseRulesData } = await get<Response>('house-rule', locale, [
+    'rules.icon',
+    'checkInOut.checkIn',
+    'checkInOut.checkOut',
+  ]);
 
   if (!data) {
     return {
@@ -28,7 +40,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   }
 
   return {
-    props: data,
+    props: { ...data, houseRules: houseRulesData },
   };
 };
 
@@ -45,8 +57,10 @@ const RoomPage = ({
   pricePerNight,
   id,
   squareMeters,
-}: RoomResponse) => (
+  houseRules,
+}: Response) => (
   <Room
+    houseRules={houseRules}
     id={id}
     bedInfo={bedInfo}
     isBathroomInside={isBathroomInside}

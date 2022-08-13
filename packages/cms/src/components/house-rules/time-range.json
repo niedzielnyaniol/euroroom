@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_house_rules_time_ranges",
+  "info": {
+    "displayName": "timeRange",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "from": {
+      "type": "integer"
+    },
+    "to": {
+      "type": "integer"
+    }
+  }
+}
