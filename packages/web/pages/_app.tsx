@@ -32,7 +32,7 @@ const MyApp = ({ Component, pageProps, router: { locale } }: AppProps) => {
     <ChakraProvider theme={theme}>
       <I18nProvider i18n={i18n}>
         <Header />
-        <Box minH="calc(100vh - 574.5px)">
+        <Box pos="relative" minH="calc(100vh - 574.5px)">
           <Component {...pageProps} />
         </Box>
         <Footer />
