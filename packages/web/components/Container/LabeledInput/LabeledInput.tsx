@@ -1,8 +1,9 @@
 import { Box, Input, Select, useTheme } from '@chakra-ui/react';
 import { Plural } from '@lingui/macro';
 import { ChangeEventHandler } from 'react';
-import { Calendar, TwoUsers } from 'react-iconly';
 import LabeledIcon from '../../LabeledIcon';
+import Calendar from '../../../assets/icons/calendar.svg';
+import TwoUsers from '../../../assets/icons/two-users.svg';
 
 type LabeledInputProps = {
   label: string;
@@ -29,13 +30,7 @@ const LabeledInput = ({ label, type, value, onChange, maxGuests, className }: La
     <Box display="flex" flexDir="column" rowGap="8px" className={className}>
       <LabeledIcon
         fontSize="large"
-        icon={
-          isDate ? (
-            <Calendar primaryColor={theme.colors.gray[500]} />
-          ) : (
-            <TwoUsers primaryColor={theme.colors.gray[500]} />
-          )
-        }
+        icon={isDate ? <Calendar color={theme.colors.gray[500]} /> : <TwoUsers color={theme.colors.gray[500]} />}
       >
         {label}
       </LabeledIcon>

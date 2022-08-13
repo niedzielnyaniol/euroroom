@@ -14,7 +14,7 @@ const ContactCard = ({ email, mainAddress, phoneNumber, links }: ContactCardProp
       <Text fontWeight={600} m="8px 0 36px">
         <Trans id="Contact information" />
       </Text>
-      <VCard variant="small" email={email} mainAddress={mainAddress} phoneNumber={phoneNumber} />
+      <VCard email={email} mainAddress={mainAddress} phoneNumber={phoneNumber} />
     </Box>
     <Bubbles />
     {links && (

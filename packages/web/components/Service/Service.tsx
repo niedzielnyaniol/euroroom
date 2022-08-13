@@ -35,71 +35,73 @@ const Service = ({ images, name, richDescription }: ServiceProps) => {
   return (
     <>
       <Banner>{name}</Banner>
-      <Box m={`10px -${margin}px 0`}>
-        <Swiper
-          loop
-          spaceBetween={10}
-          watchSlidesProgress
-          centeredSlides
-          modules={[Navigation]}
-          slidesPerView={3}
-          navigation={{
-            prevEl,
-            nextEl,
-            enabled: true,
-          }}
-          centerInsufficientSlides
-          onInit={(swiper) => {
-            /* eslint-disable no-param-reassign, @typescript-eslint/ban-ts-comment */
-            // @ts-expect-error
-            swiper.params.navigation.prevEl = prevEl?.current;
-            // @ts-expect-error
-            swiper.params.navigation.nextEl = nextEl?.current;
-            /* eslint-enable no-param-reassign, @typescript-eslint/ban-ts-comment */
-          }}
-        >
-          {images.map(({ alternativeText, id, url }) => (
-            <SwiperSlide key={id}>
-              <Box borderRadius={theme.primary.radius.default} overflow="hidden">
-                <MyImage src={url} width={SLIDER_WIDTH} height="520px" alt={alternativeText} objectFit="cover" />
-              </Box>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <Flex mt="40px" justify="center" gap="28px">
-          <Button
-            _hover={{ color: theme.primary.colors.primary }}
-            pos="relative"
-            variant="unstyled"
-            transform="rotate(180deg)"
-            ref={setPrevEl}
+      <Box maxW="100vw" overflow="hidden">
+        <Box m={`10px -${margin}px 0`}>
+          <Swiper
+            loop
+            spaceBetween={10}
+            watchSlidesProgress
+            centeredSlides
+            modules={[Navigation]}
+            slidesPerView={3}
+            navigation={{
+              prevEl,
+              nextEl,
+              enabled: true,
+            }}
+            centerInsufficientSlides
+            onInit={(swiper) => {
+              /* eslint-disable no-param-reassign, @typescript-eslint/ban-ts-comment */
+              // @ts-expect-error
+              swiper.params.navigation.prevEl = prevEl?.current;
+              // @ts-expect-error
+              swiper.params.navigation.nextEl = nextEl?.current;
+              /* eslint-enable no-param-reassign, @typescript-eslint/ban-ts-comment */
+            }}
           >
-            <Box
-              pos="absolute"
-              top={0}
-              right="-10px"
-              w="40px"
-              h="40px"
-              borderRadius="50%"
-              border="1px solid"
-              borderColor={theme.primary.colors.primary}
-            />
-            <ArrowRight />
-          </Button>
-          <Button _hover={{ color: theme.primary.colors.primary }} pos="relative" variant="unstyled" ref={setNextEl}>
-            <Box
-              pos="absolute"
-              top={0}
-              right="-10px"
-              w="40px"
-              h="40px"
-              borderRadius="50%"
-              border="1px solid"
-              borderColor={theme.primary.colors.primary}
-            />
-            <ArrowRight />
-          </Button>
-        </Flex>
+            {images.map(({ alternativeText, id, url }) => (
+              <SwiperSlide key={id}>
+                <Box borderRadius={theme.primary.radius.default} overflow="hidden">
+                  <MyImage src={url} width={SLIDER_WIDTH} height="520px" alt={alternativeText} objectFit="cover" />
+                </Box>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <Flex mt="40px" justify="center" gap="28px">
+            <Button
+              _hover={{ color: theme.primary.colors.primary }}
+              pos="relative"
+              variant="unstyled"
+              transform="rotate(180deg)"
+              ref={setPrevEl}
+            >
+              <Box
+                pos="absolute"
+                top={0}
+                right="-10px"
+                w="40px"
+                h="40px"
+                borderRadius="50%"
+                border="1px solid"
+                borderColor={theme.primary.colors.primary}
+              />
+              <ArrowRight />
+            </Button>
+            <Button _hover={{ color: theme.primary.colors.primary }} pos="relative" variant="unstyled" ref={setNextEl}>
+              <Box
+                pos="absolute"
+                top={0}
+                right="-10px"
+                w="40px"
+                h="40px"
+                borderRadius="50%"
+                border="1px solid"
+                borderColor={theme.primary.colors.primary}
+              />
+              <ArrowRight />
+            </Button>
+          </Flex>
+        </Box>
       </Box>
       <Container>
         <Grid gap="60px" m="60px 0 120px">
