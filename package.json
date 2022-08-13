@@ -2,7 +2,7 @@
   "name": "euroroom",
   "version": "0.0.0",
   "description": "euroroom headless cms & front",
-  "private": "true",
+  "private": true,
   "scripts": {
     "prepare": "husky install",
     "build": "concurrently \"yarn:build:*\"",
