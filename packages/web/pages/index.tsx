@@ -31,6 +31,7 @@ export const getStaticProps: GetStaticProps<IndexProps> = async (context) => {
     'placesNearby.image',
     'services.images',
     'services.icon',
+    'meta',
   ]);
 
   if (!data) {

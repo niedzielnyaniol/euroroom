@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react';
+import { StyleProps, VStack } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import VcardLine from './VcardLine';
@@ -9,14 +9,14 @@ import Message from '../../assets/icons/envelope.svg';
 import Calling from '../../assets/icons/calling.svg';
 import Home from '../../assets/icons/home.svg';
 
-type VCardProps = Omit<Contact, 'locations'>;
+type VCardProps = Omit<Contact, 'locations'> & Pick<StyleProps, 'alignContent'>;
 
-const VCard = ({ email, mainAddress, phoneNumber }: VCardProps) => {
+const VCard = ({ email, mainAddress, phoneNumber, alignContent = 'start' }: VCardProps) => {
   const lingui = useLingui();
   const locale = lingui.i18n._locale;
 
   return (
-    <VStack rowGap="13px" align="start">
+    <VStack rowGap="13px" align={alignContent}>
       <a href={`mailto:${email}`}>
         <VcardLine icon={<Message />}>{email}</VcardLine>
       </a>

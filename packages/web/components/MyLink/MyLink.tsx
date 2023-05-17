@@ -4,12 +4,14 @@ import { ComponentProps } from 'react';
 
 type MyLinkProps = ComponentProps<typeof Link> & {
   underline?: boolean;
+  wide?: boolean;
   color?: string;
 };
 
-const MyLink = ({ underline, children, ...rest }: MyLinkProps) => (
+const MyLink = ({ underline, children, wide, ...rest }: MyLinkProps) => (
   <Text
     as="span"
+    {...(wide && { display: 'inline-block', width: '100%' })}
     {...(underline && {
       display: 'inline-block',
       pos: 'relative',
@@ -35,7 +37,7 @@ const MyLink = ({ underline, children, ...rest }: MyLinkProps) => (
   >
     <Link {...rest}>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a>{children}</a>
+      <a {...(wide && { style: { display: 'inline-block', width: '100%' } })}>{children}</a>
     </Link>
   </Text>
 );
