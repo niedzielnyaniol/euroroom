@@ -30,7 +30,7 @@ const Header = () => {
       top="0"
       w="100%"
       h={{ xl: '88px' }}
-      borderBottom={{ xl: `1px solid ${borderColor}` }}
+      borderBottom={`1px solid ${borderColor}`}
       zIndex={10000}
       bg="white"
     >

@@ -21,15 +21,20 @@ const HotelCard = ({ description, title, benefits }: HotelCardProps) => {
         </Box>
       </Center>
       <Center>
-        <Box bg="white" w={{ xl: '1070px' }} p={{ xl: '0 40px 40px' }} borderRadius={theme.primary.radius.default}>
-          <Center p="40px">
+        <Box
+          bg="white"
+          w={{ xl: '1070px' }}
+          p={{ base: '0 20px 20px', xl: '0 40px 40px' }}
+          borderRadius={theme.primary.radius.default}
+        >
+          <Center p={{ base: '40px 0', xl: '40px' }}>
             <Box w={{ xl: '560px' }}>
               <Description name={title} align="center">
                 {description}
               </Description>
             </Box>
           </Center>
-          <Center mt="20px" p={{ base: '0 20px', xl: 'initial' }}>
+          <Center mt="20px">
             <Box
               borderRadius={theme.primary.radius.default}
               overflow="hidden"

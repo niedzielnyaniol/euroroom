@@ -71,7 +71,7 @@ const RoomDetail = ({
             w="100%"
             h="100%"
           >
-            <Box p="10px 12px">
+            <Box p={{ base: '16px', xl: '10px 12px' }}>
               <Price forWhatLabel={t`night`} price={pricePerNight} variant="white" />
             </Box>
           </Box>
@@ -81,7 +81,7 @@ const RoomDetail = ({
         position={isTransparent ? 'absolute' : undefined}
         bottom="0"
         spacing="16px"
-        p={isTransparent ? '10px 20px' : '20px 22px'}
+        p={isTransparent ? { base: '16px', xl: '10px 20px' } : '20px 22px'}
         bg={isTransparent ? 'transparent' : 'white'}
         align="start"
       >

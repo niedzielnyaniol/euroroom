@@ -34,6 +34,7 @@ const SelectLanguage = ({ variant = 'shortcut' }: SelectLanguageProps) => {
       <Select
         value={router.locale}
         variant={isDesktop ? 'unstyled' : undefined}
+        borderColor="gray.300"
         fontSize={{ base: '16px', xl: 'initial' }}
         onChange={handleLangChange}
         {...(variant === 'flag' && {

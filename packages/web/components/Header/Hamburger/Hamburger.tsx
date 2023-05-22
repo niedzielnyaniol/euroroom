@@ -7,7 +7,7 @@ type HamburgerProps = {
 };
 
 const Hamburger = ({ isOpened, onClick }: HamburgerProps) => (
-  <Button variant="outline" w="70.5px" bg="white" onClick={onClick}>
+  <Button borderColor="gray.300" variant="outline" w="70.5px" bg="white" onClick={onClick}>
     <SimpleGrid gap="6px">
       <Stripe rotation={isOpened ? 'left' : undefined} />
       <Stripe hidden={isOpened} />
