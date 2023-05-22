@@ -37,8 +37,8 @@ const FavoriteRooms = ({ rooms }: FavoriteRoomsProps) => (
             key={room.id}
             rowSpan={1}
             colSpan={1}
-            pb="75%"
-            position="relative"
+            pb={{ base: '75%', xl: 'initial' }}
+            pos="relative"
             width={{ base: '100%', xl: 'initial' }}
           >
             <Box pos="absolute" w="100%" h="100%" top={0} left={0}>
