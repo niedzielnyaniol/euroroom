@@ -1,6 +1,7 @@
 import { Box, Select } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { ChangeEvent } from 'react';
+import useMedia from '../../utils/useMedia';
 
 type SelectLanguageProps = {
   variant?: 'flag' | 'shortcut';
@@ -21,6 +22,7 @@ const LANGUAGES = [
 
 const SelectLanguage = ({ variant = 'shortcut' }: SelectLanguageProps) => {
   const router = useRouter();
+  const { isDesktop } = useMedia();
 
   const handleLangChange = (e: ChangeEvent<HTMLSelectElement>) => {
     e.preventDefault();
@@ -31,6 +33,7 @@ const SelectLanguage = ({ variant = 'shortcut' }: SelectLanguageProps) => {
     <Box w="auto" cursor="pointer" display="inline-block">
       <Select
         value={router.locale}
+        variant={isDesktop ? 'unstyled' : undefined}
         fontSize={{ base: '16px', xl: 'initial' }}
         onChange={handleLangChange}
         {...(variant === 'flag' && {

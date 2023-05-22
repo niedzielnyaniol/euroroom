@@ -11,13 +11,19 @@ type BenefitsProps = {
 };
 
 const Benefits = ({ benefits }: BenefitsProps) => (
-  <Flex justify="space-between">
+  <Flex justify={{ base: 'center', xl: 'space-between' }} flexWrap={{ base: 'wrap', xl: 'initial' }}>
     {benefits.map(({ id, title, subtitle }) => (
-      <Box key={id}>
-        <Heading fontSize="5xl" textAlign="center">
+      <Box key={id} w="50%">
+        <Heading fontSize={{ base: '2xl', xl: '5xl' }} textAlign="center">
           {title}
         </Heading>
-        <Text fontSize="larger" fontWeight={600} color="gray.500" textTransform="uppercase" textAlign="center">
+        <Text
+          fontSize={{ xl: 'larger' }}
+          fontWeight={600}
+          color="gray.500"
+          textTransform="uppercase"
+          textAlign="center"
+        >
           {subtitle}
         </Text>
       </Box>

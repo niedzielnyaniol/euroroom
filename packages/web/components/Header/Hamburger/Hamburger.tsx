@@ -1,4 +1,4 @@
-import { Button, VStack } from '@chakra-ui/react';
+import { Button, SimpleGrid } from '@chakra-ui/react';
 import Stripe from '../Stripe/Stripe';
 
 type HamburgerProps = {
@@ -7,12 +7,12 @@ type HamburgerProps = {
 };
 
 const Hamburger = ({ isOpened, onClick }: HamburgerProps) => (
-  <Button variant="unstyled" onClick={onClick}>
-    <VStack>
+  <Button variant="outline" w="70.5px" bg="white" onClick={onClick}>
+    <SimpleGrid gap="6px">
       <Stripe rotation={isOpened ? 'left' : undefined} />
       <Stripe hidden={isOpened} />
       <Stripe rotation={isOpened ? 'right' : undefined} />
-    </VStack>
+    </SimpleGrid>
   </Button>
 );
 

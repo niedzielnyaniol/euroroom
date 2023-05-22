@@ -34,7 +34,7 @@ const Header = () => {
       zIndex={10000}
       bg="white"
     >
-      <Container bg="white">
+      <Container bg={{ base: 'white', xl: 'initial' }}>
         <Grid templateColumns={{ base: '1fr', xl: '1fr auto 1fr' }} p={{ xl: '19px 0' }}>
           <Flex
             align="center"
@@ -50,7 +50,20 @@ const Header = () => {
               onClick={closeMenu}
             >
               <MyLink href={ROUTES.index.route}>
-                <Image src="/er-logo.webp" style={{ cursor: 'pointer' }} width={130} height={50} objectFit="contain" />
+                <Image
+                  src="/er-logo.webp"
+                  style={{ cursor: 'pointer' }}
+                  {...(isDesktop
+                    ? {
+                        width: 130,
+                        height: 50,
+                      }
+                    : {
+                        width: 100,
+                        height: 50,
+                      })}
+                  objectFit="contain"
+                />
               </MyLink>
             </Box>
             <SelectLanguage />

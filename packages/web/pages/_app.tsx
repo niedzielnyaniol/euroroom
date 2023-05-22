@@ -46,7 +46,7 @@ gtag('config', 'G-ZE2SMFLKFV');
       <ChakraProvider theme={theme}>
         <I18nProvider i18n={i18n}>
           <Header />
-          <Box pos="relative" minH="calc(100vh - 574.5px)">
+          <Box pos={{ xl: 'relative' }} minH={{ xl: 'calc(100vh - 574.5px)' }}>
             <Component {...pageProps} />
           </Box>
           <Footer />
