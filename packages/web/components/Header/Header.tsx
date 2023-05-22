@@ -1,14 +1,15 @@
-import { Box, Flex, Grid, Select, Text, useTheme } from '@chakra-ui/react';
+import { Box, Flex, Grid, Text, useTheme } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import ROUTES from '../../config/routes';
 import Container from '../Container';
 import MyLink from '../MyLink';
 import themeConfig from '../../config/theme';
 import Hamburger from './Hamburger/Hamburger';
 import useMedia from '../../utils/useMedia';
+import SelectLanguage from '../SelectLanguage/SelectLanguage';
 
 const Header = () => {
   const router = useRouter();
@@ -22,16 +23,12 @@ const Header = () => {
 
   const closeMenu = () => setIsOpened(false);
 
-  const handleLangChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    e.preventDefault();
-    router.push(router.asPath, undefined, { locale: e.target.value });
-  };
-
   return (
     <Box
       as="header"
-      pos="sticky"
+      pos={{ base: 'fixed', xl: 'sticky' }}
       top="0"
+      w="100%"
       h={{ xl: '88px' }}
       borderBottom={{ xl: `1px solid ${borderColor}` }}
       zIndex={10000}
@@ -56,17 +53,7 @@ const Header = () => {
                 <Image src="/er-logo.webp" style={{ cursor: 'pointer' }} width={130} height={50} objectFit="contain" />
               </MyLink>
             </Box>
-            <Box w="auto" cursor="pointer" display="inline-block">
-              <Select
-                value={router.locale}
-                variant="unstyled"
-                fontSize={{ base: '16px', xl: 'initial' }}
-                onChange={handleLangChange}
-              >
-                <option value="pl">PL</option>
-                <option value="en">EN</option>
-              </Select>
-            </Box>
+            <SelectLanguage />
           </Flex>
           {(isDesktop || isOpened) && (
             <Flex
