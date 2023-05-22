@@ -17,7 +17,12 @@ type TabsProps = {
 };
 
 const Tabs = ({ tabs, children, onTabChange, activeTab }: TabsProps) => (
-  <Grid templateColumns="3fr 7fr" gap="30px">
+  <Grid
+    display={{ base: 'flex', xl: 'grid' }}
+    flexDir={{ base: 'column-reverse', xl: 'initial' }}
+    templateColumns={{ xl: '3fr 7fr' }}
+    gap="30px"
+  >
     <VStack align="start">
       {tabs.map(({ id, tab }) => {
         const isSelected = activeTab === id;
@@ -35,7 +40,7 @@ const Tabs = ({ tabs, children, onTabChange, activeTab }: TabsProps) => (
               bg: 'white',
             }}
             bg={isSelected ? 'white' : 'transparent'}
-            p="20px 30px"
+            p={{ xl: '20px 30px' }}
             height="auto"
             display="block"
             textAlign="left"

@@ -9,6 +9,7 @@ import ArrowLeft from './ArrowLeft';
 import ArrowRight from './ArrowRight';
 import Bullets from './Bullets';
 import theme from '../../config/theme';
+import useMedia from '../../utils/useMedia';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -30,11 +31,12 @@ const Slider = ({
 }: SliderProps) => {
   const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
+  const { isDesktop } = useMedia();
 
   return (
     <Box pos="relative">
       <Flex>
-        {arrowVariant && <ArrowLeft variant={arrowVariant} ref={(node) => setPrevEl(node)} />}
+        {isDesktop && arrowVariant && <ArrowLeft variant={arrowVariant} ref={(node) => setPrevEl(node)} />}
         <Box borderRadius={borderRadius} overflow="hidden" w={w}>
           <Swiper
             className={classNames({
@@ -70,7 +72,7 @@ const Slider = ({
             ))}
           </Swiper>
         </Box>
-        {arrowVariant && <ArrowRight variant={arrowVariant} ref={(node) => setNextEl(node)} />}
+        {isDesktop && arrowVariant && <ArrowRight variant={arrowVariant} ref={(node) => setNextEl(node)} />}
       </Flex>
       {bulletsVariant && (
         <Center
