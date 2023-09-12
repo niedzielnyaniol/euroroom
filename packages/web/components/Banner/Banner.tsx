@@ -6,7 +6,7 @@ type BannerProps = {
 };
 
 const Banner = ({ children }: BannerProps) => (
-  <Center h="233px" bg="gray.600">
+  <Center h={{ xl: '233px' }} bg="gray.600" p="90px 0 40px">
     <Heading
       textTransform="uppercase"
       color="white"
